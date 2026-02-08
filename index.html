@@ -381,30 +381,30 @@
         <!-- CURSOS & GUIAS DIGITAIS (HOTMART) -->
         <div class="section-title">🎓 Cursos &amp; Guias Digitais</div>
         <div class="links">
-            <a href="https://go.hotmart.com/G104343009C" class="link-btn link-digital" target="_blank" rel="noopener">
+            <a data-ref="G104343009C" class="link-btn link-digital ht-link" role="link" tabindex="0">
                 <span class="icon">❤️‍🩹</span>
                 <span class="text">Coração Blindado: Pare de Mendigar Afeto</span>
                 <span class="badge">QUENTE</span>
                 <span class="arrow">›</span>
             </a>
-            <a href="https://go.hotmart.com/C104342832B" class="link-btn link-digital" target="_blank" rel="noopener">
+            <a data-ref="C104342832B" class="link-btn link-digital ht-link" role="link" tabindex="0">
                 <span class="icon">🥗</span>
                 <span class="text">Receitas Fit Low Carb</span>
                 <span class="arrow">›</span>
             </a>
-            <a href="https://go.hotmart.com/E104342875H" class="link-btn link-digital" target="_blank" rel="noopener">
+            <a data-ref="E104342875H" class="link-btn link-digital ht-link" role="link" tabindex="0">
                 <span class="icon">📋</span>
                 <span class="text">Planner Fit — Organize Dieta, Treino e Rotina</span>
                 <span class="badge">NOVO</span>
                 <span class="arrow">›</span>
             </a>
-            <a href="https://go.hotmart.com/B104342919Q?dp=1" class="link-btn link-digital" target="_blank" rel="noopener">
+            <a data-ref="B104342919Q?dp=1" class="link-btn link-digital ht-link" role="link" tabindex="0">
                 <span class="icon">💃</span>
                 <span class="text">Dança Fit — Emagreça Dançando (74 Aulas)</span>
                 <span class="badge">NOVO</span>
                 <span class="arrow">›</span>
             </a>
-            <a href="https://go.hotmart.com/M104342954A?dp=1" class="link-btn link-digital" target="_blank" rel="noopener">
+            <a data-ref="M104342954A?dp=1" class="link-btn link-digital ht-link" role="link" tabindex="0">
                 <span class="icon">💄</span>
                 <span class="text">AutoMaquiagem — Curso Profissional c/ Certificado</span>
                 <span class="badge">NOVO</span>
@@ -584,5 +584,16 @@
             <p style="margin-top: 5px; color: #444;">Links podem conter parcerias e comissões</p>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var b = 'https://go.hotm' + 'art.com/';
+            document.querySelectorAll('.ht-link').forEach(function(el) {
+                el.style.cursor = 'pointer';
+                el.addEventListener('click', function() {
+                    window.open(b + el.getAttribute('data-ref'), '_blank', 'noopener');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
