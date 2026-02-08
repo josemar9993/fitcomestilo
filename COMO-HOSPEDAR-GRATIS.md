@@ -6,7 +6,7 @@
 ### Passo a passo:
 1. Acesse: https://github.com e crie uma conta (grátis)
 2. Clique em "New repository" (novo repositório)
-3. Nome do repositório: fitcomestilo
+3. Nome do repositório: SEUUSUARIO.github.io (ex: josemar9993.github.io)
 4. Marque "Public"
 5. Clique "Create repository"
 6. Clique "uploading an existing file"
@@ -14,10 +14,10 @@
 8. Clique "Commit changes"
 9. Vá em Settings → Pages
 10. Em "Source", selecione "main" e clique "Save"
-11. Seu site vai ficar em: https://SEUUSUARIO.github.io/fitcomestilo
+11. Seu site vai ficar em: https://SEUUSUARIO.github.io/
 
 ### O que colocar no Amazon Associados:
-   https://SEUUSUARIO.github.io/fitcomestilo
+   https://SEUUSUARIO.github.io/
 
 ---
 
