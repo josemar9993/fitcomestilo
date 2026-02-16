@@ -1,0 +1,12 @@
+# Robots.txt — Fit com Estilo
+# https://fitcomestilo.store
+
+User-agent: *
+Allow: /
+Disallow: /.git/
+
+# Sitemap
+Sitemap: https://fitcomestilo.store/sitemap.xml
+
+# Crawl-delay (seja gentil com o servidor)
+Crawl-delay: 1
