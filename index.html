@@ -12,6 +12,17 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
+    <!-- Google Analytics GA4 -->
+    <!-- INSTRUÇÕES: Crie uma propriedade GA4 em https://analytics.google.com
+         Substitua G-XXXXXXXXXX pelo seu Measurement ID real -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -759,9 +770,195 @@
             background: linear-gradient(90deg, transparent, var(--border), transparent);
             margin: 10px 0;
         }
+
+        /* ============================================
+           WHATSAPP FLOATING BUTTON
+           ============================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            z-index: 9999;
+            transition: all 0.3s;
+            animation: whatsapp-pulse 2s ease-in-out infinite;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37,211,102,0.6);
+        }
+        @keyframes whatsapp-pulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+            50% { box-shadow: 0 4px 30px rgba(37,211,102,0.6), 0 0 0 8px rgba(37,211,102,0.1); }
+        }
+
+        /* ============================================
+           URGENCY BANNER
+           ============================================ */
+        .urgency-bar {
+            background: linear-gradient(135deg, #ef4444, #f97316);
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .urgency-bar .countdown {
+            background: rgba(0,0,0,0.25);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Inter', monospace;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .urgency-bar .urgency-close {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        .urgency-bar .urgency-close:hover { opacity: 1; }
+
+        /* ============================================
+           SOCIAL PROOF NOTIFICATION
+           ============================================ */
+        .social-proof {
+            position: fixed;
+            bottom: 100px;
+            left: 24px;
+            background: rgba(15,15,25,0.95);
+            border: 1px solid var(--border-hover);
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            z-index: 9998;
+            transform: translateX(-120%);
+            transition: transform 0.4s ease;
+            max-width: 320px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+        }
+        .social-proof.show { transform: translateX(0); }
+        .social-proof .sp-emoji { font-size: 24px; }
+        .social-proof .sp-text { line-height: 1.4; }
+        .social-proof .sp-text strong { color: var(--green); }
+        .social-proof .sp-time { color: var(--text-muted); font-size: 11px; }
+
+        /* ============================================
+           COOKIE CONSENT (LGPD)
+           ============================================ */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10,10,20,0.97);
+            border-top: 1px solid var(--border);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            z-index: 10000;
+            backdrop-filter: blur(10px);
+            flex-wrap: wrap;
+        }
+        .cookie-banner a { color: var(--accent); text-decoration: underline; }
+        .cookie-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: var(--radius-xs);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+        .cookie-btn:hover { background: #9333ea; }
+
+        /* ============================================
+           BACK TO TOP BUTTON
+           ============================================ */
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 96px;
+            width: 44px;
+            height: 44px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--text-secondary);
+            z-index: 9998;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .back-to-top:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float { width: 52px; height: 52px; font-size: 28px; bottom: 16px; right: 16px; }
+            .back-to-top { right: 76px; bottom: 16px; width: 40px; height: 40px; }
+            .social-proof { left: 12px; right: 12px; max-width: none; bottom: 80px; }
+            .cookie-banner { flex-direction: column; text-align: center; padding: 14px 16px; }
+            .urgency-bar { font-size: 11px; padding: 8px 30px 8px 12px; }
+        }
     </style>
 </head>
 <body>
+
+    <!-- ============================================
+         URGENCY BANNER
+         ============================================ -->
+    <div class="urgency-bar" id="urgencyBar">
+        🔥 Ofertas com até <strong>87% OFF</strong> — válidas por tempo limitado!
+        <span class="countdown" id="countdown">00:00:00</span>
+        <button class="urgency-close" onclick="document.getElementById('urgencyBar').style.display='none'" aria-label="Fechar">✕</button>
+    </div>
 
     <!-- ============================================
          HERO
@@ -773,7 +970,7 @@
             <p class="hero-tagline animate-in delay-2">Curadoria diária das melhores ofertas de moda fitness, suplementos, beleza e acessórios</p>
             <div class="hero-stats animate-in delay-3">
                 <div class="hero-stat">
-                    <div class="stat-num">60+</div>
+                    <div class="stat-num">24</div>
                     <div class="stat-label">Produtos</div>
                 </div>
                 <div class="hero-stat">
@@ -781,7 +978,7 @@
                     <div class="stat-label">Até OFF</div>
                 </div>
                 <div class="hero-stat">
-                    <div class="stat-num">2</div>
+                    <div class="stat-num">3</div>
                     <div class="stat-label">Lojas</div>
                 </div>
             </div>
@@ -1675,6 +1872,37 @@
     </footer>
 
     <!-- ============================================
+         WHATSAPP FLOATING BUTTON
+         ============================================ -->
+    <a href="https://wa.me/?text=Oi!%20Vi%20os%20produtos%20no%20fitcomestilo.store%20e%20quero%20saber%20mais%20%F0%9F%92%AA" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+        💬
+    </a>
+
+    <!-- ============================================
+         BACK TO TOP
+         ============================================ -->
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</a>
+
+    <!-- ============================================
+         SOCIAL PROOF NOTIFICATION
+         ============================================ -->
+    <div class="social-proof" id="socialProof">
+        <span class="sp-emoji">🛒</span>
+        <div class="sp-text">
+            <div id="spMessage"></div>
+            <div class="sp-time" id="spTime"></div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         COOKIE CONSENT (LGPD)
+         ============================================ -->
+    <div class="cookie-banner" id="cookieBanner" style="display:none">
+        <span>🍪 Este site usa cookies e links de afiliados para melhorar sua experiência. Ao continuar navegando, você concorda com nossa política.</span>
+        <button class="cookie-btn" onclick="acceptCookies()">Aceitar</button>
+    </div>
+
+    <!-- ============================================
          SCRIPTS
          ============================================ -->
     <script>
@@ -1738,6 +1966,96 @@
 
         document.querySelectorAll('.product-card, .link-item').forEach(function(el) {
             observer.observe(el);
+        });
+
+        // ============================================
+        // COUNTDOWN TIMER (reseta à meia-noite)
+        // ============================================
+        function updateCountdown() {
+            var now = new Date();
+            var end = new Date();
+            end.setHours(23, 59, 59, 0);
+            var diff = end - now;
+            if (diff <= 0) diff = 86400000;
+            var h = Math.floor(diff / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            var el = document.getElementById('countdown');
+            if (el) el.textContent = (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // ============================================
+        // BACK TO TOP
+        // ============================================
+        var backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 600) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+
+        // ============================================
+        // SOCIAL PROOF NOTIFICATIONS
+        // ============================================
+        var spMessages = [
+            {emoji: '🛒', text: 'Alguém de <strong>São Paulo</strong> comprou um Top Fitness', time: 'há 2 min'},
+            {emoji: '🔥', text: 'Alguém de <strong>Rio de Janeiro</strong> comprou Whey Protein', time: 'há 5 min'},
+            {emoji: '💄', text: 'Alguém de <strong>Belo Horizonte</strong> comprou Kit Skincare', time: 'há 8 min'},
+            {emoji: '⌚', text: 'Alguém de <strong>Curitiba</strong> comprou Smartwatch', time: 'há 3 min'},
+            {emoji: '👗', text: 'Alguém de <strong>Brasília</strong> comprou Legging Montaria', time: 'há 6 min'},
+            {emoji: '💪', text: 'Alguém de <strong>Salvador</strong> comprou Creatina 300g', time: 'há 4 min'},
+            {emoji: '📦', text: '<strong>12 pessoas</strong> estão vendo ofertas agora', time: 'agora'},
+            {emoji: '⭐', text: '<strong>Top Fitness</strong> — produto mais vendido hoje!', time: 'destaque'},
+            {emoji: '🎉', text: 'Alguém de <strong>Recife</strong> comprou Conjunto Academia', time: 'há 7 min'},
+            {emoji: '📚', text: 'Alguém de <strong>Porto Alegre</strong> comprou eBook Mindset', time: 'há 9 min'}
+        ];
+        var spIndex = 0;
+        function showSocialProof() {
+            var sp = document.getElementById('socialProof');
+            var msg = spMessages[spIndex % spMessages.length];
+            document.querySelector('.sp-emoji').textContent = msg.emoji;
+            document.getElementById('spMessage').innerHTML = msg.text;
+            document.getElementById('spTime').textContent = msg.time;
+            sp.classList.add('show');
+            setTimeout(function() { sp.classList.remove('show'); }, 4000);
+            spIndex++;
+        }
+        // Primeira notificação após 15s, depois a cada 25-40s
+        setTimeout(function() {
+            showSocialProof();
+            setInterval(showSocialProof, 25000 + Math.random() * 15000);
+        }, 15000);
+
+        // ============================================
+        // COOKIE CONSENT (LGPD)
+        // ============================================
+        function acceptCookies() {
+            localStorage.setItem('fitcomestilo_cookies', 'accepted');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+        if (!localStorage.getItem('fitcomestilo_cookies')) {
+            document.getElementById('cookieBanner').style.display = 'flex';
+        }
+
+        // ============================================
+        // GA4 — TRACKING DE CLIQUES EM PRODUTOS
+        // ============================================
+        document.querySelectorAll('.product-card, .link-item').forEach(function(el) {
+            el.addEventListener('click', function() {
+                var name = el.querySelector('.product-card-name, .name');
+                var store = el.querySelector('.product-card-store');
+                if (typeof gtag === 'function' && name) {
+                    gtag('event', 'click_produto', {
+                        'event_category': 'afiliado',
+                        'event_label': name.textContent,
+                        'loja': store ? store.textContent : 'desconhecida'
+                    });
+                }
+            });
         });
     </script>
 </body>
