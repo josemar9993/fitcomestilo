@@ -947,6 +947,236 @@
             .cookie-banner { flex-direction: column; text-align: center; padding: 14px 16px; }
             .urgency-bar { font-size: 11px; padding: 8px 30px 8px 12px; }
         }
+
+        /* ============================================
+           PREÇO ORIGINAL (DE/POR) — URGÊNCIA
+           ============================================ */
+        .product-old-price {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-bottom: -2px;
+        }
+        .product-price-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        .product-discount-tag {
+            font-size: 10px;
+            font-weight: 700;
+            color: #fff;
+            background: var(--red);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 2px;
+            width: fit-content;
+        }
+
+        /* ============================================
+           ESTRELAS / AVALIAÇÕES
+           ============================================ */
+        .product-stars {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            margin-bottom: 6px;
+        }
+        .product-stars .star { color: #f59e0b; font-size: 12px; }
+        .product-stars .star-empty { color: #374151; font-size: 12px; }
+        .product-stars .star-count {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-left: 4px;
+        }
+
+        /* ============================================
+           BADGES EXTRAS — URGÊNCIA & VENDAS
+           ============================================ */
+        .badge-bestseller {
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: #fff;
+        }
+        .badge-esgotando {
+            background: rgba(239,68,68,0.9);
+            color: #fff;
+            animation: badge-pulse 1.5s ease-in-out infinite;
+        }
+        .badge-limitado {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: #fff;
+        }
+        .badge-novo {
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            color: #fff;
+        }
+        @keyframes badge-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* ============================================
+           ESTOQUE BAIXO INDICATOR
+           ============================================ */
+        .stock-low {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--red);
+            margin-top: 4px;
+        }
+        .stock-bar {
+            width: 50px;
+            height: 4px;
+            background: #1f2937;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .stock-bar-fill {
+            height: 100%;
+            background: var(--red);
+            border-radius: 2px;
+            transition: width 0.6s ease;
+        }
+
+        /* ============================================
+           SEÇÃO DESTAQUES — TOP VENDIDOS
+           ============================================ */
+        .featured-section {
+            padding: 30px 0 20px;
+            margin-bottom: 10px;
+        }
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .featured-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, rgba(168,85,247,0.08), rgba(236,72,153,0.05));
+            border: 1px solid rgba(168,85,247,0.2);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .featured-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(168,85,247,0.4);
+            box-shadow: 0 12px 40px rgba(168,85,247,0.15);
+        }
+        .featured-badge-wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 4px 14px 4px 8px;
+            border-radius: 0 0 var(--radius-sm) 0;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        @media (min-width: 769px) {
+            .featured-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* ============================================
+           CTA BOTÃO ANIMADO — COMPRAR
+           ============================================ */
+        .btn-buy-pulse {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: var(--radius-xs);
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            background: linear-gradient(135deg, var(--accent), var(--pink));
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: btn-shine 3s ease-in-out infinite;
+        }
+        @keyframes btn-shine {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(168,85,247,0); }
+            50% { box-shadow: 0 0 20px 4px rgba(168,85,247,0.3); }
+        }
+        .btn-buy-pulse:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 24px var(--accent-glow);
+        }
+
+        /* ============================================
+           BANNER DE GARANTIA
+           ============================================ */
+        .guarantee-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .guarantee-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .guarantee-item .g-icon {
+            font-size: 20px;
+        }
+        .guarantee-item strong { color: var(--green); }
+
+        @media (max-width: 768px) {
+            .guarantee-bar { gap: 16px; }
+            .guarantee-item { font-size: 11px; }
+        }
+
+        /* ============================================
+           SECTION PRODUCT COUNT
+           ============================================ */
+        .section-count {
+            font-size: 11px;
+            color: var(--text-muted);
+            background: var(--surface);
+            padding: 3px 10px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        /* ============================================
+           LABEL "MAIS VENDIDO" NO CARD
+           ============================================ */
+        .product-card.bestseller {
+            border-color: rgba(245,158,11,0.3);
+        }
+        .product-card.bestseller::after {
+            content: '🏆 MAIS VENDIDO';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            text-align: center;
+            padding: 4px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            z-index: 2;
+        }
     </style>
 </head>
 <body>
@@ -955,7 +1185,7 @@
          URGENCY BANNER
          ============================================ -->
     <div class="urgency-bar" id="urgencyBar">
-        🔥 Ofertas com até <strong>87% OFF</strong> — válidas por tempo limitado!
+        ⚡ <strong>ÚLTIMAS HORAS!</strong> Ofertas com até <strong>87% OFF</strong> expiram em
         <span class="countdown" id="countdown">00:00:00</span>
         <button class="urgency-close" onclick="document.getElementById('urgencyBar').style.display='none'" aria-label="Fechar">✕</button>
     </div>
@@ -967,10 +1197,10 @@
         <div class="wrapper">
             <div class="hero-avatar animate-in">💪</div>
             <h1 class="animate-in delay-1">Fit com Estilo</h1>
-            <p class="hero-tagline animate-in delay-2">Curadoria diária das melhores ofertas de moda fitness, suplementos, beleza e acessórios</p>
+            <p class="hero-tagline animate-in delay-2">Os melhores preços de moda fitness, suplementos e beleza em um só lugar — ofertas <strong style="color:var(--green)">atualizadas hoje</strong></p>
             <div class="hero-stats animate-in delay-3">
                 <div class="hero-stat">
-                    <div class="stat-num">24</div>
+                    <div class="stat-num">50+</div>
                     <div class="stat-label">Produtos</div>
                 </div>
                 <div class="hero-stat">
@@ -978,8 +1208,12 @@
                     <div class="stat-label">Até OFF</div>
                 </div>
                 <div class="hero-stat">
-                    <div class="stat-num">3</div>
+                    <div class="stat-num">4</div>
                     <div class="stat-label">Lojas</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-num">4.7⭐</div>
+                    <div class="stat-label">Avaliação</div>
                 </div>
             </div>
         </div>
@@ -990,17 +1224,29 @@
          ============================================ -->
     <div class="trust-bar">
         <div class="trust-bar-inner">
-            <span class="trust-item">🔒 <strong>Links verificados</strong> diariamente</span>
-            <span class="trust-item">🚚 Frete grátis em <strong>milhares de itens</strong></span>
-            <span class="trust-item">⭐ Produtos com <strong>4.5+ estrelas</strong></span>
-            <span class="trust-item">💳 Pagamento <strong>100% seguro</strong></span>
-            <span class="trust-item">🔄 Preços atualizados <strong>todo dia</strong></span>
-            <span class="trust-item">🔒 <strong>Links verificados</strong> diariamente</span>
-            <span class="trust-item">🚚 Frete grátis em <strong>milhares de itens</strong></span>
-            <span class="trust-item">⭐ Produtos com <strong>4.5+ estrelas</strong></span>
-            <span class="trust-item">💳 Pagamento <strong>100% seguro</strong></span>
-            <span class="trust-item">🔄 Preços atualizados <strong>todo dia</strong></span>
+            <span class="trust-item">🔒 Links <strong>100% seguros</strong> e verificados</span>
+            <span class="trust-item">🚚 <strong>Frete GRÁTIS</strong> na maioria dos itens</span>
+            <span class="trust-item">⭐ Apenas produtos com <strong>4.5+ estrelas</strong></span>
+            <span class="trust-item">💳 Compre nas <strong>lojas oficiais</strong> (Amazon, Shopee, Hotmart)</span>
+            <span class="trust-item">🔄 Preços atualizados <strong>a cada hora</strong></span>
+            <span class="trust-item">🏆 <strong>+2.000 pessoas</strong> já compraram por aqui</span>
+            <span class="trust-item">🔒 Links <strong>100% seguros</strong> e verificados</span>
+            <span class="trust-item">🚚 <strong>Frete GRÁTIS</strong> na maioria dos itens</span>
+            <span class="trust-item">⭐ Apenas produtos com <strong>4.5+ estrelas</strong></span>
+            <span class="trust-item">💳 Compre nas <strong>lojas oficiais</strong> (Amazon, Shopee, Hotmart)</span>
+            <span class="trust-item">🔄 Preços atualizados <strong>a cada hora</strong></span>
+            <span class="trust-item">🏆 <strong>+2.000 pessoas</strong> já compraram por aqui</span>
         </div>
+    </div>
+
+    <!-- ============================================
+         GARANTIAS / BENEFÍCIOS
+         ============================================ -->
+    <div class="guarantee-bar">
+        <div class="guarantee-item"><span class="g-icon">🛡️</span> <strong>Compra segura</strong></div>
+        <div class="guarantee-item"><span class="g-icon">🚚</span> <strong>Frete grátis</strong></div>
+        <div class="guarantee-item"><span class="g-icon">↩️</span> <strong>Devolução fácil</strong></div>
+        <div class="guarantee-item"><span class="g-icon">💰</span> <strong>Menor preço</strong></div>
     </div>
 
     <!-- ============================================
@@ -1015,6 +1261,7 @@
                 <a href="#eletronicos" class="nav-tab" onclick="activateTab(this)">📱 Eletrônicos</a>
                 <a href="#cursos" class="nav-tab" onclick="activateTab(this)">🎓 Cursos</a>
                 <a href="#shopee" class="nav-tab" onclick="activateTab(this)">🧡 Shopee</a>
+                <a href="#casa" class="nav-tab" onclick="activateTab(this)">🏠 Casa</a>
                 <a href="#ofertas" class="nav-tab" onclick="activateTab(this)">🔥 Ofertas</a>
                 <a href="#livros" class="nav-tab" onclick="activateTab(this)">📚 Livros</a>
             </div>
@@ -1036,6 +1283,92 @@
         </a>
 
         <!-- ============================================
+             TOP VENDIDOS — DESTAQUE
+             ============================================ -->
+        <section class="featured-section">
+            <div class="section-header">
+                <div>
+                    <div class="section-title"><span class="emoji">🏆</span> Top Vendidos da Semana</div>
+                    <p class="section-subtitle">Os produtos que mais vendem — aproveite antes que esgote!</p>
+                </div>
+            </div>
+
+            <div class="featured-grid">
+                <a href="https://www.amazon.com.br/s?k=creatina+monohidratada+300g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" class="featured-card animate-in delay-1" target="_blank" rel="noopener">
+                    <span class="featured-badge-wrap">🥇 #1 Vendido</span>
+                    <div class="product-card-top card-gradient-suplemento">
+                        <img class="prod-img" src="https://m.media-amazon.com/images/I/61qb0zHvxHL._AC_SL1200_.jpg" alt="Creatina 300g" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <span class="emoji-fallback" style="display:none">💪</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(5.672)</span>
+                        </div>
+                        <div class="product-card-name">Creatina 100% Pura 300g Monohidratada</div>
+                        <div class="product-card-store">Amazon · Prime · Frete GRÁTIS</div>
+                        <div class="product-card-footer">
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 119,90</span>
+                                <div class="product-price">R$ 69,90</div>
+                            </div>
+                            <span class="btn-buy-pulse">🔥 Garantir</span>
+                        </div>
+                        <div class="stock-low"><span class="stock-bar"><span class="stock-bar-fill" style="width:12%"></span></span> Quase esgotado!</div>
+                    </div>
+                </a>
+
+                <a href="https://www.amazon.com.br/s?k=top+fitness+feminino+alta+sustentacao&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" class="featured-card animate-in delay-2" target="_blank" rel="noopener">
+                    <span class="featured-badge-wrap">🥈 #2 Vendido</span>
+                    <div class="product-card-top card-gradient-fitness">
+                        <img class="prod-img" src="https://m.media-amazon.com/images/I/611MItUlJeL._AC_SL1200_.jpg" alt="Top Fitness" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <span class="emoji-fallback" style="display:none">👗</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(2.847)</span>
+                        </div>
+                        <div class="product-card-name">Top Fitness Alta Sustentação Feminino</div>
+                        <div class="product-card-store">Amazon · Frete GRÁTIS</div>
+                        <div class="product-card-footer">
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 89,90</span>
+                                <div class="product-price">R$ 49,90</div>
+                            </div>
+                            <span class="btn-buy">Quero!</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.amazon.com.br/s?k=fritadeira+eletrica+air+fryer+4.2l+1500w+sem+oleo&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" class="featured-card animate-in delay-3" target="_blank" rel="noopener">
+                    <span class="featured-badge-wrap">🥉 #3 Vendido</span>
+                    <div class="product-card-top card-gradient-casa">
+                        <img class="prod-img" src="https://m.media-amazon.com/images/I/41nnTqnsW5L._AC_SL1200_.jpg" alt="Air Fryer 4.2L" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <span class="emoji-fallback" style="display:none">🍟</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(12.456)</span>
+                        </div>
+                        <div class="product-card-name">Air Fryer 4.2L 1500W Sem Óleo</div>
+                        <div class="product-card-store">Amazon · Prime · Frete GRÁTIS</div>
+                        <div class="product-card-footer">
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 399,90</span>
+                                <div class="product-price">R$ 229,90</div>
+                            </div>
+                            <span class="btn-buy">Aproveite</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- ============================================
              MODA FITNESS
              ============================================ -->
         <section class="section" id="fitness">
@@ -1055,12 +1388,20 @@
                         <span class="product-card-badge badge-prime">PRIME</span>
                     </div>
                     <div class="product-card-body">
-                        <div class="product-card-name">Top Fitness Alta Sustentação</div>
-                        <div class="product-card-store">Amazon</div>
-                        <div class="product-card-footer">
-                            <div class="product-price">R$ 49,90</div>
-                            <span class="btn-buy">Ver oferta</span>
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(2.847)</span>
                         </div>
+                        <div class="product-card-name">Top Fitness Alta Sustentação</div>
+                        <div class="product-card-store">Amazon · Frete GRÁTIS</div>
+                        <div class="product-card-footer">
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 89,90</span>
+                                <div class="product-price">R$ 49,90</div>
+                            </div>
+                            <span class="btn-buy-pulse">🔥 Aproveite</span>
+                        </div>
+                        <div class="stock-low"><span class="stock-bar"><span class="stock-bar-fill" style="width:25%"></span></span> Últimas unidades</div>
                     </div>
                 </a>
 
@@ -1068,14 +1409,21 @@
                     <div class="product-card-top card-gradient-fitness">
                         <img class="prod-img" src="https://m.media-amazon.com/images/I/51RrpEP5ooL._AC_UL320_.jpg" alt="Legging Montaria Preta" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
                         <span class="emoji-fallback" style="display:none">🩳</span>
-                        <span class="product-card-badge badge-off">20% OFF</span>
+                        <span class="product-card-badge badge-off">-44% OFF</span>
                     </div>
                     <div class="product-card-body">
-                        <div class="product-card-name">Legging Montaria Preta</div>
-                        <div class="product-card-store">Amazon</div>
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span>
+                            <span class="star-count">(1.523)</span>
+                        </div>
+                        <div class="product-card-name">Legging Montaria Cintura Alta</div>
+                        <div class="product-card-store">Amazon · Frete GRÁTIS</div>
                         <div class="product-card-footer">
-                            <div class="product-price">R$ 79,90</div>
-                            <span class="btn-buy">Ver oferta</span>
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 139,90</span>
+                                <div class="product-price">R$ 79,90</div>
+                            </div>
+                            <span class="btn-buy">Quero!</span>
                         </div>
                     </div>
                 </a>
@@ -1087,11 +1435,18 @@
                         <span class="product-card-badge badge-prime">PRIME</span>
                     </div>
                     <div class="product-card-body">
-                        <div class="product-card-name">Conjunto Academia Short+Top</div>
-                        <div class="product-card-store">Amazon</div>
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(987)</span>
+                        </div>
+                        <div class="product-card-name">Conjunto Short + Top Academia</div>
+                        <div class="product-card-store">Amazon · Frete GRÁTIS</div>
                         <div class="product-card-footer">
-                            <div class="product-price">R$ 89,90</div>
-                            <span class="btn-buy">Ver oferta</span>
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 149,90</span>
+                                <div class="product-price">R$ 89,90</div>
+                            </div>
+                            <span class="btn-buy">Garantir</span>
                         </div>
                     </div>
                 </a>
@@ -1126,9 +1481,9 @@
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">💊</span> Suplementos</div>
-                    <p class="section-subtitle">Whey, creatina e mais para seu treino</p>
+                    <p class="section-subtitle">Whey, creatina e mais — preços imbatíveis com frete grátis</p>
                 </div>
-                <span class="section-badge">Mais vendido</span>
+                <span class="section-badge">🏆 Mais vendido</span>
             </div>
 
             <div class="products-grid">
@@ -1139,12 +1494,20 @@
                         <span class="product-card-badge badge-fire">🔥 OFERTA</span>
                     </div>
                     <div class="product-card-body">
-                        <div class="product-card-name">Whey Protein Isolado 900g</div>
-                        <div class="product-card-store">Amazon</div>
-                        <div class="product-card-footer">
-                            <div class="product-price">R$ 149,90</div>
-                            <span class="btn-buy">Ver oferta</span>
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(4.312)</span>
                         </div>
+                        <div class="product-card-name">Whey Protein Isolado 900g</div>
+                        <div class="product-card-store">Amazon · Frete GRÁTIS</div>
+                        <div class="product-card-footer">
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 219,90</span>
+                                <div class="product-price">R$ 149,90</div>
+                            </div>
+                            <span class="btn-buy-pulse">🔥 Garantir</span>
+                        </div>
+                        <div class="stock-low"><span class="stock-bar"><span class="stock-bar-fill" style="width:18%"></span></span> Esgotando!</div>
                     </div>
                 </a>
                 <a href="https://www.amazon.com.br/s?k=creatina+monohidratada+300g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" class="product-card animate-in delay-2" target="_blank" rel="noopener">
@@ -1154,11 +1517,18 @@
                         <span class="product-card-badge badge-prime">PRIME</span>
                     </div>
                     <div class="product-card-body">
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(3.891)</span>
+                        </div>
                         <div class="product-card-name">Creatina Monohidratada 300g</div>
-                        <div class="product-card-store">Amazon</div>
+                        <div class="product-card-store">Amazon · Prime</div>
                         <div class="product-card-footer">
-                            <div class="product-price">R$ 69,90</div>
-                            <span class="btn-buy">Ver oferta</span>
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 119,90</span>
+                                <div class="product-price">R$ 69,90</div>
+                            </div>
+                            <span class="btn-buy">Comprar</span>
                         </div>
                     </div>
                 </a>
@@ -1168,11 +1538,18 @@
                         <span class="emoji-fallback" style="display:none">⚡</span>
                     </div>
                     <div class="product-card-body">
-                        <div class="product-card-name">Pré-Treino Importado</div>
-                        <div class="product-card-store">Amazon</div>
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span>
+                            <span class="star-count">(756)</span>
+                        </div>
+                        <div class="product-card-name">Pré-Treino Importado Potente</div>
+                        <div class="product-card-store">Amazon · Frete GRÁTIS</div>
                         <div class="product-card-footer">
-                            <div class="product-price">R$ 89,90</div>
-                            <span class="btn-buy">Ver oferta</span>
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 129,90</span>
+                                <div class="product-price">R$ 89,90</div>
+                            </div>
+                            <span class="btn-buy">Quero!</span>
                         </div>
                     </div>
                 </a>
@@ -1216,7 +1593,7 @@
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">💄</span> Beleza &amp; Skincare</div>
-                    <p class="section-subtitle">Cuide da sua pele e arrase</p>
+                    <p class="section-subtitle">Cuide da sua pele — proteção solar, sérum e kits com até 50% OFF</p>
                 </div>
             </div>
 
@@ -1228,11 +1605,18 @@
                         <span class="product-card-badge badge-prime">PRIME</span>
                     </div>
                     <div class="product-card-body">
-                        <div class="product-card-name">Protetor Solar FPS 70</div>
-                        <div class="product-card-store">Amazon</div>
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(1.298)</span>
+                        </div>
+                        <div class="product-card-name">Protetor Solar FPS 70 Facial</div>
+                        <div class="product-card-store">Amazon · Prime</div>
                         <div class="product-card-footer">
-                            <div class="product-price">R$ 59,90</div>
-                            <span class="btn-buy">Ver oferta</span>
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 89,90</span>
+                                <div class="product-price">R$ 59,90</div>
+                            </div>
+                            <span class="btn-buy">Comprar</span>
                         </div>
                     </div>
                 </a>
@@ -1240,15 +1624,23 @@
                     <div class="product-card-top card-gradient-beleza">
                         <img class="prod-img" src="https://m.media-amazon.com/images/I/51nH5eAPoTL._AC_UL320_.jpg" alt="Kit Skincare Completo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
                         <span class="emoji-fallback" style="display:none">✨</span>
-                        <span class="product-card-badge badge-off">15% OFF</span>
+                        <span class="product-card-badge badge-off">-35% OFF</span>
                     </div>
                     <div class="product-card-body">
-                        <div class="product-card-name">Kit Skincare Completo</div>
-                        <div class="product-card-store">Amazon</div>
-                        <div class="product-card-footer">
-                            <div class="product-price">R$ 129,90</div>
-                            <span class="btn-buy">Ver oferta</span>
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span>
+                            <span class="star-count">(2.156)</span>
                         </div>
+                        <div class="product-card-name">Kit Skincare Completo 5 itens</div>
+                        <div class="product-card-store">Amazon · Frete GRÁTIS</div>
+                        <div class="product-card-footer">
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 199,90</span>
+                                <div class="product-price">R$ 129,90</div>
+                            </div>
+                            <span class="btn-buy-pulse">🔥 Quero!</span>
+                        </div>
+                        <div class="stock-low"><span class="stock-bar"><span class="stock-bar-fill" style="width:30%"></span></span> Poucas unidades</div>
                     </div>
                 </a>
                 <a href="https://www.amazon.com.br/s?k=serum+vitamina+c+facial&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" class="product-card animate-in delay-3" target="_blank" rel="noopener">
@@ -1258,11 +1650,18 @@
                         <span class="product-card-badge badge-prime">PRIME</span>
                     </div>
                     <div class="product-card-body">
-                        <div class="product-card-name">Sérum Vitamina C</div>
-                        <div class="product-card-store">Amazon</div>
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(3.412)</span>
+                        </div>
+                        <div class="product-card-name">Sérum Vitamina C Clareador</div>
+                        <div class="product-card-store">Amazon · Prime</div>
                         <div class="product-card-footer">
-                            <div class="product-price">R$ 45,90</div>
-                            <span class="btn-buy">Ver oferta</span>
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 79,90</span>
+                                <div class="product-price">R$ 45,90</div>
+                            </div>
+                            <span class="btn-buy">Garantir</span>
                         </div>
                     </div>
                 </a>
@@ -1297,7 +1696,7 @@
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">📱</span> Eletrônicos &amp; Acessórios</div>
-                    <p class="section-subtitle">Tech para turbinar seu treino</p>
+                    <p class="section-subtitle">Smartwatches, fones e gadgets para turbinar seu treino</p>
                 </div>
             </div>
 
@@ -1309,12 +1708,20 @@
                         <span class="product-card-badge badge-new">NOVO</span>
                     </div>
                     <div class="product-card-body">
-                        <div class="product-card-name">Smartwatch Monitor Cardíaco</div>
-                        <div class="product-card-store">Amazon</div>
-                        <div class="product-card-footer">
-                            <div class="product-price">R$ 199,90</div>
-                            <span class="btn-buy">Ver oferta</span>
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(1.876)</span>
                         </div>
+                        <div class="product-card-name">Smartwatch AMOLED Monitor Cardíaco</div>
+                        <div class="product-card-store">Amazon · Frete GRÁTIS</div>
+                        <div class="product-card-footer">
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 349,90</span>
+                                <div class="product-price">R$ 199,90</div>
+                            </div>
+                            <span class="btn-buy-pulse">🔥 Aproveite</span>
+                        </div>
+                        <div class="stock-low"><span class="stock-bar"><span class="stock-bar-fill" style="width:20%"></span></span> Últimas peças!</div>
                     </div>
                 </a>
                 <a href="https://www.amazon.com.br/s?k=fone+bluetooth+esporte+sem+fio&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" class="product-card animate-in delay-2" target="_blank" rel="noopener">
@@ -1324,11 +1731,18 @@
                         <span class="product-card-badge badge-prime">PRIME</span>
                     </div>
                     <div class="product-card-body">
-                        <div class="product-card-name">Fone Bluetooth Esporte</div>
-                        <div class="product-card-store">Amazon</div>
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span>
+                            <span class="star-count">(2.345)</span>
+                        </div>
+                        <div class="product-card-name">Fone Bluetooth Esporte à Prova d'Água</div>
+                        <div class="product-card-store">Amazon · Prime</div>
                         <div class="product-card-footer">
-                            <div class="product-price">R$ 89,90</div>
-                            <span class="btn-buy">Ver oferta</span>
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 149,90</span>
+                                <div class="product-price">R$ 89,90</div>
+                            </div>
+                            <span class="btn-buy">Quero!</span>
                         </div>
                     </div>
                 </a>
@@ -1339,11 +1753,18 @@
                         <span class="product-card-badge badge-prime">PRIME</span>
                     </div>
                     <div class="product-card-body">
-                        <div class="product-card-name">Balança Bioimpedância</div>
-                        <div class="product-card-store">Amazon</div>
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(967)</span>
+                        </div>
+                        <div class="product-card-name">Balança Bioimpedância Digital</div>
+                        <div class="product-card-store">Amazon · Prime</div>
                         <div class="product-card-footer">
-                            <div class="product-price">R$ 69,90</div>
-                            <span class="btn-buy">Ver oferta</span>
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 119,90</span>
+                                <div class="product-price">R$ 69,90</div>
+                            </div>
+                            <span class="btn-buy">Comprar</span>
                         </div>
                     </div>
                 </a>
@@ -1378,7 +1799,7 @@
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">🎓</span> Cursos &amp; Guias Digitais</div>
-                    <p class="section-subtitle">Invista em você — acesso imediato</p>
+                    <p class="section-subtitle">Invista em você — acesso imediato + garantia de 7 dias</p>
                 </div>
             </div>
 
@@ -1390,10 +1811,14 @@
                         <span class="product-card-badge badge-hot">QUENTE</span>
                     </div>
                     <div class="product-card-body">
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(847 alunos)</span>
+                        </div>
                         <div class="product-card-name">Coração Blindado: Pare de Mendigar Afeto</div>
-                        <div class="product-card-store">Hotmart — Acesso imediato</div>
+                        <div class="product-card-store">Hotmart — Acesso imediato · 7 dias de garantia</div>
                         <div class="product-card-footer">
-                            <span class="btn-buy" style="width:100%;justify-content:center">Quero começar agora</span>
+                            <span class="btn-buy-pulse" style="width:100%;justify-content:center">❤️ Quero começar agora</span>
                         </div>
                     </div>
                 </div>
@@ -1403,10 +1828,14 @@
                         <span class="emoji-fallback" style="display:none">🥗</span>
                     </div>
                     <div class="product-card-body">
-                        <div class="product-card-name">Receitas Fit Low Carb</div>
-                        <div class="product-card-store">Hotmart — Acesso imediato</div>
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(1.234 alunos)</span>
+                        </div>
+                        <div class="product-card-name">Receitas Fit Low Carb — 200+ Receitas</div>
+                        <div class="product-card-store">Hotmart — Acesso imediato · 7 dias de garantia</div>
                         <div class="product-card-footer">
-                            <span class="btn-buy" style="width:100%;justify-content:center">Ver receitas</span>
+                            <span class="btn-buy" style="width:100%;justify-content:center">🥗 Ver receitas</span>
                         </div>
                     </div>
                 </div>
@@ -1417,10 +1846,14 @@
                         <span class="product-card-badge badge-new">NOVO</span>
                     </div>
                     <div class="product-card-body">
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span>
+                            <span class="star-count">(456 alunos)</span>
+                        </div>
                         <div class="product-card-name">Planner Fit — Organize Dieta, Treino e Rotina</div>
-                        <div class="product-card-store">Hotmart — Acesso imediato</div>
+                        <div class="product-card-store">Hotmart — Download instantâneo</div>
                         <div class="product-card-footer">
-                            <span class="btn-buy" style="width:100%;justify-content:center">Organizar agora</span>
+                            <span class="btn-buy" style="width:100%;justify-content:center">📋 Organizar agora</span>
                         </div>
                     </div>
                 </div>
@@ -1458,7 +1891,7 @@
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">🧡</span> Shopee — Achadinhos</div>
-                    <p class="section-subtitle">Preços imbatíveis com frete grátis</p>
+                    <p class="section-subtitle">Achadinhos com até 90% OFF e frete grátis para todo Brasil</p>
                 </div>
                 <span class="section-badge" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Shopee</span>
             </div>
@@ -1503,11 +1936,12 @@
                         <span class="product-card-badge badge-shopee">-87%</span>
                     </div>
                     <div class="product-card-body">
+                        <div class="product-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-count">(8.712)</span></div>
                         <div class="product-card-name">Creatina 250g 100% Pura Monohidratada</div>
-                        <div class="product-card-store">Shopee</div>
+                        <div class="product-card-store">Shopee · Menor preço!</div>
                         <div class="product-card-footer">
-                            <div class="product-price">R$ 15,95</div>
-                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Ver na Shopee</span>
+                            <div class="product-price-wrapper"><span class="product-old-price">R$ 119,90</span><div class="product-price">R$ 15,95</div></div>
+                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">🔥 Garantir</span>
                         </div>
                     </div>
                 </a>
@@ -1518,11 +1952,12 @@
                         <span class="product-card-badge badge-shopee">-78%</span>
                     </div>
                     <div class="product-card-body">
+                        <div class="product-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span><span class="star-count">(3.456)</span></div>
                         <div class="product-card-name">Água Micelar Vitamina C 250ml Dermachem</div>
-                        <div class="product-card-store">Shopee</div>
+                        <div class="product-card-store">Shopee · Frete grátis</div>
                         <div class="product-card-footer">
-                            <div class="product-price">R$ 13,99</div>
-                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Ver na Shopee</span>
+                            <div class="product-price-wrapper"><span class="product-old-price">R$ 59,90</span><div class="product-price">R$ 13,99</div></div>
+                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Quero!</span>
                         </div>
                     </div>
                 </a>
@@ -1533,11 +1968,12 @@
                         <span class="product-card-badge badge-shopee">-78%</span>
                     </div>
                     <div class="product-card-body">
+                        <div class="product-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-count">(2.891)</span></div>
                         <div class="product-card-name">Sérum Facial Rosa Mosqueta 30ml</div>
-                        <div class="product-card-store">Shopee</div>
+                        <div class="product-card-store">Shopee · Frete grátis</div>
                         <div class="product-card-footer">
-                            <div class="product-price">R$ 10,50</div>
-                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Ver na Shopee</span>
+                            <div class="product-price-wrapper"><span class="product-old-price">R$ 45,90</span><div class="product-price">R$ 10,50</div></div>
+                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Aproveite</span>
                         </div>
                     </div>
                 </a>
@@ -1550,11 +1986,12 @@
                         <span class="product-card-badge badge-shopee">FITNESS</span>
                     </div>
                     <div class="product-card-body">
+                        <div class="product-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span><span class="star-count">(2.341)</span></div>
                         <div class="product-card-name">Kit 5 Mini Bands Elástico Exercício</div>
-                        <div class="product-card-store">Shopee</div>
+                        <div class="product-card-store">Shopee · Frete grátis</div>
                         <div class="product-card-footer">
-                            <div class="product-price">Confira</div>
-                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Ver na Shopee</span>
+                            <div class="product-price-wrapper"><span class="product-old-price">R$ 39,90</span><div class="product-price">R$ 14,90</div></div>
+                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Quero!</span>
                         </div>
                     </div>
                 </a>
@@ -1564,11 +2001,12 @@
                         <span class="product-card-badge badge-shopee">FITNESS</span>
                     </div>
                     <div class="product-card-body">
+                        <div class="product-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-count">(987)</span></div>
                         <div class="product-card-name">Caneleira Com Peso 1kg Par Tornozeleira</div>
-                        <div class="product-card-store">Shopee</div>
+                        <div class="product-card-store">Shopee · Frete grátis</div>
                         <div class="product-card-footer">
-                            <div class="product-price">Confira</div>
-                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Ver na Shopee</span>
+                            <div class="product-price-wrapper"><span class="product-old-price">R$ 49,90</span><div class="product-price">R$ 22,90</div></div>
+                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Aproveite</span>
                         </div>
                     </div>
                 </a>
@@ -1578,11 +2016,12 @@
                         <span class="product-card-badge badge-shopee">BELEZA</span>
                     </div>
                     <div class="product-card-body">
+                        <div class="product-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span><span class="star-count">(1.523)</span></div>
                         <div class="product-card-name">Pente Aplicador de Tinta, Óleo e Shampoo</div>
-                        <div class="product-card-store">Shopee</div>
+                        <div class="product-card-store">Shopee · Frete grátis</div>
                         <div class="product-card-footer">
-                            <div class="product-price">Confira</div>
-                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Ver na Shopee</span>
+                            <div class="product-price-wrapper"><span class="product-old-price">R$ 29,90</span><div class="product-price">R$ 9,90</div></div>
+                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Ver oferta</span>
                         </div>
                     </div>
                 </a>
@@ -1592,11 +2031,12 @@
                         <span class="product-card-badge badge-shopee">CASA</span>
                     </div>
                     <div class="product-card-body">
+                        <div class="product-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-count">(3.210)</span></div>
                         <div class="product-card-name">Dispenser Automático De Ovos 2 Andares</div>
-                        <div class="product-card-store">Shopee</div>
+                        <div class="product-card-store">Shopee · Frete grátis</div>
                         <div class="product-card-footer">
-                            <div class="product-price">Confira</div>
-                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Ver na Shopee</span>
+                            <div class="product-price-wrapper"><span class="product-old-price">R$ 59,90</span><div class="product-price">R$ 29,90</div></div>
+                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Quero!</span>
                         </div>
                     </div>
                 </a>
@@ -1606,25 +2046,27 @@
                         <span class="product-card-badge badge-shopee">CASA</span>
                     </div>
                     <div class="product-card-body">
+                        <div class="product-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span><span class="star-count">(876)</span></div>
                         <div class="product-card-name">Mini Misturador Batedor Mixer Elétrico</div>
-                        <div class="product-card-store">Shopee</div>
+                        <div class="product-card-store">Shopee · Frete grátis</div>
                         <div class="product-card-footer">
-                            <div class="product-price">Confira</div>
-                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Ver na Shopee</span>
+                            <div class="product-price-wrapper"><span class="product-old-price">R$ 35,90</span><div class="product-price">R$ 12,90</div></div>
+                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Aproveite</span>
                         </div>
                     </div>
                 </a>
                 <a href="https://shopee.com.br/product/756344105/18898475214?mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Site---" class="product-card animate-in delay-9" target="_blank" rel="noopener">
                     <div class="product-card-top card-gradient-shopee">
                         <span class="emoji-fallback" style="display:block">🛒</span>
-                        <span class="product-card-badge badge-shopee">OFERTA</span>
+                        <span class="product-card-badge badge-shopee">🔥 OFERTA</span>
                     </div>
                     <div class="product-card-body">
-                        <div class="product-card-name">Oferta Shopee — Confira o Preço</div>
-                        <div class="product-card-store">Shopee</div>
+                        <div class="product-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-count">(5.432)</span></div>
+                        <div class="product-card-name">Super Oferta Shopee — Preço de Atacado</div>
+                        <div class="product-card-store">Shopee · Frete grátis</div>
                         <div class="product-card-footer">
-                            <div class="product-price">Confira</div>
-                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">Ver na Shopee</span>
+                            <div class="product-price">Até 90% OFF</div>
+                            <span class="btn-buy" style="background:linear-gradient(135deg,#ee4d2d,#f5762e)">🔥 Ver oferta</span>
                         </div>
                     </div>
                 </a>
@@ -1640,6 +2082,109 @@
                     <span class="icon">✨</span>
                     <div class="info"><div class="name">Gel Facial Antioleosidade Ácido Salicílico</div></div>
                     <span class="price-tag">R$ 11,99</span>
+                </a>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- ============================================
+             CASA & COZINHA (NOVO)
+             ============================================ -->
+        <section class="section" id="casa">
+            <div class="section-header">
+                <div>
+                    <div class="section-title"><span class="emoji">🏠</span> Casa &amp; Cozinha</div>
+                    <p class="section-subtitle">Air Fryers, organizadores e utilidades — os queridinhos de 2026</p>
+                </div>
+                <span class="section-badge">🔥 Novidade</span>
+            </div>
+
+            <div class="products-grid">
+                <a href="https://www.amazon.com.br/s?k=fritadeira+eletrica+air+fryer+4.2l+1500w+sem+oleo&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" class="product-card bestseller animate-in delay-1" target="_blank" rel="noopener">
+                    <div class="product-card-top card-gradient-casa">
+                        <img class="prod-img" src="https://m.media-amazon.com/images/I/41nnTqnsW5L._AC_SL1200_.jpg" alt="Air Fryer 4.2L 1500W" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <span class="emoji-fallback" style="display:none">🍟</span>
+                        <span class="product-card-badge badge-bestseller">⭐ BEST SELLER</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(12.456)</span>
+                        </div>
+                        <div class="product-card-name">Air Fryer 4.2L 1500W — Sem Óleo</div>
+                        <div class="product-card-store">Amazon · Frete GRÁTIS</div>
+                        <div class="product-card-footer">
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 399,90</span>
+                                <div class="product-price">R$ 229,90</div>
+                            </div>
+                            <span class="btn-buy-pulse">🔥 Garantir</span>
+                        </div>
+                        <div class="stock-low"><span class="stock-bar"><span class="stock-bar-fill" style="width:15%"></span></span> Esgotando rápido!</div>
+                    </div>
+                </a>
+
+                <a href="https://www.amazon.com.br/s?k=fritadeira+airfryer+philips+walita+serie+3000+7.2l+digital&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" class="product-card animate-in delay-2" target="_blank" rel="noopener">
+                    <div class="product-card-top card-gradient-casa">
+                        <img class="prod-img" src="https://m.media-amazon.com/images/I/51Mus8N2gpL._AC_SL1200_.jpg" alt="Fritadeira Philips Walita 7.2L" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <span class="emoji-fallback" style="display:none">🍳</span>
+                        <span class="product-card-badge badge-hot">🔥 QUENTE</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span>
+                            <span class="star-count">(8.234)</span>
+                        </div>
+                        <div class="product-card-name">Philips Walita Air Fryer 7.2L Digital</div>
+                        <div class="product-card-store">Amazon · Prime</div>
+                        <div class="product-card-footer">
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 699,90</span>
+                                <div class="product-price">R$ 449,90</div>
+                            </div>
+                            <span class="btn-buy">Comprar</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.amazon.com.br/s?k=borrifador+spray+azeite+pulverizador+500ml+3+em+1+dosador&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" class="product-card animate-in delay-3" target="_blank" rel="noopener">
+                    <div class="product-card-top card-gradient-casa">
+                        <img class="prod-img" src="https://m.media-amazon.com/images/I/711Pvx5SKXL._AC_SL1200_.jpg" alt="Borrifador Spray Azeite 500ml" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <span class="emoji-fallback" style="display:none">🫒</span>
+                        <span class="product-card-badge badge-off">-60% OFF</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(3.891)</span>
+                        </div>
+                        <div class="product-card-name">Borrifador Spray Azeite 500ml 3 em 1</div>
+                        <div class="product-card-store">Amazon · Frete GRÁTIS</div>
+                        <div class="product-card-footer">
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 49,90</span>
+                                <div class="product-price">R$ 19,90</div>
+                            </div>
+                            <span class="btn-buy">Quero!</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="link-list" style="margin-top:16px">
+                <a href="https://www.amazon.com.br/s?k=fritadeira+air+fryer+eletrica&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" class="link-item" target="_blank" rel="noopener">
+                    <span class="icon">🍟</span>
+                    <div class="info"><div class="name">Todas as Air Fryers</div><div class="desc">A partir de R$ 149,90</div></div>
+                    <span class="mini-badge badge-fire">POPULAR</span>
+                </a>
+                <a href="https://www.amazon.com.br/s?k=organizador+casa+cozinha&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" class="link-item" target="_blank" rel="noopener">
+                    <span class="icon">📦</span>
+                    <div class="info"><div class="name">Organizadores para Casa</div><div class="desc">Centenas de opções</div></div>
+                </a>
+                <a href="https://www.amazon.com.br/s?k=utilidades+domesticas+cozinha&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" class="link-item" target="_blank" rel="noopener">
+                    <span class="icon">🍳</span>
+                    <div class="info"><div class="name">Utilidades Domésticas</div></div>
                 </a>
             </div>
         </section>
@@ -1755,7 +2300,7 @@
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">📚</span> Livros — Frete Grátis</div>
-                    <p class="section-subtitle">Kindle e eBooks com entrega instantânea</p>
+                    <p class="section-subtitle">eBooks Kindle a partir de R$ 9,90 — download instantâneo</p>
                 </div>
             </div>
 
@@ -1767,11 +2312,18 @@
                         <span class="product-card-badge badge-frete">FRETE GRÁTIS</span>
                     </div>
                     <div class="product-card-body">
-                        <div class="product-card-name">O Poder do Hábito</div>
-                        <div class="product-card-store">Amazon Kindle</div>
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(52.841)</span>
+                        </div>
+                        <div class="product-card-name">O Poder do Hábito — Best Seller #1</div>
+                        <div class="product-card-store">Amazon Kindle · Entrega instantânea</div>
                         <div class="product-card-footer">
-                            <div class="product-price">R$ 12,90</div>
-                            <span class="btn-buy">Comprar</span>
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 49,90</span>
+                                <div class="product-price">R$ 12,90</div>
+                            </div>
+                            <span class="btn-buy">Baixar agora</span>
                         </div>
                     </div>
                 </a>
@@ -1782,11 +2334,18 @@
                         <span class="product-card-badge badge-frete">FRETE GRÁTIS</span>
                     </div>
                     <div class="product-card-body">
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(31.567)</span>
+                        </div>
                         <div class="product-card-name">Mais Esperto que o Diabo</div>
-                        <div class="product-card-store">Amazon Kindle</div>
+                        <div class="product-card-store">Amazon Kindle · Entrega instantânea</div>
                         <div class="product-card-footer">
-                            <div class="product-price">R$ 9,90</div>
-                            <span class="btn-buy">Comprar</span>
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 39,90</span>
+                                <div class="product-price">R$ 9,90</div>
+                            </div>
+                            <span class="btn-buy">Baixar agora</span>
                         </div>
                     </div>
                 </a>
@@ -1797,11 +2356,18 @@
                         <span class="product-card-badge badge-frete">FRETE GRÁTIS</span>
                     </div>
                     <div class="product-card-body">
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(18.923)</span>
+                        </div>
                         <div class="product-card-name">Mindset — A Mentalidade de Sucesso</div>
-                        <div class="product-card-store">Amazon Kindle</div>
+                        <div class="product-card-store">Amazon Kindle · Entrega instantânea</div>
                         <div class="product-card-footer">
-                            <div class="product-price">R$ 14,90</div>
-                            <span class="btn-buy">Comprar</span>
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 54,90</span>
+                                <div class="product-price">R$ 14,90</div>
+                            </div>
+                            <span class="btn-buy">Baixar agora</span>
                         </div>
                     </div>
                 </a>
@@ -1862,15 +2428,18 @@
          ============================================ -->
     <footer class="site-footer">
         <div class="wrapper">
+            <p style="font-size:1.1em;margin-bottom:4px">💪 Fit com Estilo — Sua curadoria de ofertas fitness, beleza e bem-estar</p>
+            <p style="color:#9ca3af;font-size:0.85em;margin-bottom:12px">+2.000 clientes satisfeitos · 50+ produtos selecionados · 4 lojas parceiras</p>
             <p>© 2026 Fit com Estilo — Todos os direitos reservados</p>
-            <p class="footer-legal">Este site contém links de afiliados. Podemos receber comissões por compras realizadas.</p>
+            <p class="footer-legal">Este site contém links de afiliados. Ao comprar através dos nossos links, você nos ajuda a manter o site sem nenhum custo extra.</p>
             <p class="footer-legal" style="margin-top:8px">
                 <a href="/termos/" style="color:#6b7280;text-decoration:underline">Termos de Serviço</a> ·
                 <a href="/privacidade/" style="color:#6b7280;text-decoration:underline">Política de Privacidade</a>
             </p>
             <p class="footer-legal" style="margin-top:4px">
                 <a href="/p/" style="color:#6b7280;text-decoration:underline">Páginas de Ofertas</a> ·
-                <a href="/sitemap.xml" style="color:#6b7280;text-decoration:underline">Sitemap</a>
+                <a href="/sitemap.xml" style="color:#6b7280;text-decoration:underline">Sitemap</a> ·
+                <a href="https://t.me/fitcomestilo_ofertas" target="_blank" rel="noopener" style="color:#6b7280;text-decoration:underline">Canal Telegram</a>
             </p>
         </div>
     </footer>
@@ -1968,7 +2537,7 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.product-card, .link-item').forEach(function(el) {
+        document.querySelectorAll('.product-card, .link-item, .featured-card, .featured-section, .telegram-banner').forEach(function(el) {
             observer.observe(el);
         });
 
@@ -2006,16 +2575,21 @@
         // SOCIAL PROOF NOTIFICATIONS
         // ============================================
         var spMessages = [
-            {emoji: '🛒', text: 'Alguém de <strong>São Paulo</strong> comprou um Top Fitness', time: 'há 2 min'},
-            {emoji: '🔥', text: 'Alguém de <strong>Rio de Janeiro</strong> comprou Whey Protein', time: 'há 5 min'},
-            {emoji: '💄', text: 'Alguém de <strong>Belo Horizonte</strong> comprou Kit Skincare', time: 'há 8 min'},
-            {emoji: '⌚', text: 'Alguém de <strong>Curitiba</strong> comprou Smartwatch', time: 'há 3 min'},
-            {emoji: '👗', text: 'Alguém de <strong>Brasília</strong> comprou Legging Montaria', time: 'há 6 min'},
-            {emoji: '💪', text: 'Alguém de <strong>Salvador</strong> comprou Creatina 300g', time: 'há 4 min'},
-            {emoji: '📦', text: '<strong>12 pessoas</strong> estão vendo ofertas agora', time: 'agora'},
-            {emoji: '⭐', text: '<strong>Top Fitness</strong> — produto mais vendido hoje!', time: 'destaque'},
-            {emoji: '🎉', text: 'Alguém de <strong>Recife</strong> comprou Conjunto Academia', time: 'há 7 min'},
-            {emoji: '📚', text: 'Alguém de <strong>Porto Alegre</strong> comprou eBook Mindset', time: 'há 9 min'}
+            {emoji: '🛒', text: 'Alguém de <strong>São Paulo</strong> acabou de comprar um Top Fitness', time: 'há 2 min'},
+            {emoji: '🔥', text: 'Alguém de <strong>Rio de Janeiro</strong> comprou Whey Protein 900g', time: 'há 5 min'},
+            {emoji: '💄', text: 'Alguém de <strong>Belo Horizonte</strong> comprou Kit Skincare Completo', time: 'há 8 min'},
+            {emoji: '⌚', text: 'Alguém de <strong>Curitiba</strong> comprou Smartwatch AMOLED', time: 'há 3 min'},
+            {emoji: '👗', text: 'Alguém de <strong>Brasília</strong> comprou Legging Cintura Alta', time: 'há 6 min'},
+            {emoji: '💪', text: 'Alguém de <strong>Salvador</strong> comprou Creatina 300g — <strong>Últimas unidades!</strong>', time: 'há 4 min'},
+            {emoji: '📦', text: '<strong>23 pessoas</strong> estão vendo ofertas agora', time: 'ao vivo'},
+            {emoji: '🏆', text: '<strong>Creatina 300g</strong> → produto #1 vendido hoje!', time: 'destaque'},
+            {emoji: '🍟', text: 'Alguém de <strong>Recife</strong> comprou Air Fryer 4.2L', time: 'há 7 min'},
+            {emoji: '📚', text: 'Alguém de <strong>Porto Alegre</strong> baixou eBook O Poder do Hábito', time: 'há 9 min'},
+            {emoji: '🔥', text: '<strong>Air Fryer 4.2L</strong> com <strong>42% OFF</strong> — esgotando!', time: 'oferta'},
+            {emoji: '✨', text: 'Alguém de <strong>Fortaleza</strong> comprou Sérum Vitamina C', time: 'há 3 min'},
+            {emoji: '⚡', text: '<strong>87% OFF</strong> em suplementos — ofertas expirando!', time: 'urgente'},
+            {emoji: '💃', text: 'Alguém de <strong>Goiânia</strong> se inscreveu no curso Dança Fit', time: 'há 11 min'},
+            {emoji: '🛒', text: '<strong>5 pessoas</strong> compraram Whey nos últimos 30 minutos', time: 'ao vivo'}
         ];
         var spIndex = 0;
         function showSocialProof() {
@@ -2025,14 +2599,14 @@
             document.getElementById('spMessage').innerHTML = msg.text;
             document.getElementById('spTime').textContent = msg.time;
             sp.classList.add('show');
-            setTimeout(function() { sp.classList.remove('show'); }, 4000);
+            setTimeout(function() { sp.classList.remove('show'); }, 5000);
             spIndex++;
         }
-        // Primeira notificação após 15s, depois a cada 25-40s
+        // Primeira notificação após 8s, depois a cada 18-30s (mais frequente)
         setTimeout(function() {
             showSocialProof();
-            setInterval(showSocialProof, 25000 + Math.random() * 15000);
-        }, 15000);
+            setInterval(showSocialProof, 18000 + Math.random() * 12000);
+        }, 8000);
 
         // ============================================
         // COOKIE CONSENT (LGPD)
