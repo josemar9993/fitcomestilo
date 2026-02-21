@@ -233,7 +233,7 @@
             background: rgba(10,10,15,0.9);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
+            border-bottom: none;
             padding: 0;
         }
 
@@ -243,13 +243,14 @@
             scrollbar-width: none;
             -ms-overflow-style: none;
             gap: 0;
+            padding: 0 4px;
         }
 
         .nav-tabs-inner::-webkit-scrollbar { display: none; }
 
         .nav-tab {
             flex-shrink: 0;
-            padding: 14px 18px;
+            padding: 13px 16px;
             font-size: 13px;
             font-weight: 600;
             color: var(--text-muted);
@@ -313,8 +314,8 @@
            ============================================ */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
 
         .product-card {
@@ -330,14 +331,14 @@
         }
 
         .product-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-6px);
             border-color: var(--border-hover);
-            box-shadow: var(--shadow), 0 0 40px rgba(168,85,247,0.08);
+            box-shadow: var(--shadow), 0 8px 40px rgba(168,85,247,0.12);
         }
 
         .product-card-top {
             position: relative;
-            height: 160px;
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -349,8 +350,9 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            padding: 14px;
+            padding: 10px;
             transition: transform 0.4s ease;
+            background: rgba(255,255,255,0.03);
         }
 
         .product-card:hover .prod-img {
@@ -396,7 +398,7 @@
         .badge-shopee { background: rgba(238,77,45,0.9); color: #fff; }
 
         .product-card-body {
-            padding: 16px;
+            padding: 12px;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -684,7 +686,11 @@
 
             .products-grid {
                 grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
             }
+
+            .product-card-top { height: 200px; }
+            .product-card-body { padding: 16px; }
 
             .mobile-only { display: none !important; }
 
@@ -701,7 +707,22 @@
             }
             .product-card:hover::before { opacity: 1; }
 
-            .product-card-top { height: 200px; font-size: 56px; }
+            .product-card-top { height: 220px; font-size: 56px; }
+            .product-card-top img.prod-img { padding: 16px; }
+        }
+
+        /* Widescreen 4 columns */
+        @media (min-width: 1280px) {
+            .products-grid { grid-template-columns: repeat(4, 1fr); }
+            .featured-grid { grid-template-columns: repeat(4, 1fr); }
+            .wrapper { max-width: 1320px; }
+        }
+
+        /* Very small phones — 1 column */
+        @media (max-width: 380px) {
+            .products-grid { grid-template-columns: 1fr; }
+            .product-card-top { height: 150px; }
+            .product-card-name { font-size: 13px; }
         }
 
         /* ============================================
@@ -717,16 +738,30 @@
             .desktop-only { display: none !important; }
 
             .products-grid {
-                grid-template-columns: 1fr;
-                gap: 10px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
             }
 
-            .product-card-top { height: 140px; font-size: 40px; }
+            .product-card-top { height: 120px; font-size: 36px; }
+            .product-card-body { padding: 10px; }
+            .product-card-name { font-size: 12px; line-height: 1.3; margin-bottom: 3px; -webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
+            .product-card-store { font-size: 10px; margin-bottom: 6px; }
+            .product-price { font-size: 15px; }
+            .product-old-price { font-size: 10px; }
+            .btn-buy, .btn-buy-pulse { font-size: 10px; padding: 6px 8px; letter-spacing: 0; }
+            .product-stars .star, .product-stars .star-empty { font-size: 10px; }
+            .product-stars .star-count { font-size: 9px; }
+            .stock-low { font-size: 9px; }
+            .product-card-footer { padding-top: 8px; }
+            .product-card-badge { font-size: 8px; padding: 3px 7px; top: 6px; right: 6px; }
+            .featured-badge-wrap { font-size: 8px; padding: 3px 10px 3px 6px; }
 
             .nav-tab { padding: 12px 14px; font-size: 12px; }
 
-            .section { padding: 30px 0 15px; }
-            .section-title { font-size: 18px; }
+            .section { padding: 24px 0 12px; }
+            .section-title { font-size: 17px; }
+            .section-subtitle { font-size: 12px; }
+            .section-badge { font-size: 10px; padding: 3px 8px; }
         }
 
         /* ============================================
@@ -1051,8 +1086,8 @@
         }
         .featured-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
         .featured-card {
             position: relative;
@@ -1177,6 +1212,157 @@
             text-transform: uppercase;
             z-index: 2;
         }
+
+        /* ============================================
+           FILTRO POR LOJA
+           ============================================ */
+        .filter-bar {
+            background: rgba(10,10,15,0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .filter-bar-inner {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 0 4px;
+        }
+        .filter-bar-inner::-webkit-scrollbar { display: none; }
+        .filter-bar-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            white-space: nowrap;
+            margin-right: 4px;
+            flex-shrink: 0;
+        }
+        .filter-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.25s;
+            white-space: nowrap;
+            flex-shrink: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .filter-pill:hover {
+            border-color: var(--border-hover);
+            color: var(--text-primary);
+        }
+        .filter-pill.active {
+            background: linear-gradient(135deg, var(--accent), var(--pink));
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 2px 12px var(--accent-glow);
+        }
+        .filter-pill .pill-count {
+            font-size: 10px;
+            background: rgba(255,255,255,0.15);
+            padding: 1px 6px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+        .filter-pill.active .pill-count {
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* Seções ocultas pelo filtro */
+        .section.filter-hidden,
+        .featured-section.filter-hidden,
+        .cta-banner.filter-hidden,
+        .divider.filter-hidden {
+            display: none !important;
+        }
+
+        /* Tab scroll fade indicators */
+        .nav-tabs-wrap {
+            position: relative;
+        }
+        .nav-tabs-wrap::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 40px;
+            background: linear-gradient(to right, transparent, rgba(10,10,15,0.9));
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Search bar */
+        .search-bar {
+            position: relative;
+            margin: 12px 0 0;
+        }
+        .search-input {
+            width: 100%;
+            padding: 11px 16px 11px 40px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+        .search-input::placeholder { color: var(--text-muted); }
+        .search-input:focus { border-color: var(--accent); }
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 15px;
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+        .search-clear {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 16px;
+            cursor: pointer;
+            display: none;
+            padding: 4px;
+        }
+        .search-clear.visible { display: block; }
+        .search-no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+            display: none;
+        }
+
+        /* Produto oculto pela busca */
+        .product-card.search-hidden,
+        .link-item.search-hidden { display: none !important; }
+
+        @media (max-width: 768px) {
+            .filter-pill { font-size: 11px; padding: 5px 10px; }
+            .filter-bar-label { font-size: 10px; }
+            .search-input { font-size: 14px; padding: 10px 16px 10px 38px; }
+        }
+
     </style>
 </head>
 <body>
@@ -1254,21 +1440,41 @@
          ============================================ -->
     <nav class="nav-tabs">
         <div class="wrapper">
-            <div class="nav-tabs-inner">
-                <a href="#fitness" class="nav-tab active" onclick="activateTab(this)">👗 Fitness</a>
-                <a href="#suplementos" class="nav-tab" onclick="activateTab(this)">💊 Suplementos</a>
-                <a href="#beleza" class="nav-tab" onclick="activateTab(this)">💄 Beleza</a>
-                <a href="#eletronicos" class="nav-tab" onclick="activateTab(this)">📱 Eletrônicos</a>
-                <a href="#cursos" class="nav-tab" onclick="activateTab(this)">🎓 Cursos</a>
-                <a href="#shopee" class="nav-tab" onclick="activateTab(this)">🧡 Shopee</a>
-                <a href="#casa" class="nav-tab" onclick="activateTab(this)">🏠 Casa</a>
-                <a href="#ofertas" class="nav-tab" onclick="activateTab(this)">🔥 Ofertas</a>
-                <a href="#livros" class="nav-tab" onclick="activateTab(this)">📚 Livros</a>
+            <div class="nav-tabs-wrap">
+                <div class="nav-tabs-inner">
+                    <a href="#fitness" class="nav-tab active" onclick="activateTab(this)">👗 Fitness</a>
+                    <a href="#suplementos" class="nav-tab" onclick="activateTab(this)">💊 Suplementos</a>
+                    <a href="#beleza" class="nav-tab" onclick="activateTab(this)">💄 Beleza</a>
+                    <a href="#eletronicos" class="nav-tab" onclick="activateTab(this)">📱 Eletrônicos</a>
+                    <a href="#cursos" class="nav-tab" onclick="activateTab(this)">🎓 Cursos</a>
+                    <a href="#shopee" class="nav-tab" onclick="activateTab(this)">🧡 Shopee</a>
+                    <a href="#casa" class="nav-tab" onclick="activateTab(this)">🏠 Casa</a>
+                    <a href="#ofertas" class="nav-tab" onclick="activateTab(this)">🔥 Ofertas</a>
+                    <a href="#livros" class="nav-tab" onclick="activateTab(this)">📚 Livros</a>
+                </div>
+            </div>
+            <div class="filter-bar">
+                <div class="filter-bar-inner">
+                    <span class="filter-bar-label">🏪 Loja:</span>
+                    <button class="filter-pill active" data-filter="todos" onclick="filterByStore(this)">Todos <span class="pill-count" id="countTodos"></span></button>
+                    <button class="filter-pill" data-filter="amazon" onclick="filterByStore(this)">🛒 Amazon <span class="pill-count" id="countAmazon"></span></button>
+                    <button class="filter-pill" data-filter="shopee" onclick="filterByStore(this)">🧡 Shopee <span class="pill-count" id="countShopee"></span></button>
+                    <button class="filter-pill" data-filter="hotmart" onclick="filterByStore(this)">🎓 Hotmart <span class="pill-count" id="countHotmart"></span></button>
+                    <button class="filter-pill" data-filter="kindle" onclick="filterByStore(this)">📚 Kindle <span class="pill-count" id="countKindle"></span></button>
+                </div>
             </div>
         </div>
     </nav>
 
     <main class="wrapper">
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" id="searchInput" placeholder="Buscar produto... Ex: creatina, legging, air fryer" autocomplete="off">
+            <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+        </div>
+        <div class="search-no-results" id="noResults">😕 Nenhum produto encontrado. Tente outro termo!</div>
 
         <!-- ============================================
              TELEGRAM BANNER
@@ -1285,7 +1491,7 @@
         <!-- ============================================
              TOP VENDIDOS — DESTAQUE
              ============================================ -->
-        <section class="featured-section">
+        <section class="featured-section" data-loja="amazon">
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">🏆</span> Top Vendidos da Semana</div>
@@ -1371,7 +1577,7 @@
         <!-- ============================================
              MODA FITNESS
              ============================================ -->
-        <section class="section" id="fitness">
+        <section class="section" id="fitness" data-loja="amazon">
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">👗</span> Moda Fitness</div>
@@ -1477,7 +1683,7 @@
         <!-- ============================================
              SUPLEMENTOS
              ============================================ -->
-        <section class="section" id="suplementos">
+        <section class="section" id="suplementos" data-loja="amazon">
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">💊</span> Suplementos</div>
@@ -1589,7 +1795,7 @@
         <!-- ============================================
              BELEZA
              ============================================ -->
-        <section class="section" id="beleza">
+        <section class="section" id="beleza" data-loja="amazon">
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">💄</span> Beleza &amp; Skincare</div>
@@ -1692,7 +1898,7 @@
         <!-- ============================================
              ELETRONICOS
              ============================================ -->
-        <section class="section" id="eletronicos">
+        <section class="section" id="eletronicos" data-loja="amazon">
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">📱</span> Eletrônicos &amp; Acessórios</div>
@@ -1795,7 +2001,7 @@
         <!-- ============================================
              CURSOS DIGITAIS (HOTMART)
              ============================================ -->
-        <section class="section" id="cursos">
+        <section class="section" id="cursos" data-loja="hotmart">
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">🎓</span> Cursos &amp; Guias Digitais</div>
@@ -1887,7 +2093,7 @@
         <!-- ============================================
              SHOPEE
              ============================================ -->
-        <section class="section" id="shopee">
+        <section class="section" id="shopee" data-loja="shopee">
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">🧡</span> Shopee — Achadinhos</div>
@@ -1981,7 +2187,7 @@
                 <!-- NOVOS produtos Shopee (afiliado) -->
                 <a href="https://shopee.com.br/product/412423479/58250048521?mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Site---" class="product-card animate-in delay-4" target="_blank" rel="noopener">
                     <div class="product-card-top card-gradient-shopee">
-                        <img class="prod-img" src="https://down-br.img.susercontent.com/file/a65c5d1c5e556c6197f8fbd607482372" alt="Kit 5 Mini Bands" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <img class="prod-img" src="https://m.media-amazon.com/images/I/51IO9+WCkiL._AC_UL320_.jpg" alt="Kit 5 Mini Bands" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
                         <span class="emoji-fallback" style="display:none">🏋️</span>
                         <span class="product-card-badge badge-shopee">FITNESS</span>
                     </div>
@@ -1997,7 +2203,8 @@
                 </a>
                 <a href="https://shopee.com.br/product/428145731/3290332989?mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Site---" class="product-card animate-in delay-5" target="_blank" rel="noopener">
                     <div class="product-card-top card-gradient-shopee">
-                        <span class="emoji-fallback" style="display:block">🦵</span>
+                        <img class="prod-img" src="https://m.media-amazon.com/images/I/51MiiJxXM6L._AC_UL320_.jpg" alt="Caneleira Com Peso 1kg" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <span class="emoji-fallback" style="display:none">🦵</span>
                         <span class="product-card-badge badge-shopee">FITNESS</span>
                     </div>
                     <div class="product-card-body">
@@ -2012,7 +2219,8 @@
                 </a>
                 <a href="https://shopee.com.br/product/1151895537/23498780909?mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Site---" class="product-card animate-in delay-6" target="_blank" rel="noopener">
                     <div class="product-card-top card-gradient-shopee">
-                        <span class="emoji-fallback" style="display:block">💇</span>
+                        <img class="prod-img" src="https://m.media-amazon.com/images/I/514Czam-0CL._AC_UL320_.jpg" alt="Pente Aplicador de Tinta" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <span class="emoji-fallback" style="display:none">💇</span>
                         <span class="product-card-badge badge-shopee">BELEZA</span>
                     </div>
                     <div class="product-card-body">
@@ -2027,7 +2235,8 @@
                 </a>
                 <a href="https://shopee.com.br/product/1387420477/23097980660?mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Site---" class="product-card animate-in delay-7" target="_blank" rel="noopener">
                     <div class="product-card-top card-gradient-shopee">
-                        <span class="emoji-fallback" style="display:block">🥚</span>
+                        <img class="prod-img" src="https://m.media-amazon.com/images/I/51o3AAso+UL._AC_UL320_.jpg" alt="Dispenser Automático De Ovos" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <span class="emoji-fallback" style="display:none">🥚</span>
                         <span class="product-card-badge badge-shopee">CASA</span>
                     </div>
                     <div class="product-card-body">
@@ -2042,7 +2251,8 @@
                 </a>
                 <a href="https://shopee.com.br/product/1348415937/20799378300?mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Site---" class="product-card animate-in delay-8" target="_blank" rel="noopener">
                     <div class="product-card-top card-gradient-shopee">
-                        <span class="emoji-fallback" style="display:block">🔌</span>
+                        <img class="prod-img" src="https://m.media-amazon.com/images/I/71PLIl1Q8DL._AC_UL320_.jpg" alt="Mini Misturador Batedor Mixer" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <span class="emoji-fallback" style="display:none">🔌</span>
                         <span class="product-card-badge badge-shopee">CASA</span>
                     </div>
                     <div class="product-card-body">
@@ -2057,7 +2267,8 @@
                 </a>
                 <a href="https://shopee.com.br/product/756344105/18898475214?mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Site---" class="product-card animate-in delay-9" target="_blank" rel="noopener">
                     <div class="product-card-top card-gradient-shopee">
-                        <span class="emoji-fallback" style="display:block">🛒</span>
+                        <img class="prod-img" src="https://m.media-amazon.com/images/I/61D55ZI-FKL._AC_UL320_.jpg" alt="Super Oferta Shopee" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <span class="emoji-fallback" style="display:none">🛒</span>
                         <span class="product-card-badge badge-shopee">🔥 OFERTA</span>
                     </div>
                     <div class="product-card-body">
@@ -2091,7 +2302,7 @@
         <!-- ============================================
              CASA & COZINHA (NOVO)
              ============================================ -->
-        <section class="section" id="casa">
+        <section class="section" id="casa" data-loja="amazon">
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">🏠</span> Casa &amp; Cozinha</div>
@@ -2194,7 +2405,7 @@
         <!-- ============================================
              OFERTAS & DESTAQUES
              ============================================ -->
-        <section class="section" id="ofertas">
+        <section class="section" id="ofertas" data-loja="amazon">
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">🔥</span> Ofertas &amp; Destaques</div>
@@ -2296,7 +2507,7 @@
         <!-- ============================================
              LIVROS
              ============================================ -->
-        <section class="section" id="livros">
+        <section class="section" id="livros" data-loja="kindle">
             <div class="section-header">
                 <div>
                     <div class="section-title"><span class="emoji">📚</span> Livros — Frete Grátis</div>
@@ -2617,6 +2828,148 @@
         }
         if (!localStorage.getItem('fitcomestilo_cookies')) {
             document.getElementById('cookieBanner').style.display = 'flex';
+        }
+
+        // ============================================
+        // FILTRO POR LOJA
+        // ============================================
+        var storeMap = {
+            'amazon': ['fitness', 'suplementos', 'beleza', 'eletronicos', 'casa', 'ofertas'],
+            'shopee': ['shopee'],
+            'hotmart': ['cursos'],
+            'kindle': ['livros']
+        };
+        var currentFilter = 'todos';
+
+        function countProducts() {
+            var secs = document.querySelectorAll('section.section');
+            var counts = { todos: 0, amazon: 0, shopee: 0, hotmart: 0, kindle: 0 };
+            secs.forEach(function(s) {
+                var n = s.querySelectorAll('.product-card, .link-item').length;
+                counts.todos += n;
+                var loja = s.getAttribute('data-loja');
+                if (loja && counts[loja] !== undefined) counts[loja] += n;
+            });
+            // Featured section counts as amazon
+            var feat = document.querySelector('.featured-section');
+            if (feat) {
+                var fn = feat.querySelectorAll('.featured-card').length;
+                counts.todos += fn;
+                counts.amazon += fn;
+            }
+            for (var k in counts) {
+                var el = document.getElementById('count' + k.charAt(0).toUpperCase() + k.slice(1));
+                if (el) el.textContent = counts[k];
+            }
+        }
+        countProducts();
+
+        function filterByStore(btn) {
+            document.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
+            btn.classList.add('active');
+            currentFilter = btn.getAttribute('data-filter');
+
+            var sections = document.querySelectorAll('section.section');
+            var dividers = document.querySelectorAll('.divider');
+            var featured = document.querySelector('.featured-section');
+            var ctaBanners = document.querySelectorAll('.cta-banner');
+
+            if (currentFilter === 'todos') {
+                sections.forEach(function(s) { s.classList.remove('filter-hidden'); });
+                dividers.forEach(function(d) { d.classList.remove('filter-hidden'); });
+                if (featured) featured.classList.remove('filter-hidden');
+                ctaBanners.forEach(function(c) { c.classList.remove('filter-hidden'); });
+            } else {
+                var allowed = storeMap[currentFilter] || [];
+                sections.forEach(function(s) {
+                    var id = s.getAttribute('id');
+                    if (allowed.indexOf(id) >= 0) {
+                        s.classList.remove('filter-hidden');
+                    } else {
+                        s.classList.add('filter-hidden');
+                    }
+                });
+                // Hide featured for non-amazon filters
+                if (featured) {
+                    if (currentFilter === 'amazon') featured.classList.remove('filter-hidden');
+                    else featured.classList.add('filter-hidden');
+                }
+                ctaBanners.forEach(function(c) { c.classList.add('filter-hidden'); });
+                // Hide dividers next to hidden sections
+                dividers.forEach(function(d) {
+                    var next = d.nextElementSibling;
+                    var prev = d.previousElementSibling;
+                    if ((next && next.classList.contains('filter-hidden')) || (prev && prev.classList.contains('filter-hidden'))) {
+                        d.classList.add('filter-hidden');
+                    } else {
+                        d.classList.remove('filter-hidden');
+                    }
+                });
+            }
+        }
+
+        // ============================================
+        // BUSCA DE PRODUTOS
+        // ============================================
+        var searchInput = document.getElementById('searchInput');
+        var searchClear = document.getElementById('searchClear');
+        var noResults = document.getElementById('noResults');
+        var searchTimeout;
+
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(performSearch, 200);
+                searchClear.classList.toggle('visible', searchInput.value.length > 0);
+            });
+        }
+
+        function performSearch() {
+            var query = searchInput.value.trim().toLowerCase();
+            var allCards = document.querySelectorAll('.product-card, .link-item');
+            var sections = document.querySelectorAll('section.section');
+
+            if (!query) {
+                allCards.forEach(function(c) { c.classList.remove('search-hidden'); });
+                sections.forEach(function(s) { s.classList.remove('filter-hidden'); });
+                noResults.style.display = 'none';
+                return;
+            }
+
+            var visibleCount = 0;
+            var visibleSections = new Set();
+
+            allCards.forEach(function(card) {
+                var text = card.textContent.toLowerCase();
+                var alt = card.querySelector('img') ? card.querySelector('img').alt.toLowerCase() : '';
+                if (text.indexOf(query) >= 0 || alt.indexOf(query) >= 0) {
+                    card.classList.remove('search-hidden');
+                    visibleCount++;
+                    // Find parent section
+                    var sec = card.closest('section.section');
+                    if (sec) visibleSections.add(sec.id);
+                } else {
+                    card.classList.add('search-hidden');
+                }
+            });
+
+            // Show/hide sections based on whether they have visible cards
+            sections.forEach(function(s) {
+                if (visibleSections.has(s.id)) {
+                    s.classList.remove('filter-hidden');
+                } else {
+                    s.classList.add('filter-hidden');
+                }
+            });
+
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function clearSearch() {
+            searchInput.value = '';
+            searchClear.classList.remove('visible');
+            performSearch();
+            searchInput.focus();
         }
 
         // ============================================
