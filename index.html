@@ -1337,36 +1337,46 @@
     <script>
     function filtrarLojas(e, loja) {
         e.preventDefault();
-        const cards = document.querySelectorAll('.hero-card[data-store]');
-        const dividers = document.querySelectorAll('.section-divider');
-        const sociais = document.querySelectorAll('.social-card');
-        const btns = document.querySelectorAll('.store-nav-btn');
+        var cards = document.querySelectorAll('.hero-card[data-store]');
+        var dividers = document.querySelectorAll('.section-divider');
+        var sociais = document.querySelectorAll('.social-card');
+        var btns = document.querySelectorAll('.store-nav-btn');
 
         // Atualiza botão ativo
-        btns.forEach(b => {
+        btns.forEach(function(b) {
             b.classList.remove('active');
             b.style.opacity = '0.55';
         });
-        const ativo = document.querySelector('[data-filter="' + loja + '"]');
+        var ativo = document.querySelector('[data-filter="' + loja + '"]');
         if (ativo) {
             ativo.classList.add('active');
             ativo.style.opacity = '1';
         }
 
         if (loja === 'todos') {
-            cards.forEach(c => { c.style.display = 'flex'; });
-            dividers.forEach(d => { d.style.display = ''; });
-            sociais.forEach(s => { s.style.display = ''; });
+            cards.forEach(function(c) {
+                c.style.display = 'flex';
+                c.style.opacity = '1';
+                c.style.animation = 'none';
+            });
+            dividers.forEach(function(d) { d.style.display = ''; d.style.opacity = '1'; d.style.animation = 'none'; });
+            sociais.forEach(function(s) { s.style.display = ''; s.style.opacity = '1'; s.style.animation = 'none'; });
             return;
         }
 
-        cards.forEach(c => {
-            c.style.display = c.dataset.store === loja ? 'flex' : 'none';
+        cards.forEach(function(c) {
+            if (c.dataset.store === loja) {
+                c.style.display = 'flex';
+                c.style.opacity = '1';
+                c.style.animation = 'none';
+            } else {
+                c.style.display = 'none';
+            }
         });
 
         // Esconde divisores e cards sociais quando filtrando
-        dividers.forEach(d => { d.style.display = 'none'; });
-        sociais.forEach(s => { s.style.display = 'none'; });
+        dividers.forEach(function(d) { d.style.display = 'none'; });
+        sociais.forEach(function(s) { s.style.display = 'none'; });
     }
 
     // Botão "Todos" ativo por padrão
