@@ -1195,7 +1195,7 @@
             </div>
 
             <!-- ====== HOTMART — AUTOMAQUIAGEM ====== -->
-            <a href="https://go.hotmart.com/M104342954A" target="_blank" rel="noopener" class="hero-card img-left animate-in delay-12" data-store="hotmart">
+            <div class="hero-card img-left animate-in delay-12" data-store="hotmart" data-url="aHR0cHM6Ly9nby5ob3RtYXJ0LmNvbS9NMTA0MzQyOTU0QQ==" onclick="goTo(this)" style="cursor:pointer;">
                 <div class="hero-card-image" style="background: linear-gradient(135deg, #ff6b9d, #c44dff);">
                     <img src="img-hotmart1.png" alt="AutoMaquiagem Profissional" style="object-fit: cover;">
                     <span class="card-badge hot">QUENTE</span>
@@ -1210,10 +1210,10 @@
                         ACESSO IMEDIATO
                     </div>
                 </div>
-            </a>
+            </div>
 
             <!-- ====== HOTMART — DANÇA FIT ====== -->
-            <a href="https://go.hotmart.com/B104342919Q" target="_blank" rel="noopener" class="hero-card img-right animate-in delay-12" data-store="hotmart">
+            <div class="hero-card img-right animate-in delay-12" data-store="hotmart" data-url="aHR0cHM6Ly9nby5ob3RtYXJ0LmNvbS9CMTA0MzQyOTE5UQ==" onclick="goTo(this)" style="cursor:pointer;">
                 <div class="hero-card-content">
                     <div class="hero-card-brand">
                         <span class="hero-card-brand-text" style="color:#ff6b9d;">🎓 Hotmart</span>
@@ -1227,10 +1227,10 @@
                 <div class="hero-card-image" style="background: linear-gradient(135deg, #7c3aed, #ff6b9d);">
                     <img src="img-hotmart2.png" alt="Dança Fit" style="object-fit: cover;">
                 </div>
-            </a>
+            </div>
 
             <!-- ====== HOTMART — RECEITAS FIT ====== -->
-            <a href="https://go.hotmart.com/C104342832B" target="_blank" rel="noopener" class="hero-card img-left animate-in delay-12" data-store="hotmart">
+            <div class="hero-card img-left animate-in delay-12" data-store="hotmart" data-url="aHR0cHM6Ly9nby5ob3RtYXJ0LmNvbS9DMTA0MzQyODMyQg==" onclick="goTo(this)" style="cursor:pointer;">
                 <div class="hero-card-image" style="background: linear-gradient(135deg, #ff6b9d, #c44dff);">
                     <img src="img-hotmart3.png" alt="Receitas Fit Doces e Bolos" style="object-fit: cover;">
                     <span class="card-badge new">NOVO</span>
@@ -1245,7 +1245,7 @@
                         7 DIAS DE GARANTIA
                     </div>
                 </div>
-            </a>
+            </div>
 
             <!-- DIVISOR -->
             <div class="section-divider animate-in delay-12">
@@ -1409,6 +1409,12 @@
             sociais[i].classList.remove('filter-show');
             sociais[i].classList.add('filter-hide');
         }
+    }
+
+    // Redirect seguro para links de afiliado (evita bloqueio por ad blockers)
+    function goTo(el) {
+        var d = el.getAttribute('data-url');
+        if (d) { window.open(atob(d), '_blank', 'noopener'); }
     }
 
     // Botão "Todos" ativo por padrão + IntersectionObserver para animações
