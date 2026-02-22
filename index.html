@@ -374,6 +374,7 @@
         .card-gradient-escolar { background: linear-gradient(135deg, #f59e0b22, #ffd20044); }
         .card-gradient-digital { background: linear-gradient(135deg, #ec489922, #a855f744); }
         .card-gradient-shopee { background: linear-gradient(135deg, #ee4d2d22, #f5762e44); }
+        .card-gradient-magalu { background: linear-gradient(135deg, #005aa722, #0086d644); }
 
         .product-card-badge {
             position: absolute;
@@ -1449,6 +1450,7 @@
                     <a href="#cursos" class="nav-tab" onclick="activateTab(this)">🎓 Cursos</a>
                     <a href="#shopee" class="nav-tab" onclick="activateTab(this)">🧡 Shopee</a>
                     <a href="#casa" class="nav-tab" onclick="activateTab(this)">🏠 Casa</a>
+                    <a href="#magalu" class="nav-tab" onclick="activateTab(this)">🛒 Magalu</a>
                     <a href="#ofertas" class="nav-tab" onclick="activateTab(this)">🔥 Ofertas</a>
                     <a href="#livros" class="nav-tab" onclick="activateTab(this)">📚 Livros</a>
                 </div>
@@ -1461,6 +1463,7 @@
                     <button class="filter-pill" data-filter="shopee" onclick="filterByStore(this)">🧡 Shopee <span class="pill-count" id="countShopee"></span></button>
                     <button class="filter-pill" data-filter="hotmart" onclick="filterByStore(this)">🎓 Hotmart <span class="pill-count" id="countHotmart"></span></button>
                     <button class="filter-pill" data-filter="kindle" onclick="filterByStore(this)">📚 Kindle <span class="pill-count" id="countKindle"></span></button>
+                    <button class="filter-pill" data-filter="magalu" onclick="filterByStore(this)">🛒 Magalu <span class="pill-count" id="countMagalu"></span></button>
                 </div>
             </div>
         </div>
@@ -2419,6 +2422,103 @@
         <div class="divider"></div>
 
         <!-- ============================================
+             MAGALU — Magazine Luiza Parceiro
+             ============================================ -->
+        <section class="section" id="magalu" data-loja="magalu">
+            <div class="section-header">
+                <div>
+                    <div class="section-title"><span class="emoji">🛒</span> Magalu — Ofertas Imperdíveis</div>
+                    <p class="section-subtitle">Magazine Luiza com entrega rápida e parcelamento facilitado</p>
+                </div>
+                <span class="section-badge">🔵 Parceiro</span>
+            </div>
+
+            <div class="products-grid">
+                <a href="https://divulgador.magalu.com/dbIhfE=T" class="product-card bestseller animate-in delay-1" target="_blank" rel="noopener">
+                    <div class="product-card-top card-gradient-magalu">
+                        <img class="prod-img" src="https://a-static.mlcdn.com.br/450x450/smart-tv-43-uhd-4k-led-samsung-43cu7700-wi-fi-bluetooth-alexa-3-hdmi/magazineluiza/237108100/5f28dff51f82b4d62296fbe94d1d0c18.jpg" alt="TV Samsung 43 Crystal UHD 4K" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <span class="emoji-fallback" style="display:none">📺</span>
+                        <span class="product-card-badge badge-off">-43% OFF</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                            <span class="star-count">(2.456)</span>
+                        </div>
+                        <div class="product-card-name">Smart TV 43" Samsung Crystal UHD 4K</div>
+                        <div class="product-card-store">Magalu · 12x sem juros</div>
+                        <div class="product-card-footer">
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 3.140,81</span>
+                                <div class="product-price">R$ 1.799,30</div>
+                            </div>
+                            <span class="btn-buy-pulse">🔥 Garantir</span>
+                        </div>
+                        <div class="stock-low"><span class="stock-bar"><span class="stock-bar-fill" style="width:25%"></span></span> Poucas unidades!</div>
+                    </div>
+                </a>
+
+                <a href="https://divulgador.magalu.com/Rm-srB=Q" class="product-card animate-in delay-2" target="_blank" rel="noopener">
+                    <div class="product-card-top card-gradient-magalu">
+                        <img class="prod-img" src="https://a-static.mlcdn.com.br/450x450/smartphone-samsung-galaxy-a15-5g-128gb-4gb-ram-tela-62-camera-tripla-50mp-selfie-13mp-android-14/magazineluiza/238149300/a55d62a2ef41e1d63cc1a6ab1c8dfab2.jpg" alt="Smartphone Samsung Galaxy" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <span class="emoji-fallback" style="display:none">📱</span>
+                        <span class="product-card-badge badge-hot">🔥 OFERTA</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-stars">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star-empty">★</span>
+                            <span class="star-count">(1.823)</span>
+                        </div>
+                        <div class="product-card-name">Smartphone Samsung Galaxy — 128GB</div>
+                        <div class="product-card-store">Magalu · Frete Grátis</div>
+                        <div class="product-card-footer">
+                            <div class="product-price-wrapper">
+                                <span class="product-old-price">R$ 1.499,00</span>
+                                <div class="product-price">R$ 999,00</div>
+                            </div>
+                            <span class="btn-buy">Ver Oferta</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.magazinevoce.com.br/magazinefitcomestilo/" class="product-card animate-in delay-3" target="_blank" rel="noopener">
+                    <div class="product-card-top card-gradient-magalu">
+                        <span class="emoji-fallback" style="display:block">🛍️</span>
+                        <span class="product-card-badge badge-new">LOJA</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-name">Ver Todas as Ofertas Magalu</div>
+                        <div class="product-card-store">Magazine Luiza · Milhares de produtos</div>
+                        <div class="product-card-footer">
+                            <div class="product-price-wrapper">
+                                <div class="product-price" style="font-size:14px">Até 70% OFF</div>
+                            </div>
+                            <span class="btn-buy">Explorar →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="link-list" style="margin-top:16px">
+                <a href="https://www.magazinevoce.com.br/magazinefitcomestilo/eletronicos/" class="link-item" target="_blank" rel="noopener">
+                    <span class="icon">📺</span>
+                    <div class="info"><div class="name">TVs e Eletrônicos</div><div class="desc">Smart TVs, notebooks, tablets</div></div>
+                    <span class="mini-badge" style="background:#005aa7;color:#fff">MAGALU</span>
+                </a>
+                <a href="https://www.magazinevoce.com.br/magazinefitcomestilo/celulares-e-smartphones/" class="link-item" target="_blank" rel="noopener">
+                    <span class="icon">📱</span>
+                    <div class="info"><div class="name">Celulares e Smartphones</div><div class="desc">Samsung, Xiaomi, Motorola</div></div>
+                </a>
+                <a href="https://www.magazinevoce.com.br/magazinefitcomestilo/eletrodomesticos/" class="link-item" target="_blank" rel="noopener">
+                    <span class="icon">🏠</span>
+                    <div class="info"><div class="name">Eletrodomésticos</div><div class="desc">Geladeiras, fogões, lavadoras</div></div>
+                </a>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- ============================================
              OFERTAS & DESTAQUES
              ============================================ -->
         <section class="section" id="ofertas" data-loja="amazon">
@@ -2853,13 +2953,14 @@
             'amazon': ['fitness', 'suplementos', 'beleza', 'eletronicos', 'casa', 'ofertas'],
             'shopee': ['shopee'],
             'hotmart': ['cursos'],
-            'kindle': ['livros']
+            'kindle': ['livros'],
+            'magalu': ['magalu']
         };
         var currentFilter = 'todos';
 
         function countProducts() {
             var secs = document.querySelectorAll('section.section');
-            var counts = { todos: 0, amazon: 0, shopee: 0, hotmart: 0, kindle: 0 };
+            var counts = { todos: 0, amazon: 0, shopee: 0, hotmart: 0, kindle: 0, magalu: 0 };
             secs.forEach(function(s) {
                 var n = s.querySelectorAll('.product-card, .link-item').length;
                 counts.todos += n;
