@@ -681,6 +681,17 @@
         .delay-11 { animation-delay: 1.1s; }
         .delay-12 { animation-delay: 1.2s; }
 
+        /* Classes de filtro */
+        .filter-show {
+            display: flex !important;
+            opacity: 1 !important;
+            animation: none !important;
+            transform: none !important;
+        }
+        .filter-hide {
+            display: none !important;
+        }
+
         /* ============================================
            RESPONSIVO
            ============================================ */
@@ -1336,17 +1347,18 @@
          ============================================ -->
     <script>
     function filtrarLojas(e, loja) {
-        e.preventDefault();
+        if (e && e.preventDefault) e.preventDefault();
+
         var cards = document.querySelectorAll('.hero-card[data-store]');
         var dividers = document.querySelectorAll('.section-divider');
         var sociais = document.querySelectorAll('.social-card');
         var btns = document.querySelectorAll('.store-nav-btn');
 
         // Atualiza botão ativo
-        btns.forEach(function(b) {
-            b.classList.remove('active');
-            b.style.opacity = '0.55';
-        });
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].classList.remove('active');
+            btns[i].style.opacity = '0.55';
+        }
         var ativo = document.querySelector('[data-filter="' + loja + '"]');
         if (ativo) {
             ativo.classList.add('active');
@@ -1354,29 +1366,41 @@
         }
 
         if (loja === 'todos') {
-            cards.forEach(function(c) {
-                c.style.display = 'flex';
-                c.style.opacity = '1';
-                c.style.animation = 'none';
-            });
-            dividers.forEach(function(d) { d.style.display = ''; d.style.opacity = '1'; d.style.animation = 'none'; });
-            sociais.forEach(function(s) { s.style.display = ''; s.style.opacity = '1'; s.style.animation = 'none'; });
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].classList.remove('filter-hide');
+                cards[i].classList.add('filter-show');
+            }
+            for (var i = 0; i < dividers.length; i++) {
+                dividers[i].classList.remove('filter-hide');
+                dividers[i].classList.add('filter-show');
+            }
+            for (var i = 0; i < sociais.length; i++) {
+                sociais[i].classList.remove('filter-hide');
+                sociais[i].classList.add('filter-show');
+            }
             return;
         }
 
-        cards.forEach(function(c) {
-            if (c.dataset.store === loja) {
-                c.style.display = 'flex';
-                c.style.opacity = '1';
-                c.style.animation = 'none';
+        for (var i = 0; i < cards.length; i++) {
+            var store = cards[i].getAttribute('data-store');
+            if (store === loja) {
+                cards[i].classList.remove('filter-hide');
+                cards[i].classList.add('filter-show');
             } else {
-                c.style.display = 'none';
+                cards[i].classList.remove('filter-show');
+                cards[i].classList.add('filter-hide');
             }
-        });
+        }
 
         // Esconde divisores e cards sociais quando filtrando
-        dividers.forEach(function(d) { d.style.display = 'none'; });
-        sociais.forEach(function(s) { s.style.display = 'none'; });
+        for (var i = 0; i < dividers.length; i++) {
+            dividers[i].classList.remove('filter-show');
+            dividers[i].classList.add('filter-hide');
+        }
+        for (var i = 0; i < sociais.length; i++) {
+            sociais[i].classList.remove('filter-show');
+            sociais[i].classList.add('filter-hide');
+        }
     }
 
     // Botão "Todos" ativo por padrão
