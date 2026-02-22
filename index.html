@@ -876,17 +876,17 @@
         <!-- MENU DE LOJAS -->
         <nav class="store-nav animate-in delay-5">
             <div class="store-nav-row">
-                <a href="#" class="store-nav-btn btn-todos active" data-filter="todos" onclick="filtrarLojas('todos')">🔥 Todos</a>
+                <a href="#" class="store-nav-btn btn-todos active" data-filter="todos" onclick="filtrarLojas(event, 'todos')">🔥 Todos</a>
             </div>
             <div class="store-nav-row">
-                <a href="#" class="store-nav-btn btn-shein" data-filter="shein" onclick="filtrarLojas('shein')">🖤 Shein</a>
-                <a href="#" class="store-nav-btn btn-shopee" data-filter="shopee" onclick="filtrarLojas('shopee')">🧡 Shopee</a>
-                <a href="#" class="store-nav-btn btn-amazon" data-filter="amazon" onclick="filtrarLojas('amazon')">🛒 Amazon</a>
+                <a href="#" class="store-nav-btn btn-shein" data-filter="shein" onclick="filtrarLojas(event, 'shein')">🖤 Shein</a>
+                <a href="#" class="store-nav-btn btn-shopee" data-filter="shopee" onclick="filtrarLojas(event, 'shopee')">🧡 Shopee</a>
+                <a href="#" class="store-nav-btn btn-amazon" data-filter="amazon" onclick="filtrarLojas(event, 'amazon')">🛒 Amazon</a>
             </div>
             <div class="store-nav-row">
-                <a href="#" class="store-nav-btn btn-magalu" data-filter="magalu" onclick="filtrarLojas('magalu')">💙 Magalu</a>
-                <a href="#" class="store-nav-btn btn-hotmart" data-filter="hotmart" onclick="filtrarLojas('hotmart')">🎓 Hotmart</a>
-                <a href="#" class="store-nav-btn btn-livros" data-filter="livros" onclick="filtrarLojas('livros')">📚 Livros</a>
+                <a href="#" class="store-nav-btn btn-magalu" data-filter="magalu" onclick="filtrarLojas(event, 'magalu')">💙 Magalu</a>
+                <a href="#" class="store-nav-btn btn-hotmart" data-filter="hotmart" onclick="filtrarLojas(event, 'hotmart')">🎓 Hotmart</a>
+                <a href="#" class="store-nav-btn btn-livros" data-filter="livros" onclick="filtrarLojas(event, 'livros')">📚 Livros</a>
             </div>
         </nav>
 
@@ -945,39 +945,7 @@
                 </div>
             </a>
 
-            <!-- ====== E-BOOK DE RECEITAS ====== -->
-            <a href="https://www.amazon.com.br/s?k=receitas+fit+marmitas+saudaveis+ebook&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="hero-card img-left banner animate-in delay-8" data-store="amazon">
-                <div class="hero-card-image gradient-purple">
-                    <img src="https://m.media-amazon.com/images/I/718PshdCE3L._AC_SL500_.jpg" alt="E-book de Receitas Fit">
-                </div>
-                <div class="hero-card-content">
-                    <div class="hero-card-brand">
-                        <span class="hero-card-brand-text">📚 eBook Kindle</span>
-                    </div>
-                    <h2 class="hero-card-title">Meu e-book de <span>receitas fit</span></h2>
-                    <div class="price-tag">
-                        <span class="price-old">R$ 29,90</span>
-                        <span class="price-new">R$ 9,99</span>
-                    </div>
-                </div>
-            </a>
 
-            <!-- ====== PROGRAMA DE TREINOS ====== -->
-            <a href="https://www.amazon.com.br/s?k=treino+funcional+guia&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="hero-card img-right banner-green animate-in delay-9" data-store="amazon">
-                <div class="hero-card-content">
-                    <div class="hero-card-brand">
-                        <span class="hero-card-brand-text">💪 Fitness</span>
-                    </div>
-                    <h2 class="hero-card-title">Meu programa de <span>treinos</span></h2>
-                    <div class="coupon-pill">
-                        <span class="icon">⚡</span>
-                        RESULTADOS EM 30 DIAS
-                    </div>
-                </div>
-                <div class="hero-card-image gradient-lime">
-                    <img src="https://m.media-amazon.com/images/I/91WpnI0B6nL._AC_SL500_.jpg" alt="Programa de Treinos">
-                </div>
-            </a>
 
             <!-- DIVISOR -->
             <div class="section-divider animate-in delay-10">
@@ -1001,55 +969,37 @@
                 </div>
             </a>
 
-            <!-- ====== BELEZA & SKINCARE ====== -->
-            <a href="https://www.amazon.com.br/s?k=skincare+vitamina+c+serum&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="hero-card img-right animate-in delay-10" data-store="amazon">
+            <!-- ====== SHOPEE BELEZA ====== -->
+            <a href="https://shopee.com.br/search?keyword=skincare+vitamina+c+serum" target="_blank" rel="noopener" class="hero-card img-right animate-in delay-10" data-store="shopee">
                 <div class="hero-card-content">
                     <div class="hero-card-brand">
-                        <span class="hero-card-brand-text">💄 Beauty</span>
+                        <span class="hero-card-brand-text" style="color: #ee4d2d;">💄 Shopee</span>
                     </div>
-                    <h2 class="hero-card-title">Skincare & <span>Beleza</span></h2>
-                    <div class="coupon-pill">
+                    <h2 class="hero-card-title">Beleza & <span style="color:#ee4d2d;">Skincare</span></h2>
+                    <div class="coupon-pill" style="background: linear-gradient(135deg, #fff5f2, #ffebe5); border-color: #ee4d2d; color: #ee4d2d;">
                         <span class="icon">✨</span>
-                        MAIS VENDIDOS
-                    </div>
-                </div>
-                <div class="hero-card-image" style="background: #fff;">
-                    <img src="img-skincare.jpg" alt="Skincare">
-                </div>
-            </a>
-
-            <!-- ====== ELETRÔNICOS ====== -->
-            <a href="https://www.amazon.com.br/s?k=smartwatch+fone+bluetooth&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="hero-card img-left animate-in delay-11" data-store="amazon">
-                <div class="hero-card-image gradient-blue">
-                    <img src="https://m.media-amazon.com/images/I/71vHLiJHUHL._AC_SL1200_.jpg" alt="Eletrônicos">
-                    <span class="card-badge off">30% OFF</span>
-                </div>
-                <div class="hero-card-content">
-                    <div class="hero-card-brand">
-                        <span class="hero-card-brand-text">📱 Tech</span>
-                    </div>
-                    <h2 class="hero-card-title">Eletrônicos & <span>Gadgets</span></h2>
-                    <div class="coupon-pill">
-                        <span class="icon">🚚</span>
                         FRETE GRÁTIS
                     </div>
                 </div>
+                <div class="hero-card-image" style="background: #fff;">
+                    <img src="img-skincare.jpg" alt="Beleza Shopee" style="object-fit: cover;">
+                </div>
             </a>
 
-            <!-- ====== CASA & COZINHA ====== -->
-            <a href="https://www.amazon.com.br/s?k=air+fryer+organizadores&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="hero-card img-right animate-in delay-11" data-store="amazon">
+            <!-- ====== SHOPEE CASA ====== -->
+            <a href="https://shopee.com.br/search?keyword=organizadores+casa+cozinha+air+fryer" target="_blank" rel="noopener" class="hero-card img-left animate-in delay-10" data-store="shopee">
+                <div class="hero-card-image" style="background: linear-gradient(135deg, #fff5f2, #ffebe5);">
+                    <img src="https://m.media-amazon.com/images/I/61dDZxzhI8L._AC_SL1200_.jpg" alt="Casa Shopee">
+                </div>
                 <div class="hero-card-content">
                     <div class="hero-card-brand">
-                        <span class="hero-card-brand-text">🏠 Casa</span>
+                        <span class="hero-card-brand-text" style="color: #ee4d2d;">🏠 Shopee</span>
                     </div>
-                    <h2 class="hero-card-title">Casa & <span>Cozinha</span></h2>
-                    <div class="coupon-pill">
-                        <span class="icon">💎</span>
-                        ACHADINHOS
+                    <h2 class="hero-card-title">Casa & <span style="color:#ee4d2d;">Cozinha</span></h2>
+                    <div class="coupon-pill" style="background: linear-gradient(135deg, #fff5f2, #ffebe5); border-color: #ee4d2d; color: #ee4d2d;">
+                        <span class="icon">🛒</span>
+                        OFERTAS DO DIA
                     </div>
-                </div>
-                <div class="hero-card-image gradient-teal">
-                    <img src="https://m.media-amazon.com/images/I/61dDZxzhI8L._AC_SL1200_.jpg" alt="Casa e Cozinha">
                 </div>
             </a>
 
@@ -1385,8 +1335,8 @@
          FILTRO POR LOJA
          ============================================ -->
     <script>
-    function filtrarLojas(loja) {
-        event.preventDefault();
+    function filtrarLojas(e, loja) {
+        e.preventDefault();
         const cards = document.querySelectorAll('.hero-card[data-store]');
         const dividers = document.querySelectorAll('.section-divider');
         const sociais = document.querySelectorAll('.social-card');
@@ -1404,14 +1354,14 @@
         }
 
         if (loja === 'todos') {
-            cards.forEach(c => { c.style.display = ''; });
+            cards.forEach(c => { c.style.display = 'flex'; });
             dividers.forEach(d => { d.style.display = ''; });
             sociais.forEach(s => { s.style.display = ''; });
             return;
         }
 
         cards.forEach(c => {
-            c.style.display = c.dataset.store === loja ? '' : 'none';
+            c.style.display = c.dataset.store === loja ? 'flex' : 'none';
         });
 
         // Esconde divisores e cards sociais quando filtrando
