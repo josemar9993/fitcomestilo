@@ -175,6 +175,9 @@
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
 
+    <!-- Preload LCP image para performance -->
+    <link rel="preload" as="image" href="https://m.media-amazon.com/images/I/61cVXbI0OOL._AC_SL500_.jpg" fetchpriority="high">
+
     <!-- Fontes: Sistema otimizado (sem requisições externas) -->
 
     <style>
@@ -789,41 +792,18 @@
         /* ============================================
            ANIMAÇÕES
            ============================================ */
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(40px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
-        }
-
         .animate-in {
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-            will-change: transform, opacity;
-            contain: layout style;
+            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+            content-visibility: auto;
+            contain-intrinsic-size: 0 300px;
         }
 
         /* Visível quando entra na viewport ou fallback */
         .animate-in.visible {
             opacity: 1 !important;
-            transform: translateY(0) !important;
-            will-change: auto;
-        }
-
-        /* Fallback máximo: se JS falhar, mostra tudo após 4s */
-        @keyframes forceShow {
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-in {
-            animation: forceShow 0s 4s forwards;
-        }
-        .animate-in.visible {
-            animation: none;
+            transform: none !important;
         }
 
         /* Delays usados pelo IntersectionObserver via JS */
@@ -1052,9 +1032,9 @@
         <div class="cards-container">
 
             <!-- ====== SUPLEMENTOS ====== -->
-            <a href="https://www.amazon.com.br/s?k=suplementos+whey+creatina&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="hero-card img-left animate-in delay-5" data-store="amazon">
+            <a href="https://www.amazon.com.br/s?k=suplementos+whey+creatina&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="hero-card img-left visible" data-store="amazon">
                 <div class="hero-card-image gradient-green">
-                    <img src="https://m.media-amazon.com/images/I/61cVXbI0OOL._AC_SL500_.jpg" alt="Suplementos" width="300" height="300" loading="lazy">
+                    <img src="https://m.media-amazon.com/images/I/61cVXbI0OOL._AC_SL500_.jpg" alt="Suplementos" width="300" height="300" fetchpriority="high">
                     <span class="card-badge prime">PRIME</span>
                 </div>
                 <div class="hero-card-content">
@@ -1567,19 +1547,14 @@
         // Método 1: IntersectionObserver (melhor — anima ao entrar na tela)
         if ('IntersectionObserver' in window) {
             var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        // Delay escalonado baseado na classe delay-N
-                        var el = entry.target;
-                        var delay = 0;
-                        var classes = el.className;
-                        var match = classes.match(/delay-(\d+)/);
-                        if (match) delay = parseInt(match[1]) * 100;
-                        setTimeout(function() {
-                            el.classList.add('visible');
-                        }, Math.min(delay, 600));
-                        observer.unobserve(el);
-                    }
+                // Batch todas as mudanças em um requestAnimationFrame
+                requestAnimationFrame(function() {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
                 });
             }, { threshold: 0.05, rootMargin: '50px' });
 
@@ -1588,17 +1563,21 @@
             }
         } else {
             // Fallback: mostra tudo de uma vez
-            for (var i = 0; i < els.length; i++) {
-                els[i].classList.add('visible');
-            }
+            requestAnimationFrame(function() {
+                for (var i = 0; i < els.length; i++) {
+                    els[i].classList.add('visible');
+                }
+            });
         }
 
         // Fallback agressivo: força visibilidade após 2s (WebViews, JS lento)
         setTimeout(function() {
-            var els2 = document.querySelectorAll('.animate-in:not(.visible)');
-            for (var i = 0; i < els2.length; i++) {
-                els2[i].classList.add('visible');
-            }
+            requestAnimationFrame(function() {
+                var els2 = document.querySelectorAll('.animate-in:not(.visible)');
+                for (var i = 0; i < els2.length; i++) {
+                    els2[i].classList.add('visible');
+                }
+            });
         }, 2000);
     });
     </script>
