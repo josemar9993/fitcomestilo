@@ -25,23 +25,7 @@
     <meta name="twitter:description" content="Moda fitness feminina, suplementos e beleza com cupons exclusivos.">
     <meta name="twitter:image" content="https://fitcomestilo.store/og-cover.jpg">
 
-    <!-- Google Analytics GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "veeg17eg6l");
-    </script>
+    <!-- Analytics carregados após conteúdo (performance) -->
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://fitcomestilo.store/">
@@ -191,10 +175,14 @@
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Otimizado para performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Preload fonte crítica -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <!-- Carregamento não-bloqueante -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600&display=swap"></noscript>
 
     <style>
         /* ============================================
@@ -1011,7 +999,7 @@
     <header class="header">
         <div class="container">
             <div class="profile-photo animate-in">
-                <img src="logo.png" alt="Fit com Estilo - Moda Fitness Feminina" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                <img src="logo.png" alt="Fit com Estilo - Moda Fitness Feminina" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
             </div>
             
             <h1 class="profile-name animate-in delay-1">Fit com Estilo</h1>
@@ -1065,7 +1053,7 @@
             <!-- ====== SUPLEMENTOS ====== -->
             <a href="https://www.amazon.com.br/s?k=suplementos+whey+creatina&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="hero-card img-left animate-in delay-5" data-store="amazon">
                 <div class="hero-card-image gradient-green">
-                    <img src="https://m.media-amazon.com/images/I/61cVXbI0OOL._AC_SL500_.jpg" alt="Suplementos">
+                    <img src="https://m.media-amazon.com/images/I/61cVXbI0OOL._AC_SL500_.jpg" alt="Suplementos" loading="lazy">
                     <span class="card-badge prime">PRIME</span>
                 </div>
                 <div class="hero-card-content">
@@ -1093,7 +1081,7 @@
                     </div>
                 </div>
                 <div class="hero-card-image gradient-purple">
-                    <img src="https://m.media-amazon.com/images/I/516dPo8gbUL._AC_SL500_.jpg" alt="Moda Fitness">
+                    <img src="https://m.media-amazon.com/images/I/516dPo8gbUL._AC_SL500_.jpg" alt="Moda Fitness" loading="lazy">
                     <span class="card-badge hot">HOT</span>
                 </div>
             </a>
@@ -1101,7 +1089,7 @@
             <!-- ====== ACESSÓRIOS FITNESS ====== -->
             <a href="https://www.amazon.com.br/s?k=acessorios+fitness+treino&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="hero-card img-left animate-in delay-7" data-store="amazon">
                 <div class="hero-card-image" style="background: #fff;">
-                    <img src="img-acessorios.webp" alt="Acessórios Fitness" style="object-fit: cover;">
+                    <img src="img-acessorios.webp" alt="Acessórios Fitness" loading="lazy" style="object-fit: cover;">
                 </div>
                 <div class="hero-card-content">
                     <div class="hero-card-brand">
@@ -1125,7 +1113,7 @@
             <!-- ====== SHOPEE ====== -->
             <a href="https://shopee.com.br/search?keyword=moda%20fitness&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Site---&af_click_lookback=7d" target="_blank" rel="noopener" class="hero-card img-left animate-in delay-10" data-store="shopee">
                 <div class="hero-card-image" style="background: #fff;">
-                    <img src="img-shopee.webp" alt="Coleção Shopee" style="object-fit: cover;">
+                    <img src="img-shopee.webp" alt="Coleção Shopee" loading="lazy" style="object-fit: cover;">
                 </div>
                 <div class="hero-card-content">
                     <div class="hero-card-brand">
@@ -1152,14 +1140,14 @@
                     </div>
                 </div>
                 <div class="hero-card-image" style="background: #fff;">
-                    <img src="img-skincare.jpg" alt="Beleza Shopee" style="object-fit: cover;">
+                    <img src="img-skincare.jpg" alt="Beleza Shopee" loading="lazy" style="object-fit: cover;">
                 </div>
             </a>
 
             <!-- ====== SHOPEE CASA ====== -->
             <a href="https://shopee.com.br/search?keyword=organizadores+casa+cozinha+air+fryer&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Site---&af_click_lookback=7d" target="_blank" rel="noopener" class="hero-card img-left animate-in delay-10" data-store="shopee">
                 <div class="hero-card-image" style="background: linear-gradient(135deg, #fff5f2, #ffebe5);">
-                    <img src="https://m.media-amazon.com/images/I/61dDZxzhI8L._AC_SL1200_.jpg" alt="Casa Shopee">
+                    <img src="https://m.media-amazon.com/images/I/61dDZxzhI8L._AC_SL1200_.jpg" alt="Casa Shopee" loading="lazy">
                 </div>
                 <div class="hero-card-content">
                     <div class="hero-card-brand">
@@ -1181,7 +1169,7 @@
             <!-- ====== MAGALU — TV SAMSUNG ====== -->
             <a href="https://divulgador.magalu.com/dbIhfE=T" target="_blank" rel="noopener" class="hero-card img-left animate-in delay-12" data-store="magalu">
                 <div class="hero-card-image" style="background: #fff;">
-                    <img src="img-tv.jpeg" alt="Smart TV Samsung 43" style="object-fit: cover;">
+                    <img src="img-tv.jpeg" alt="Smart TV Samsung 43" loading="lazy" style="object-fit: cover;">
                     <span class="card-badge off">-43% OFF</span>
                 </div>
                 <div class="hero-card-content">
@@ -1209,7 +1197,7 @@
                     </div>
                 </div>
                 <div class="hero-card-image gradient-blue">
-                    <img src="https://m.media-amazon.com/images/I/71Sa3dqTqzL._AC_SL1500_.jpg" alt="Samsung Galaxy">
+                    <img src="https://m.media-amazon.com/images/I/71Sa3dqTqzL._AC_SL1500_.jpg" alt="Samsung Galaxy" loading="lazy">
                     <span class="card-badge hot">HOT</span>
                 </div>
             </a>
@@ -1217,7 +1205,7 @@
             <!-- ====== MAGALU — LOJA ====== -->
             <a href="https://www.magazinevoce.com.br/magazinefitcomestilo/" target="_blank" rel="noopener" class="hero-card img-left animate-in delay-12" data-store="magalu">
                 <div class="hero-card-image gradient-blue">
-                    <img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg" alt="Magalu Loja">
+                    <img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg" alt="Magalu Loja" loading="lazy">
                 </div>
                 <div class="hero-card-content">
                     <div class="hero-card-brand">
@@ -1244,7 +1232,7 @@
                     </div>
                 </div>
                 <div class="hero-card-image" style="background: linear-gradient(135deg, #222, #444);">
-                    <img src="https://m.media-amazon.com/images/I/61vaVZCGtCL._AC_SL1500_.jpg" alt="Conjunto Fitness Shein">
+                    <img src="https://m.media-amazon.com/images/I/61vaVZCGtCL._AC_SL1500_.jpg" alt="Conjunto Fitness Shein" loading="lazy">
                     <span class="card-badge hot">🔥</span>
                 </div>
             </a>
@@ -1252,7 +1240,7 @@
             <!-- ====== SHEIN — TOP ====== -->
             <a href="https://onelink.shein.com/30/5hbo63xl4v7t" target="_blank" rel="noopener" class="hero-card img-left animate-in delay-12" data-store="shein">
                 <div class="hero-card-image" style="background: linear-gradient(135deg, #222, #444);">
-                    <img src="https://m.media-amazon.com/images/I/61Fp5ini3bL._AC_SL1500_.jpg" alt="Top Fitness Shein">
+                    <img src="https://m.media-amazon.com/images/I/61Fp5ini3bL._AC_SL1500_.jpg" alt="Top Fitness Shein" loading="lazy">
                     <span class="card-badge off">-45% OFF</span>
                 </div>
                 <div class="hero-card-content">
@@ -1280,7 +1268,7 @@
                     </div>
                 </div>
                 <div class="hero-card-image" style="background: linear-gradient(135deg, #222, #444);">
-                    <img src="https://m.media-amazon.com/images/I/51vwHmNHMEL._AC_SL1500_.jpg" alt="Shein Fitness">
+                    <img src="https://m.media-amazon.com/images/I/51vwHmNHMEL._AC_SL1500_.jpg" alt="Shein Fitness" loading="lazy">
                 </div>
             </a>
 
@@ -1292,7 +1280,7 @@
             <!-- ====== LIVRO — PODER DO HÁBITO ====== -->
             <a href="https://www.amazon.com.br/dp/B00A3D10JE?tag=fitcomestilo-20&linkCode=ll1&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="hero-card img-left animate-in delay-12" data-store="livros">
                 <div class="hero-card-image gradient-purple">
-                    <img src="https://m.media-amazon.com/images/I/815+4rm+F-L._SY385_.jpg" alt="O Poder do Hábito">
+                    <img src="https://m.media-amazon.com/images/I/815+4rm+F-L._SY385_.jpg" alt="O Poder do Hábito" loading="lazy">
                 </div>
                 <div class="hero-card-content">
                     <div class="hero-card-brand">
@@ -1319,14 +1307,14 @@
                     </div>
                 </div>
                 <div class="hero-card-image gradient-purple">
-                    <img src="https://m.media-amazon.com/images/I/819ERrDHRcL._SY385_.jpg" alt="Mais Esperto que o Diabo">
+                    <img src="https://m.media-amazon.com/images/I/819ERrDHRcL._SY385_.jpg" alt="Mais Esperto que o Diabo" loading="lazy">
                 </div>
             </a>
 
             <!-- ====== LIVRO — MINDSET ====== -->
             <a href="https://www.amazon.com.br/dp/B01NASOQGG?tag=fitcomestilo-20&linkCode=ll1&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="hero-card img-left animate-in delay-12" data-store="livros">
                 <div class="hero-card-image gradient-purple">
-                    <img src="https://m.media-amazon.com/images/I/81D1T67ZflL._SY385_.jpg" alt="Mindset">
+                    <img src="https://m.media-amazon.com/images/I/81D1T67ZflL._SY385_.jpg" alt="Mindset" loading="lazy">
                 </div>
                 <div class="hero-card-content">
                     <div class="hero-card-brand">
@@ -1348,7 +1336,7 @@
             <!-- ====== HOTMART — AUTOMAQUIAGEM ====== -->
             <div class="hero-card img-left animate-in delay-12" data-store="hotmart" data-url="aHR0cHM6Ly9nby5ob3RtYXJ0LmNvbS9NMTA0MzQyOTU0QQ==" onclick="goTo(this)" style="cursor:pointer;">
                 <div class="hero-card-image" style="background: linear-gradient(135deg, #ff6b9d, #c44dff);">
-                    <img src="img-hotmart1.png" alt="AutoMaquiagem Profissional" style="object-fit: cover;">
+                    <img src="img-hotmart1.png" alt="AutoMaquiagem Profissional" loading="lazy" style="object-fit: cover;">
                     <span class="card-badge hot">QUENTE</span>
                 </div>
                 <div class="hero-card-content">
@@ -1376,14 +1364,14 @@
                     </div>
                 </div>
                 <div class="hero-card-image" style="background: linear-gradient(135deg, #7c3aed, #ff6b9d);">
-                    <img src="img-hotmart2.png" alt="Dança Fit" style="object-fit: cover;">
+                    <img src="img-hotmart2.png" alt="Dança Fit" loading="lazy" style="object-fit: cover;">
                 </div>
             </div>
 
             <!-- ====== HOTMART — RECEITAS FIT ====== -->
             <div class="hero-card img-left animate-in delay-12" data-store="hotmart" data-url="aHR0cHM6Ly9nby5ob3RtYXJ0LmNvbS9DMTA0MzQyODMyQg==" onclick="goTo(this)" style="cursor:pointer;">
                 <div class="hero-card-image" style="background: linear-gradient(135deg, #ff6b9d, #c44dff);">
-                    <img src="img-hotmart3.png" alt="Receitas Fit Doces e Bolos" style="object-fit: cover;">
+                    <img src="img-hotmart3.png" alt="Receitas Fit Doces e Bolos" loading="lazy" style="object-fit: cover;">
                     <span class="card-badge new">NOVO</span>
                 </div>
                 <div class="hero-card-content">
@@ -1647,6 +1635,16 @@
             <a href="mailto:fitfitcomestilo@gmail.com" style="color: #8b5cf6; text-decoration: none;">✉️ Contato</a>
         </p>
     </article>
+
+    <!-- Analytics (carregados após conteúdo para não bloquear renderização) -->
+    <script type="text/javascript">
+        // Microsoft Clarity
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "veeg17eg6l");
+    </script>
 
 </body>
 </html>
