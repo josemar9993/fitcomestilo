@@ -2725,5 +2725,59 @@
       }, 200);
     });
   </script>
+
+  <!-- Schema.org Product — Google Shopping Free Listings (gerado automaticamente) -->
+  <script type="text/javascript">
+  (function(){
+    var products = [];
+    document.querySelectorAll('.card[href]').forEach(function(card){
+      var nameEl = card.querySelector('.nome');
+      var priceEl = card.querySelector('.preco');
+      var imgEl = card.querySelector('img');
+      if(!nameEl || !priceEl || !imgEl) return;
+      var name = nameEl.textContent.trim();
+      var priceText = priceEl.textContent.replace(/[^\d,.]/g,'').replace(',','.');
+      var price = parseFloat(priceText);
+      if(isNaN(price) || price <= 0) return;
+      var image = imgEl.getAttribute('src') || '';
+      var url = card.getAttribute('href') || '';
+      var seller = 'Shopee';
+      if(url.indexOf('amazon') > -1) seller = 'Amazon';
+      else if(url.indexOf('shein') > -1) seller = 'Shein';
+      else if(url.indexOf('magalu') > -1 || url.indexOf('magazin') > -1) seller = 'Magazine Luiza';
+      var cat = 'Moda Fitness';
+      var section = card.closest('.cat-section');
+      if(section){
+        var h2 = section.querySelector('h2');
+        if(h2) cat = h2.textContent.replace(/[^\w\s&áàãâéêíóôõúçÁÀÃÂÉÊÍÓÔÕÚÇ]/g,'').trim();
+      }
+      products.push({
+        "@context":"https://schema.org",
+        "@type":"Product",
+        "name": name,
+        "description": name + " - Curadoria Fit com Estilo. " + cat + " com os melhores preços.",
+        "image": image,
+        "sku": "FCS-" + products.length,
+        "category": cat,
+        "offers":{
+          "@type":"Offer",
+          "url":"https://fitcomestilo.store/achadinhos/",
+          "priceCurrency":"BRL",
+          "price": price.toFixed(2),
+          "priceValidUntil":"2026-12-31",
+          "availability":"https://schema.org/InStock",
+          "seller":{"@type":"Organization","name": seller},
+          "itemCondition":"https://schema.org/NewCondition"
+        }
+      });
+    });
+    if(products.length > 0){
+      var script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(products);
+      document.head.appendChild(script);
+    }
+  })();
+  </script>
 </body>
 </html>
