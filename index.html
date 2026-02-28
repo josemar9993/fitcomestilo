@@ -16,8 +16,17 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://fitcomestilo.store/">
     <meta property="og:image" content="https://fitcomestilo.store/logo.webp">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
     <meta property="og:site_name" content="Fit com Estilo">
     <meta property="og:locale" content="pt_BR">
+
+    <!-- Pinterest Rich Pins -->
+    <meta name="pinterest-rich-pin" content="true">
+    <meta property="og:see_also" content="https://www.instagram.com/fit_com_estilo/">
+
+    <!-- Bing Webmaster / IndexNow -->
+    <meta name="msvalidate.01" content="">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -1325,6 +1334,17 @@
          FOOTER
          ============================================ -->
     <footer class="footer">
+        <!-- Barra de compartilhamento -->
+        <div style="text-align:center; margin-bottom: 20px;">
+            <p style="color: #aaa; font-size: 13px; margin-bottom: 10px;">📢 Compartilhe com amigas que treinam com estilo:</p>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/?text=Olha%20esse%20site%20de%20moda%20fitness%20com%20ofertas%20incr%C3%ADveis!%20%F0%9F%92%AA%20https://fitcomestilo.store" target="_blank" rel="noopener" style="background:#25D366; color:#fff; padding: 8px 16px; border-radius:25px; text-decoration:none; font-size:13px; font-weight:600; display:inline-flex; align-items:center; gap:5px;">💬 WhatsApp</a>
+                <a href="https://t.me/share/url?url=https://fitcomestilo.store&text=Moda%20fitness%20com%20ofertas%20incr%C3%ADveis!%20%F0%9F%92%AA" target="_blank" rel="noopener" style="background:#0088cc; color:#fff; padding: 8px 16px; border-radius:25px; text-decoration:none; font-size:13px; font-weight:600; display:inline-flex; align-items:center; gap:5px;">✈️ Telegram</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://fitcomestilo.store" target="_blank" rel="noopener" style="background:#1877F2; color:#fff; padding: 8px 16px; border-radius:25px; text-decoration:none; font-size:13px; font-weight:600; display:inline-flex; align-items:center; gap:5px;">👍 Facebook</a>
+                <a href="https://twitter.com/intent/tweet?url=https://fitcomestilo.store&text=Moda%20fitness%20com%20ofertas%20incr%C3%ADveis!%20%F0%9F%92%AA%20@fit_com_estilo" target="_blank" rel="noopener" style="background:#1DA1F2; color:#fff; padding: 8px 16px; border-radius:25px; text-decoration:none; font-size:13px; font-weight:600; display:inline-flex; align-items:center; gap:5px;">🐦 Twitter</a>
+                <a href="https://pinterest.com/pin/create/button/?url=https://fitcomestilo.store&media=https://fitcomestilo.store/logo.webp&description=Fit%20com%20Estilo%20-%20Moda%20Fitness%20Feminina" target="_blank" rel="noopener" style="background:#E60023; color:#fff; padding: 8px 16px; border-radius:25px; text-decoration:none; font-size:13px; font-weight:600; display:inline-flex; align-items:center; gap:5px;">📌 Pinterest</a>
+            </div>
+        </div>
         <div class="footer-links">
             <a href="/sobre/">Sobre o Fit com Estilo</a>
             <a href="/p/">Ofertas por Categoria</a>
@@ -1677,6 +1697,13 @@
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "veeg17eg6l");
+    </script>
+
+    <!-- Service Worker — PWA instalável -->
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(function(){});
+    }
     </script>
 
 </body>

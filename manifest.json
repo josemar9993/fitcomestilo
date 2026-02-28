@@ -1,11 +1,31 @@
 {
-  "name": "Fit com Estilo",
+  "name": "Fit com Estilo — Moda Fitness, Suplementos e Beleza",
   "short_name": "FitComEstilo",
-  "description": "Curadoria de moda fitness feminina, suplementos e beleza",
+  "description": "Curadoria de moda fitness feminina, suplementos e beleza com ofertas exclusivas Amazon, Shopee, Shein e Magalu",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#f8f4ff",
   "theme_color": "#7c3aed",
+  "lang": "pt-BR",
+  "categories": ["shopping", "lifestyle", "fitness"],
+  "shortcuts": [
+    {
+      "name": "Achadinhos Shopee",
+      "short_name": "Achadinhos",
+      "url": "/achadinhos/",
+      "description": "Ofertas curadas da Shopee",
+      "icons": [{"src": "/favicon-192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Ofertas do Dia",
+      "short_name": "Ofertas",
+      "url": "/p/ofertas-hoje.html",
+      "description": "Melhores ofertas de hoje",
+      "icons": [{"src": "/favicon-192.png", "sizes": "192x192"}]
+    }
+  ],
   "icons": [
     {
       "src": "/favicon-32.png",

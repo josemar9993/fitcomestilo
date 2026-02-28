@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>Fit com Estilo — Produtos</title>
+    <link>https://fitcomestilo.store/</link>
+    <description>Curadoria de moda fitness feminina, suplementos e beleza — Fit com Estilo</description>
+
+    <item>
+      <g:id>TV-SAMSUNG-43-4K</g:id>
+      <g:title>Smart TV 43" Samsung 4K Crystal UHD</g:title>
+      <g:description>Smart TV Samsung 43 polegadas 4K Crystal UHD com tecnologia HDR e processador Crystal 4K. Ideal para filmes, séries e jogos com qualidade de imagem superior.</g:description>
+      <g:link>https://fitcomestilo.store/</g:link>
+      <g:image_link>https://fitcomestilo.store/img-tv.webp</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>1799.30 BRL</g:price>
+      <g:brand>Samsung</g:brand>
+      <g:condition>new</g:condition>
+      <g:product_type>Eletrônicos > TVs</g:product_type>
+      <g:google_product_category>404</g:google_product_category>
+    </item>
+
+    <item>
+      <g:id>GALAXY-128GB</g:id>
+      <g:title>Samsung Galaxy 128GB Smartphone</g:title>
+      <g:description>Smartphone Samsung Galaxy com 128GB de armazenamento. Design moderno, câmera de alta resolução e bateria de longa duração.</g:description>
+      <g:link>https://fitcomestilo.store/</g:link>
+      <g:image_link>https://m.media-amazon.com/images/I/71Sa3dqTqzL._AC_SL300_.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>999.00 BRL</g:price>
+      <g:brand>Samsung</g:brand>
+      <g:condition>new</g:condition>
+      <g:product_type>Eletrônicos > Celulares</g:product_type>
+      <g:google_product_category>267</g:google_product_category>
+    </item>
+
+    <item>
+      <g:id>CONJ-TOP-LEGGING-SHEIN</g:id>
+      <g:title>Conjunto Fitness Top + Legging Feminino</g:title>
+      <g:description>Conjunto fitness feminino com top e legging. Tecido confortável e respirável, ideal para academia e treinos. Look moderno e estiloso.</g:description>
+      <g:link>https://fitcomestilo.store/</g:link>
+      <g:image_link>https://m.media-amazon.com/images/I/61vaVZCGtCL._AC_SL300_.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>49.90 BRL</g:price>
+      <g:brand>Shein</g:brand>
+      <g:condition>new</g:condition>
+      <g:product_type>Moda > Moda Fitness > Conjuntos</g:product_type>
+      <g:google_product_category>5322</g:google_product_category>
+      <g:gender>female</g:gender>
+      <g:age_group>adult</g:age_group>
+    </item>
+
+    <item>
+      <g:id>TOP-CROPPED-SHEIN</g:id>
+      <g:title>Top Cropped Costas Cruzadas Fitness Feminino</g:title>
+      <g:description>Top cropped fitness com costas cruzadas. Design moderno e confortável para treinos de academia. Tecido respirável com ótima sustentação.</g:description>
+      <g:link>https://fitcomestilo.store/</g:link>
+      <g:image_link>https://m.media-amazon.com/images/I/61Fp5ini3bL._AC_SL300_.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>32.90 BRL</g:price>
+      <g:brand>Shein</g:brand>
+      <g:condition>new</g:condition>
+      <g:product_type>Moda > Moda Fitness > Tops</g:product_type>
+      <g:google_product_category>5322</g:google_product_category>
+      <g:gender>female</g:gender>
+      <g:age_group>adult</g:age_group>
+    </item>
+
+    <item>
+      <g:id>KINDLE-B00A3D10JE</g:id>
+      <g:title>O Poder do Hábito — Charles Duhigg (eBook Kindle)</g:title>
+      <g:description>Best-seller sobre como os hábitos funcionam e como transformá-los. Edição Kindle com acesso imediato. O livro mais vendido sobre produtividade e mudança de hábitos.</g:description>
+      <g:link>https://fitcomestilo.store/</g:link>
+      <g:image_link>https://m.media-amazon.com/images/I/815+4rm+F-L._SY385_.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>12.90 BRL</g:price>
+      <g:brand>Kindle</g:brand>
+      <g:condition>new</g:condition>
+      <g:product_type>Livros > Desenvolvimento Pessoal</g:product_type>
+      <g:google_product_category>784</g:google_product_category>
+    </item>
+
+    <item>
+      <g:id>KINDLE-B0153SZLXO</g:id>
+      <g:title>Mais Esperto que o Diabo — Napoleon Hill (eBook Kindle)</g:title>
+      <g:description>Clássico de Napoleon Hill sobre sucesso e superação de obstáculos mentais. Edição Kindle com acesso imediato.</g:description>
+      <g:link>https://fitcomestilo.store/</g:link>
+      <g:image_link>https://m.media-amazon.com/images/I/819ERrDHRcL._SY385_.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>9.90 BRL</g:price>
+      <g:brand>Kindle</g:brand>
+      <g:condition>new</g:condition>
+      <g:product_type>Livros > Desenvolvimento Pessoal</g:product_type>
+      <g:google_product_category>784</g:google_product_category>
+    </item>
+
+    <item>
+      <g:id>KINDLE-B01NASOQGG</g:id>
+      <g:title>Mindset — Mentalidade de Sucesso — Carol Dweck (eBook Kindle)</g:title>
+      <g:description>Best-seller sobre a psicologia do sucesso. Como a mentalidade de crescimento pode transformar sua vida. Edição Kindle.</g:description>
+      <g:link>https://fitcomestilo.store/</g:link>
+      <g:image_link>https://m.media-amazon.com/images/I/81D1T67ZflL._SY385_.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>14.90 BRL</g:price>
+      <g:brand>Kindle</g:brand>
+      <g:condition>new</g:condition>
+      <g:product_type>Livros > Desenvolvimento Pessoal</g:product_type>
+      <g:google_product_category>784</g:google_product_category>
+    </item>
+
+  </channel>
+</rss>
