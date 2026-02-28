@@ -2778,6 +2778,24 @@
     });
   </script>
 
+  <!-- Email Capture + Compartilhamento -->
+  <div style="max-width:900px;margin:30px auto;padding:0 16px">
+    <div style="background:linear-gradient(135deg,#8b5cf6,#a78bfa);border-radius:24px;padding:24px;margin-bottom:16px;text-align:center;box-shadow:0 4px 30px rgba(139,92,246,.25)">
+      <p style="font-size:.9rem;color:#fff;margin-bottom:12px;font-weight:600">📬 Receba os melhores achadinhos no e-mail!</p>
+      <form id="email-form-achadinhos" style="display:flex;gap:8px;max-width:400px;margin:0 auto">
+        <input type="email" placeholder="Seu melhor e-mail" required style="flex:1;padding:12px 16px;border:none;border-radius:14px;background:#fff;color:#333;font-size:14px;outline:none">
+        <button type="submit" style="padding:12px 20px;background:#fff;color:#8b5cf6;border:none;border-radius:14px;font-weight:800;cursor:pointer;font-size:14px;transition:transform .2s">Inscrever 💌</button>
+      </form>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="https://api.whatsapp.com/send?text=🛍️ Olha esses achadinhos fitness com preços incríveis! https://fitcomestilo.store/achadinhos/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:#25d366;color:#fff;border-radius:50px;text-decoration:none;font-size:.85rem;font-weight:700;box-shadow:0 3px 12px rgba(37,211,102,.3);transition:all .2s">📲 Compartilhar no WhatsApp</a>
+      <a href="https://t.me/share/url?url=https://fitcomestilo.store/achadinhos/&text=🛍️ Achadinhos fitness com preços incríveis!" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:#0088cc;color:#fff;border-radius:50px;text-decoration:none;font-size:.85rem;font-weight:700;box-shadow:0 3px 12px rgba(0,136,204,.3);transition:all .2s">✈️ Telegram</a>
+    </div>
+  </div>
+  <script>
+  document.getElementById('email-form-achadinhos').addEventListener('submit',function(e){e.preventDefault();localStorage.setItem('subscriber-email',this.querySelector('input').value);this.parentElement.innerHTML='<p style="color:#fff;font-weight:700;font-size:1.1rem">✅ Cadastrado com sucesso!</p>';if(typeof gtag!=='undefined')gtag('event','email_signup',{event_category:'Email',event_label:'achadinhos'});});
+  </script>
+
   <!-- Schema.org Product — Google Shopping Free Listings (gerado automaticamente) -->
   <script type="text/javascript">
   (function(){
@@ -2831,5 +2849,8 @@
     }
   })();
   </script>
+
+<!-- Microsoft Clarity -->
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","veeg17eg6l")</script>
 </body>
 </html>
