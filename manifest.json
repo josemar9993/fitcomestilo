@@ -1,0 +1,28 @@
+{
+  "name": "Fit com Estilo",
+  "short_name": "FitComEstilo",
+  "description": "Curadoria de moda fitness feminina, suplementos e beleza",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f4ff",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
