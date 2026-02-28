@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparador de Preços Fitness — Shopee vs Amazon vs Shein | Fit com Estilo</title>
+  <meta name="description" content="Compare preços de roupas fitness, suplementos e acessórios entre Shopee, Amazon, Shein e Magalu. Encontre sempre o menor preço com links verificados!">
+  <meta name="keywords" content="comparador de preços fitness, legging mais barata, whey mais barato, shopee amazon comparar, moda fitness preço">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fitcomestilo.store/comparar/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Comparador de Preços Fitness — Shopee vs Amazon vs Shein vs Magalu">
+  <meta property="og:description" content="Compare preços entre 4 lojas e encontre as melhores ofertas de moda fitness, suplementos e acessórios!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fitcomestilo.store/comparar/">
+  <meta property="og:image" content="https://fitcomestilo.store/logo.webp">
+  <meta property="og:site_name" content="Fit com Estilo">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Comparador de Preços Fitness — Fit com Estilo">
+  <meta name="twitter:description" content="Compare preços entre 4 lojas e encontre as melhores ofertas fitness!">
+  <meta name="twitter:image" content="https://fitcomestilo.store/logo.webp">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Comparador de Preços Fitness","description":"Compare preços de roupas fitness, suplementos e acessórios entre Shopee, Amazon, Shein e Magazine Luiza.","url":"https://fitcomestilo.store/comparar/","publisher":{"@type":"Organization","name":"Fit com Estilo","url":"https://fitcomestilo.store","logo":{"@type":"ImageObject","url":"https://fitcomestilo.store/logo.webp"}},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Fit com Estilo","item":"https://fitcomestilo.store/"},{"@type":"ListItem","position":2,"name":"Comparador de Preços","item":"https://fitcomestilo.store/comparar/"}]}}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#7c3aed">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8TPYHYMY8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J8TPYHYMY8');
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+      min-height: 100vh;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 20px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #a78bfa;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+    .back-link:hover { background: rgba(139,92,246,0.2); }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .page-header .emoji { font-size: 42px; margin-bottom: 8px; }
+    .page-header h1 {
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #a78bfa, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .page-header p { color: #999; font-size: 0.85rem; }
+
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 8px 16px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
+      border-radius: 20px;
+      color: #bbb;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: rgba(139,92,246,0.25);
+      border-color: #8b5cf6;
+      color: #fff;
+    }
+
+    .compare-item {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(8px);
+    }
+    .compare-item h3 {
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .compare-item .category-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .cat-moda { background: rgba(236, 72, 153, 0.2); color: #ec4899; }
+    .cat-suplemento { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+    .cat-acessorio { background: rgba(59, 130, 246, 0.2); color: #3b82f6; }
+    .cat-skincare { background: rgba(251, 191, 36, 0.2); color: #fbbf24; }
+
+    .store-row {
+      display: flex;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      margin-bottom: 6px;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .store-row:hover { background: rgba(255,255,255,0.06); transform: translateX(4px); }
+    .store-row.best { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.25); }
+    .store-row .store-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+    .store-shopee { background: #ee4d2d; color: #fff; }
+    .store-amazon { background: #ff9900; color: #111; }
+    .store-shein { background: #000; color: #fff; border: 1px solid #333; }
+    .store-magalu { background: #0086ff; color: #fff; }
+    .store-row .store-info { flex: 1; }
+    .store-row .store-name { font-size: 0.8rem; color: #aaa; font-weight: 600; }
+    .store-row .store-price { font-size: 1.05rem; font-weight: 800; color: #fff; }
+    .store-row.best .store-price { color: #10b981; }
+    .store-row .best-tag {
+      background: #10b981;
+      color: #000;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.65rem;
+      font-weight: 800;
+    }
+    .store-row .btn-go {
+      padding: 6px 14px;
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      color: #fff;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .savings-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      padding: 8px 14px;
+      background: rgba(16,185,129,0.1);
+      border-radius: 10px;
+    }
+    .savings-bar .savings-text {
+      font-size: 0.78rem;
+      color: #10b981;
+      font-weight: 600;
+    }
+
+    .tip-card {
+      background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(236,72,153,0.2));
+      border: 1px solid rgba(139,92,246,0.3);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 24px 0;
+      text-align: center;
+    }
+    .tip-card h4 { color: #a78bfa; font-size: 0.85rem; margin-bottom: 6px; }
+    .tip-card p { color: #ccc; font-size: 0.8rem; line-height: 1.5; }
+
+    .section-title {
+      font-size: 0.85rem;
+      color: #a78bfa;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 28px 0 14px;
+    }
+
+    .alert-box {
+      background: rgba(251,191,36,0.1);
+      border: 1px solid rgba(251,191,36,0.3);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 24px 0;
+    }
+    .alert-box h4 { color: #fbbf24; font-size: 0.85rem; margin-bottom: 6px; }
+    .alert-box p { color: #ccc; font-size: 0.8rem; line-height: 1.5; }
+
+    .email-section {
+      background: rgba(139,92,246,0.12);
+      border: 1px solid rgba(139,92,246,0.25);
+      border-radius: 14px;
+      padding: 20px;
+      margin: 24px 0;
+      text-align: center;
+    }
+    .email-section p { font-size: 0.85rem; color: #ccc; margin-bottom: 12px; }
+    .email-section form { display: flex; gap: 8px; }
+    .email-section input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      background: rgba(0,0,0,0.3);
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+    }
+    .email-section button {
+      padding: 10px 18px;
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    @media (max-width: 420px) {
+      .compare-item { padding: 16px; }
+      .store-row { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a href="https://fitcomestilo.store/" class="back-link">← Voltar ao Fit com Estilo</a>
+
+  <div class="page-header">
+    <div class="emoji">🔍</div>
+    <h1>Comparador de Preços Fitness</h1>
+    <p>Encontre o menor preço entre Shopee, Amazon, Shein e Magalu</p>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterCompare('todos')">🏷️ Todos</button>
+    <button class="filter-btn" onclick="filterCompare('moda')">👗 Moda</button>
+    <button class="filter-btn" onclick="filterCompare('suplemento')">💊 Suplementos</button>
+    <button class="filter-btn" onclick="filterCompare('acessorio')">🎒 Acessórios</button>
+    <button class="filter-btn" onclick="filterCompare('skincare')">🧴 Skincare</button>
+  </div>
+
+  <div class="alert-box">
+    <h4>⚡ Preços atualizados diariamente</h4>
+    <p>Valores podem variar com cupons e promoções. Clique pra ver o preço atual em cada loja!</p>
+  </div>
+
+  <div id="compare-list">
+
+    <!-- PRODUTO 1 -->
+    <div class="compare-item" data-cat="moda">
+      <h3>Legging Cós Alto Poliamida</h3>
+      <span class="category-tag cat-moda">Moda Fitness</span>
+      <a href="https://shopee.com.br/search?keyword=legging+cos+alto+poliamida&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=comparador" target="_blank" rel="noopener" class="store-row best" data-store="shopee">
+        <div class="store-icon store-shopee">S</div>
+        <div class="store-info"><div class="store-name">Shopee</div><div class="store-price">R$ 32,99</div></div>
+        <span class="best-tag">MENOR</span>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://onelink.shein.com/30/5hbo1g7ykwmc" target="_blank" rel="noopener" class="store-row" data-store="shein">
+        <div class="store-icon store-shein">SH</div>
+        <div class="store-info"><div class="store-name">Shein</div><div class="store-price">R$ 42,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.amazon.com.br/s?k=legging+cos+alto+poliamida+feminina&tag=fitcomestilo-20&linkCode=ll2" target="_blank" rel="noopener" class="store-row" data-store="amazon">
+        <div class="store-icon store-amazon">A</div>
+        <div class="store-info"><div class="store-name">Amazon</div><div class="store-price">R$ 59,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.magazineluiza.com.br/busca/legging+cos+alto+poliamida/?partner_id=68930&utm_source=divulgador" target="_blank" rel="noopener" class="store-row" data-store="magalu">
+        <div class="store-icon store-magalu">ML</div>
+        <div class="store-info"><div class="store-name">Magazine Luiza</div><div class="store-price">R$ 64,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <div class="savings-bar"><span class="savings-text">💰 Economize até R$ 31,91 escolhendo a Shopee!</span></div>
+    </div>
+
+    <!-- PRODUTO 2 -->
+    <div class="compare-item" data-cat="suplemento">
+      <h3>Whey Protein Concentrado 1kg</h3>
+      <span class="category-tag cat-suplemento">Suplemento</span>
+      <a href="https://www.amazon.com.br/s?k=whey+protein+concentrado+1kg&tag=fitcomestilo-20&linkCode=ll2" target="_blank" rel="noopener" class="store-row best" data-store="amazon">
+        <div class="store-icon store-amazon">A</div>
+        <div class="store-info"><div class="store-name">Amazon</div><div class="store-price">R$ 89,90</div></div>
+        <span class="best-tag">MENOR</span>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://shopee.com.br/search?keyword=whey+protein+concentrado+1kg&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=comparador" target="_blank" rel="noopener" class="store-row" data-store="shopee">
+        <div class="store-icon store-shopee">S</div>
+        <div class="store-info"><div class="store-name">Shopee</div><div class="store-price">R$ 94,99</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.magazineluiza.com.br/busca/whey+protein+concentrado+1kg/?partner_id=68930&utm_source=divulgador" target="_blank" rel="noopener" class="store-row" data-store="magalu">
+        <div class="store-icon store-magalu">ML</div>
+        <div class="store-info"><div class="store-name">Magazine Luiza</div><div class="store-price">R$ 109,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <div class="savings-bar"><span class="savings-text">💰 Economize até R$ 20 escolhendo a Amazon!</span></div>
+    </div>
+
+    <!-- PRODUTO 3 -->
+    <div class="compare-item" data-cat="moda">
+      <h3>Macaquinho Fitness Modelador</h3>
+      <span class="category-tag cat-moda">Moda Fitness</span>
+      <a href="https://shopee.com.br/search?keyword=macaquinho+fitness+modelador+feminino&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=comparador" target="_blank" rel="noopener" class="store-row best" data-store="shopee">
+        <div class="store-icon store-shopee">S</div>
+        <div class="store-info"><div class="store-name">Shopee</div><div class="store-price">R$ 39,90</div></div>
+        <span class="best-tag">MENOR</span>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://onelink.shein.com/30/5hbo63xl4v7t" target="_blank" rel="noopener" class="store-row" data-store="shein">
+        <div class="store-icon store-shein">SH</div>
+        <div class="store-info"><div class="store-name">Shein</div><div class="store-price">R$ 52,00</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.amazon.com.br/s?k=macaquinho+fitness+feminino+modelador&tag=fitcomestilo-20&linkCode=ll2" target="_blank" rel="noopener" class="store-row" data-store="amazon">
+        <div class="store-icon store-amazon">A</div>
+        <div class="store-info"><div class="store-name">Amazon</div><div class="store-price">R$ 69,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <div class="savings-bar"><span class="savings-text">💰 Economize até R$ 30 escolhendo a Shopee!</span></div>
+    </div>
+
+    <!-- PRODUTO 4 -->
+    <div class="compare-item" data-cat="suplemento">
+      <h3>Creatina Monohidratada 300g</h3>
+      <span class="category-tag cat-suplemento">Suplemento</span>
+      <a href="https://www.amazon.com.br/s?k=creatina+monohidratada+300g&tag=fitcomestilo-20&linkCode=ll2" target="_blank" rel="noopener" class="store-row best" data-store="amazon">
+        <div class="store-icon store-amazon">A</div>
+        <div class="store-info"><div class="store-name">Amazon</div><div class="store-price">R$ 49,90</div></div>
+        <span class="best-tag">MENOR</span>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://shopee.com.br/search?keyword=creatina+monohidratada+300g&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=comparador" target="_blank" rel="noopener" class="store-row" data-store="shopee">
+        <div class="store-icon store-shopee">S</div>
+        <div class="store-info"><div class="store-name">Shopee</div><div class="store-price">R$ 54,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.magazineluiza.com.br/busca/creatina+monohidratada+300g/?partner_id=68930&utm_source=divulgador" target="_blank" rel="noopener" class="store-row" data-store="magalu">
+        <div class="store-icon store-magalu">ML</div>
+        <div class="store-info"><div class="store-name">Magazine Luiza</div><div class="store-price">R$ 69,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <div class="savings-bar"><span class="savings-text">💰 Economize até R$ 20 escolhendo a Amazon!</span></div>
+    </div>
+
+    <!-- PRODUTO 5 -->
+    <div class="compare-item" data-cat="moda">
+      <h3>Conjunto Top + Legging Canelado</h3>
+      <span class="category-tag cat-moda">Moda Fitness</span>
+      <a href="https://shopee.com.br/search?keyword=conjunto+top+legging+fitness+canelado&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=comparador" target="_blank" rel="noopener" class="store-row best" data-store="shopee">
+        <div class="store-icon store-shopee">S</div>
+        <div class="store-info"><div class="store-name">Shopee</div><div class="store-price">R$ 54,90</div></div>
+        <span class="best-tag">MENOR</span>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://onelink.shein.com/30/5hbo1g7ykwmc" target="_blank" rel="noopener" class="store-row" data-store="shein">
+        <div class="store-icon store-shein">SH</div>
+        <div class="store-info"><div class="store-name">Shein</div><div class="store-price">R$ 68,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.amazon.com.br/s?k=conjunto+top+legging+fitness+feminino&tag=fitcomestilo-20&linkCode=ll2" target="_blank" rel="noopener" class="store-row" data-store="amazon">
+        <div class="store-icon store-amazon">A</div>
+        <div class="store-info"><div class="store-name">Amazon</div><div class="store-price">R$ 89,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.magazineluiza.com.br/busca/conjunto+fitness+feminino/?partner_id=68930&utm_source=divulgador" target="_blank" rel="noopener" class="store-row" data-store="magalu">
+        <div class="store-icon store-magalu">ML</div>
+        <div class="store-info"><div class="store-name">Magazine Luiza</div><div class="store-price">R$ 99,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <div class="savings-bar"><span class="savings-text">💰 Economize até R$ 45 escolhendo a Shopee!</span></div>
+    </div>
+
+    <!-- PRODUTO 6 -->
+    <div class="compare-item" data-cat="skincare">
+      <h3>Sérum Vitamina C + Ácido Hialurônico</h3>
+      <span class="category-tag cat-skincare">Skincare</span>
+      <a href="https://shopee.com.br/search?keyword=serum+vitamina+c+acido+hialuronico&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=comparador" target="_blank" rel="noopener" class="store-row best" data-store="shopee">
+        <div class="store-icon store-shopee">S</div>
+        <div class="store-info"><div class="store-name">Shopee</div><div class="store-price">R$ 19,90</div></div>
+        <span class="best-tag">MENOR</span>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.amazon.com.br/s?k=serum+vitamina+c+acido+hialuronico&tag=fitcomestilo-20&linkCode=ll2" target="_blank" rel="noopener" class="store-row" data-store="amazon">
+        <div class="store-icon store-amazon">A</div>
+        <div class="store-info"><div class="store-name">Amazon</div><div class="store-price">R$ 34,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.magazineluiza.com.br/busca/serum+vitamina+c+acido+hialuronico/?partner_id=68930&utm_source=divulgador" target="_blank" rel="noopener" class="store-row" data-store="magalu">
+        <div class="store-icon store-magalu">ML</div>
+        <div class="store-info"><div class="store-name">Magazine Luiza</div><div class="store-price">R$ 44,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <div class="savings-bar"><span class="savings-text">💰 Economize até R$ 25 escolhendo a Shopee!</span></div>
+    </div>
+
+    <!-- PRODUTO 7 -->
+    <div class="compare-item" data-cat="acessorio">
+      <h3>Garrafa de Água 2L com Marcador</h3>
+      <span class="category-tag cat-acessorio">Acessório</span>
+      <a href="https://shopee.com.br/search?keyword=garrafa+agua+2l+marcador+tempo&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=comparador" target="_blank" rel="noopener" class="store-row best" data-store="shopee">
+        <div class="store-icon store-shopee">S</div>
+        <div class="store-info"><div class="store-name">Shopee</div><div class="store-price">R$ 18,90</div></div>
+        <span class="best-tag">MENOR</span>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.amazon.com.br/s?k=garrafa+agua+2+litros+marcador&tag=fitcomestilo-20&linkCode=ll2" target="_blank" rel="noopener" class="store-row" data-store="amazon">
+        <div class="store-icon store-amazon">A</div>
+        <div class="store-info"><div class="store-name">Amazon</div><div class="store-price">R$ 29,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.magazineluiza.com.br/busca/garrafa+agua+2+litros+marcador/?partner_id=68930&utm_source=divulgador" target="_blank" rel="noopener" class="store-row" data-store="magalu">
+        <div class="store-icon store-magalu">ML</div>
+        <div class="store-info"><div class="store-name">Magazine Luiza</div><div class="store-price">R$ 39,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <div class="savings-bar"><span class="savings-text">💰 Economize até R$ 21 escolhendo a Shopee!</span></div>
+    </div>
+
+    <!-- PRODUTO 8 -->
+    <div class="compare-item" data-cat="suplemento">
+      <h3>Colágeno Hidrolisado + Vitamina C</h3>
+      <span class="category-tag cat-suplemento">Suplemento</span>
+      <a href="https://www.amazon.com.br/s?k=colageno+hidrolisado+vitamina+c&tag=fitcomestilo-20&linkCode=ll2" target="_blank" rel="noopener" class="store-row best" data-store="amazon">
+        <div class="store-icon store-amazon">A</div>
+        <div class="store-info"><div class="store-name">Amazon</div><div class="store-price">R$ 39,90</div></div>
+        <span class="best-tag">MENOR</span>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://shopee.com.br/search?keyword=colageno+hidrolisado+vitamina+c&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=comparador" target="_blank" rel="noopener" class="store-row" data-store="shopee">
+        <div class="store-icon store-shopee">S</div>
+        <div class="store-info"><div class="store-name">Shopee</div><div class="store-price">R$ 44,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.magazineluiza.com.br/busca/colageno+hidrolisado+vitamina+c/?partner_id=68930&utm_source=divulgador" target="_blank" rel="noopener" class="store-row" data-store="magalu">
+        <div class="store-icon store-magalu">ML</div>
+        <div class="store-info"><div class="store-name">Magazine Luiza</div><div class="store-price">R$ 54,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <div class="savings-bar"><span class="savings-text">💰 Economize até R$ 15 escolhendo a Amazon!</span></div>
+    </div>
+
+    <!-- PRODUTO 9 -->
+    <div class="compare-item" data-cat="acessorio">
+      <h3>Fone Bluetooth Esportivo</h3>
+      <span class="category-tag cat-acessorio">Acessório</span>
+      <a href="https://shopee.com.br/search?keyword=fone+bluetooth+esportivo+prova+agua&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=comparador" target="_blank" rel="noopener" class="store-row best" data-store="shopee">
+        <div class="store-icon store-shopee">S</div>
+        <div class="store-info"><div class="store-name">Shopee</div><div class="store-price">R$ 24,90</div></div>
+        <span class="best-tag">MENOR</span>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.amazon.com.br/s?k=fone+bluetooth+esportivo+prova+agua&tag=fitcomestilo-20&linkCode=ll2" target="_blank" rel="noopener" class="store-row" data-store="amazon">
+        <div class="store-icon store-amazon">A</div>
+        <div class="store-info"><div class="store-name">Amazon</div><div class="store-price">R$ 49,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.magazineluiza.com.br/busca/fone+bluetooth+esportivo/?partner_id=68930&utm_source=divulgador" target="_blank" rel="noopener" class="store-row" data-store="magalu">
+        <div class="store-icon store-magalu">ML</div>
+        <div class="store-info"><div class="store-name">Magazine Luiza</div><div class="store-price">R$ 59,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <div class="savings-bar"><span class="savings-text">💰 Economize até R$ 35 escolhendo a Shopee!</span></div>
+    </div>
+
+    <!-- PRODUTO 10 -->
+    <div class="compare-item" data-cat="skincare">
+      <h3>Protetor Solar Facial FPS 50</h3>
+      <span class="category-tag cat-skincare">Skincare</span>
+      <a href="https://shopee.com.br/search?keyword=protetor+solar+facial+fps+50&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=comparador" target="_blank" rel="noopener" class="store-row best" data-store="shopee">
+        <div class="store-icon store-shopee">S</div>
+        <div class="store-info"><div class="store-name">Shopee</div><div class="store-price">R$ 22,90</div></div>
+        <span class="best-tag">MENOR</span>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.amazon.com.br/s?k=protetor+solar+facial+fps+50&tag=fitcomestilo-20&linkCode=ll2" target="_blank" rel="noopener" class="store-row" data-store="amazon">
+        <div class="store-icon store-amazon">A</div>
+        <div class="store-info"><div class="store-name">Amazon</div><div class="store-price">R$ 39,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <a href="https://www.magazineluiza.com.br/busca/protetor+solar+facial+fps+50/?partner_id=68930&utm_source=divulgador" target="_blank" rel="noopener" class="store-row" data-store="magalu">
+        <div class="store-icon store-magalu">ML</div>
+        <div class="store-info"><div class="store-name">Magazine Luiza</div><div class="store-price">R$ 49,90</div></div>
+        <span class="btn-go">Ver →</span>
+      </a>
+      <div class="savings-bar"><span class="savings-text">💰 Economize até R$ 27 escolhendo a Shopee!</span></div>
+    </div>
+
+  </div><!-- /compare-list -->
+
+  <div class="tip-card">
+    <h4>💡 Dica do Fit com Estilo</h4>
+    <p>Combine cupons de desconto com as ofertas! No app da Shopee, confira os cupons pra cada vendedor. Na Amazon Prime, frete grátis em muitos itens!</p>
+  </div>
+
+  <div class="email-section">
+    <p>📬 Quer receber alertas quando o preço cair?</p>
+    <form id="compare-email-form">
+      <input type="email" placeholder="Seu melhor e-mail" required>
+      <button type="submit">Alertar-me 💜</button>
+    </form>
+  </div>
+
+</div>
+
+<script>
+// Filtro por categoria
+function filterCompare(cat) {
+  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+  event.target.classList.add('active');
+
+  document.querySelectorAll('.compare-item').forEach(function(item) {
+    if (cat === 'todos' || item.getAttribute('data-cat') === cat) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'compare_filter', { 'event_category': 'Comparador', 'event_label': cat });
+  }
+}
+
+// Email capture
+document.getElementById('compare-email-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var email = this.querySelector('input[type=email]').value;
+  localStorage.setItem('subscriber-email', email);
+  this.parentElement.innerHTML = '<p style="color:#10b981; font-weight:700;">✅ Pronto! Você será notificado(a) quando os preços caírem!</p>';
+  if (typeof gtag !== 'undefined') { gtag('event', 'email_signup', { 'event_category': 'Email', 'event_label': 'comparador_alertas' }); }
+});
+
+// Click tracking
+document.addEventListener('click', function(e) {
+  var link = e.target.closest('a.store-row');
+  if (!link) return;
+  var store = link.getAttribute('data-store') || 'unknown';
+  var item = link.closest('.compare-item');
+  var product = item ? item.querySelector('h3').textContent : '';
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'affiliate_click', {
+      'event_category': 'Comparador',
+      'event_label': store + '_' + product,
+      'link_url': link.href
+    });
+  }
+});
+</script>
+</body>
+</html>

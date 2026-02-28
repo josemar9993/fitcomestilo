@@ -94,5 +94,23 @@
       <category>Ofertas do Dia</category>
     </item>
 
+    <item>
+      <title>Quiz: Qual é o Seu Estilo Fitness? — Descubra Agora!</title>
+      <link>https://fitcomestilo.store/quiz/</link>
+      <description>Responda 5 perguntas rápidas e descubra seu perfil fitness: Warrior Fit, Power Queen, Zen Flow ou Glow Fitness. Receba recomendações personalizadas!</description>
+      <pubDate>Fri, 28 Feb 2026 12:00:00 -0300</pubDate>
+      <guid isPermaLink="true">https://fitcomestilo.store/quiz/</guid>
+      <category>Quiz</category>
+    </item>
+
+    <item>
+      <title>Comparador de Preços Fitness — Shopee vs Amazon vs Shein vs Magalu</title>
+      <link>https://fitcomestilo.store/comparar/</link>
+      <description>Compare preços de roupas fitness, suplementos e acessórios entre Shopee, Amazon, Shein e Magalu. Encontre sempre o menor preço!</description>
+      <pubDate>Fri, 28 Feb 2026 11:00:00 -0300</pubDate>
+      <guid isPermaLink="true">https://fitcomestilo.store/comparar/</guid>
+      <category>Ferramentas</category>
+    </item>
+
   </channel>
 </rss>

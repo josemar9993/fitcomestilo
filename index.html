@@ -37,6 +37,15 @@
 
     <!-- Analytics carregados após conteúdo (performance) -->
 
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8TPYHYMY8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-J8TPYHYMY8');
+    </script>
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://fitcomestilo.store/">
     <link rel="alternate" type="application/rss+xml" title="Fit com Estilo — Ofertas" href="https://fitcomestilo.store/feed.xml">
@@ -845,6 +854,32 @@
 <body>
 
     <!-- ============================================
+         BARRA DE CAPTURA DE EMAIL (TOPO)
+         ============================================ -->
+    <div id="email-bar" style="display:none; background:linear-gradient(135deg,#8b5cf6,#ec4899); color:#fff; text-align:center; padding:10px 16px; font-size:13px; position:relative; z-index:9998;">
+        <form id="email-bar-form" style="display:inline-flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:center;">
+            <span style="font-weight:600;">📩 Receba ofertas exclusivas antes de todo mundo!</span>
+            <input type="email" name="EMAIL" placeholder="Seu e-mail" required style="padding:6px 14px; border:none; border-radius:16px; font-size:13px; width:200px; outline:none;">
+            <button type="submit" style="padding:6px 16px; background:#1a1a2e; color:#fff; border:none; border-radius:16px; font-size:13px; font-weight:700; cursor:pointer;">Quero! 💜</button>
+        </form>
+        <button onclick="document.getElementById('email-bar').style.display='none'; localStorage.setItem('bar-closed','1');" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; color:#fff; font-size:18px; cursor:pointer; line-height:1;">✕</button>
+    </div>
+    <script>
+    if (!localStorage.getItem('bar-closed')) {
+        document.getElementById('email-bar').style.display = 'block';
+    }
+    document.getElementById('email-bar-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = this.querySelector('input[type=email]').value;
+        localStorage.setItem('subscriber-email', email);
+        localStorage.setItem('bar-closed', '1');
+        document.getElementById('email-bar').innerHTML = '<div style="padding:10px; font-weight:700;">✅ Pronto! Você receberá as melhores ofertas. 💜</div>';
+        setTimeout(function(){ document.getElementById('email-bar').style.display='none'; }, 3000);
+        if (typeof gtag !== 'undefined') { gtag('event', 'email_signup', { 'event_category': 'Email', 'event_label': 'top_bar' }); }
+    });
+    </script>
+
+    <!-- ============================================
          HEADER / PERFIL
          ============================================ -->
     <header class="header">
@@ -1255,6 +1290,45 @@
                 </div>
             </div>
 
+            <!-- DIVISOR FERRAMENTAS -->
+            <div class="section-divider animate-in delay-12">
+                <span class="section-title">🛠️ Ferramentas Exclusivas</span>
+            </div>
+
+            <!-- ====== QUIZ ====== -->
+            <a href="https://fitcomestilo.store/quiz/" class="hero-card img-left animate-in delay-12" style="border: 2px solid rgba(139,92,246,0.3);">
+                <div class="hero-card-image" style="background: linear-gradient(135deg, #8b5cf6, #ec4899); display:flex; align-items:center; justify-content:center;">
+                    <span style="font-size:64px;">🏋️‍♀️</span>
+                </div>
+                <div class="hero-card-content">
+                    <div class="hero-card-brand">
+                        <span class="hero-card-brand-text">✨ Quiz Exclusivo</span>
+                    </div>
+                    <h2 class="hero-card-title">Qual é o Seu <span>Estilo Fitness?</span></h2>
+                    <div class="coupon-pill">
+                        <span class="icon">🎯</span>
+                        5 PERGUNTAS RÁPIDAS
+                    </div>
+                </div>
+            </a>
+
+            <!-- ====== COMPARADOR ====== -->
+            <a href="https://fitcomestilo.store/comparar/" class="hero-card img-right animate-in delay-12" style="border: 2px solid rgba(16,185,129,0.3);">
+                <div class="hero-card-content">
+                    <div class="hero-card-brand">
+                        <span class="hero-card-brand-text">🔍 Compare Preços</span>
+                    </div>
+                    <h2 class="hero-card-title">Comparador de <span>Preços Fitness</span></h2>
+                    <div class="coupon-pill">
+                        <span class="icon">💰</span>
+                        SHOPEE vs AMAZON vs SHEIN
+                    </div>
+                </div>
+                <div class="hero-card-image" style="background: linear-gradient(135deg, #10b981, #3b82f6); display:flex; align-items:center; justify-content:center;">
+                    <span style="font-size:64px;">🔍</span>
+                </div>
+            </a>
+
             <!-- DIVISOR -->
             <div class="section-divider animate-in delay-12">
                 <span class="section-title">📲 Me acompanhe</span>
@@ -1348,6 +1422,8 @@
         <div class="footer-links">
             <a href="/sobre/">Sobre o Fit com Estilo</a>
             <a href="/p/">Ofertas por Categoria</a>
+            <a href="/quiz/">Quiz: Seu Estilo Fitness</a>
+            <a href="/comparar/">Comparador de Preços</a>
             <a href="/termos/">Termos de Uso</a>
             <a href="/privacidade/">Política de Privacidade</a>
         </div>
@@ -1697,6 +1773,61 @@
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "veeg17eg6l");
+    </script>
+
+    <!-- Tracking de cliques em links de afiliado -->
+    <script>
+    document.querySelectorAll('a[href*="shopee"], a[href*="amazon"], a[href*="shein"], a[href*="magalu"], a[href*="hotmart"], a[href*="magazin"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        var h = this.href;
+        var store = h.indexOf('shopee') > -1 ? 'Shopee' :
+                    h.indexOf('amazon') > -1 ? 'Amazon' :
+                    h.indexOf('shein') > -1 ? 'Shein' :
+                    (h.indexOf('magalu') > -1 || h.indexOf('magazin') > -1) ? 'Magalu' : 'Hotmart';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'affiliate_click', { 'event_category': 'Affiliate', 'event_label': store, 'link_url': h });
+        }
+      });
+    });
+    </script>
+
+    <!-- Pop-up de captura de email (Exit Intent) -->
+    <div id="exit-popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:99999; align-items:center; justify-content:center;">
+      <div style="background:#fff; border-radius:24px; padding:40px; max-width:400px; text-align:center; position:relative; margin:20px auto; margin-top:15vh;">
+        <button onclick="document.getElementById('exit-popup').style.display='none'; localStorage.setItem('popup-closed','1');" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:24px; cursor:pointer; color:#999;">✕</button>
+        <div style="font-size:48px; margin-bottom:16px;">🎁</div>
+        <h2 style="font-size:22px; margin-bottom:8px; color:#1a1a2e;">Espera! Presente pra você</h2>
+        <p style="color:#666; margin-bottom:20px; font-size:14px;">Receba as <b>melhores ofertas fitness</b> direto no seu email antes de todo mundo!</p>
+        <form id="popup-email-form">
+          <input type="email" name="EMAIL" placeholder="Seu melhor e-mail" required style="width:100%; padding:14px; border:2px solid #e0e0e0; border-radius:12px; font-size:16px; margin-bottom:12px; box-sizing:border-box;">
+          <button type="submit" style="width:100%; padding:14px; background:linear-gradient(135deg,#8b5cf6,#ec4899); color:white; border:none; border-radius:12px; font-size:16px; font-weight:700; cursor:pointer;">Quero Receber Ofertas! 💜</button>
+        </form>
+        <p style="font-size:11px; color:#999; margin-top:12px;">Zero spam. Só as melhores ofertas.</p>
+      </div>
+    </div>
+    <script>
+    // Pop-up email — Exit Intent (desktop) + timer (mobile)
+    var popupShown = false;
+    function showPopup() {
+      if (popupShown || localStorage.getItem('popup-closed') || localStorage.getItem('subscriber-email')) return;
+      popupShown = true;
+      document.getElementById('exit-popup').style.display = 'flex';
+    }
+    document.addEventListener('mouseout', function(e) {
+      if (e.clientY < 50) showPopup();
+    });
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      setTimeout(showPopup, 45000);
+    }
+    document.getElementById('popup-email-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = this.querySelector('input[type=email]').value;
+      localStorage.setItem('subscriber-email', email);
+      localStorage.setItem('popup-closed', '1');
+      this.parentElement.innerHTML = '<div style="font-size:48px; margin-bottom:16px;">🎉</div><h2 style="font-size:22px; color:#1a1a2e;">Você está na lista!</h2><p style="color:#666; margin-top:12px;">As melhores ofertas chegarão no seu email.</p>';
+      setTimeout(function(){ document.getElementById('exit-popup').style.display='none'; }, 3000);
+      if (typeof gtag !== 'undefined') { gtag('event', 'email_signup', { 'event_category': 'Email', 'event_label': 'exit_popup' }); }
+    });
     </script>
 
     <!-- Service Worker — PWA instalável -->

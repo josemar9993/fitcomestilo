@@ -38,6 +38,15 @@
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#7c3aed">
 
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8TPYHYMY8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J8TPYHYMY8');
+  </script>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -2733,6 +2742,39 @@
         searchTerm = searchInput.value.toLowerCase().trim();
         applyFilters();
       }, 200);
+    });
+
+    // ── Correção de links de afiliado Shopee ──
+    // Adiciona parâmetros de afiliado em todos os links de produto Shopee
+    document.querySelectorAll('a[href*="shopee.com.br/product"]').forEach(function(link) {
+      try {
+        var url = new URL(link.href);
+        if (!url.searchParams.has('mmp_pid')) {
+          url.searchParams.set('mmp_pid', 'an_18356120947');
+          url.searchParams.set('utm_source', 'an_18356120947');
+          url.searchParams.set('utm_medium', 'affiliates');
+          url.searchParams.set('utm_content', 'FitComEstilo-Achadinhos');
+          url.searchParams.set('af_click_lookback', '7d');
+          link.href = url.toString();
+        }
+      } catch(e) {}
+    });
+
+    // ── Tracking de cliques em links de afiliado ──
+    document.querySelectorAll('a[href*="shopee"], a[href*="amazon"], a[href*="shein"], a[href*="magalu"], a[href*="hotmart"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        var store = this.href.indexOf('shopee') > -1 ? 'Shopee' :
+                    this.href.indexOf('amazon') > -1 ? 'Amazon' :
+                    this.href.indexOf('shein') > -1 ? 'Shein' :
+                    this.href.indexOf('magalu') > -1 ? 'Magalu' : 'Hotmart';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'affiliate_click', {
+            'event_category': 'Affiliate',
+            'event_label': store,
+            'link_url': this.href
+          });
+        }
+      });
     });
   </script>
 

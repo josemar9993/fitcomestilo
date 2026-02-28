@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz: Qual é o Seu Estilo Fitness? | Fit com Estilo</title>
+  <meta name="description" content="Descubra qual é o seu estilo fitness com nosso quiz exclusivo! Receba recomendações personalizadas de looks, suplementos e acessórios para o seu perfil.">
+  <meta name="keywords" content="quiz fitness, estilo fitness, qual meu estilo, moda fitness, fit com estilo quiz">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fitcomestilo.store/quiz/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="🏋️‍♀️ Quiz: Qual é o Seu Estilo Fitness?">
+  <meta property="og:description" content="Descubra seu perfil fitness e receba recomendações personalizadas de produtos, looks e suplementos!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fitcomestilo.store/quiz/">
+  <meta property="og:image" content="https://fitcomestilo.store/logo.webp">
+  <meta property="og:site_name" content="Fit com Estilo">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Quiz: Qual é o Seu Estilo Fitness? — Fit com Estilo">
+  <meta name="twitter:description" content="Descubra seu perfil fitness e receba recomendações personalizadas!">
+  <meta name="twitter:image" content="https://fitcomestilo.store/logo.webp">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Quiz: Qual é o Seu Estilo Fitness?","description":"Descubra qual é o seu estilo fitness com nosso quiz exclusivo! Receba recomendações personalizadas.","url":"https://fitcomestilo.store/quiz/","publisher":{"@type":"Organization","name":"Fit com Estilo","url":"https://fitcomestilo.store","logo":{"@type":"ImageObject","url":"https://fitcomestilo.store/logo.webp"}},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Fit com Estilo","item":"https://fitcomestilo.store/"},{"@type":"ListItem","position":2,"name":"Quiz","item":"https://fitcomestilo.store/quiz/"}]}}</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#7c3aed">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8TPYHYMY8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J8TPYHYMY8');
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+      min-height: 100vh;
+      color: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .quiz-container {
+      max-width: 500px;
+      width: 100%;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 20px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #a78bfa;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+    .back-link:hover { background: rgba(139,92,246,0.2); }
+
+    .quiz-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 36px 28px;
+      backdrop-filter: blur(12px);
+    }
+    .quiz-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .quiz-header .emoji { font-size: 48px; margin-bottom: 12px; }
+    .quiz-header h1 {
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #a78bfa, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .quiz-header p { color: #999; font-size: 0.9rem; }
+
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 3px;
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #8b5cf6, #ec4899);
+      border-radius: 3px;
+      transition: width 0.5s ease;
+      width: 0%;
+    }
+    .step-counter {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+    .question.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    .question h2 {
+      font-size: 1.15rem;
+      color: #fff;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .option {
+      background: rgba(255,255,255,0.06);
+      border: 2px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 14px 18px;
+      cursor: pointer;
+      transition: all 0.25s;
+      font-size: 0.95rem;
+      color: #ddd;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .option:hover {
+      background: rgba(139,92,246,0.15);
+      border-color: #8b5cf6;
+      transform: translateY(-2px);
+    }
+    .option.selected {
+      background: rgba(139,92,246,0.25);
+      border-color: #8b5cf6;
+      color: #fff;
+    }
+    .option .opt-emoji { font-size: 1.3rem; }
+
+    /* Resultado */
+    #result {
+      display: none;
+      animation: fadeIn 0.6s ease;
+    }
+    #result.active { display: block; }
+    .result-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .result-header .profile-emoji { font-size: 56px; margin-bottom: 12px; }
+    .result-header h2 {
+      font-size: 1.4rem;
+      background: linear-gradient(135deg, #a78bfa, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .result-header p { color: #aaa; font-size: 0.9rem; line-height: 1.5; }
+
+    .reco-title {
+      font-size: 0.85rem;
+      color: #a78bfa;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 24px 0 12px;
+    }
+    .product-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .product-card .prod-info { flex: 1; }
+    .product-card .prod-name { font-size: 0.9rem; color: #fff; font-weight: 600; margin-bottom: 4px; }
+    .product-card .prod-price { font-size: 0.85rem; color: #10b981; font-weight: 700; }
+    .product-card .prod-store { font-size: 0.75rem; color: #999; }
+    .product-card .btn-ver {
+      padding: 8px 16px;
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.2s;
+    }
+    .product-card .btn-ver:hover { transform: scale(1.05); }
+
+    .email-capture-result {
+      background: rgba(139,92,246,0.15);
+      border: 1px solid rgba(139,92,246,0.3);
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .email-capture-result p { font-size: 0.85rem; color: #ccc; margin-bottom: 12px; }
+    .email-capture-result form { display: flex; gap: 8px; }
+    .email-capture-result input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      background: rgba(0,0,0,0.3);
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+    }
+    .email-capture-result button {
+      padding: 10px 18px;
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .share-btns {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .share-btns a {
+      padding: 8px 14px;
+      border-radius: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+    .share-btns a:hover { transform: scale(1.05); }
+    .share-btns .wpp { background: #25d366; }
+    .share-btns .ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .share-btns .tg { background: #0088cc; }
+
+    .restart-btn {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 24px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      color: #ccc;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .restart-btn:hover { background: rgba(255,255,255,0.15); color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <a href="https://fitcomestilo.store/" class="back-link">← Voltar ao Fit com Estilo</a>
+
+    <div class="quiz-card">
+      <!-- HEADER -->
+      <div class="quiz-header" id="quiz-header">
+        <div class="emoji">🏋️‍♀️</div>
+        <h1>Qual é o Seu Estilo Fitness?</h1>
+        <p>Responda 5 perguntas rápidas e descubra seu perfil + recomendações personalizadas!</p>
+      </div>
+
+      <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+      <div class="step-counter" id="step-counter">Pergunta 1 de 5</div>
+
+      <!-- PERGUNTA 1 -->
+      <div class="question active" data-q="1">
+        <h2>Qual é o seu objetivo principal?</h2>
+        <div class="options">
+          <div class="option" data-val="warrior" onclick="selectOption(this)">
+            <span class="opt-emoji">🔥</span> Emagrecer e definir o corpo
+          </div>
+          <div class="option" data-val="power" onclick="selectOption(this)">
+            <span class="opt-emoji">💪</span> Ganhar massa e ficar mais forte
+          </div>
+          <div class="option" data-val="zen" onclick="selectOption(this)">
+            <span class="opt-emoji">🧘</span> Flexibilidade e bem-estar mental
+          </div>
+          <div class="option" data-val="glow" onclick="selectOption(this)">
+            <span class="opt-emoji">✨</span> Me sentir bem e bonita no dia a dia
+          </div>
+        </div>
+      </div>
+
+      <!-- PERGUNTA 2 -->
+      <div class="question" data-q="2">
+        <h2>Qual estilo de roupa te representa mais?</h2>
+        <div class="options">
+          <div class="option" data-val="warrior" onclick="selectOption(this)">
+            <span class="opt-emoji">🖤</span> All Black — Elegante e poderosa
+          </div>
+          <div class="option" data-val="power" onclick="selectOption(this)">
+            <span class="opt-emoji">🎨</span> Colorido e chamativo
+          </div>
+          <div class="option" data-val="zen" onclick="selectOption(this)">
+            <span class="opt-emoji">🤍</span> Neutro e minimalista
+          </div>
+          <div class="option" data-val="glow" onclick="selectOption(this)">
+            <span class="opt-emoji">💖</span> Estampado e divertido
+          </div>
+        </div>
+      </div>
+
+      <!-- PERGUNTA 3 -->
+      <div class="question" data-q="3">
+        <h2>Quanto você costuma investir em looks fitness?</h2>
+        <div class="options">
+          <div class="option" data-val="zen" onclick="selectOption(this)">
+            <span class="opt-emoji">💰</span> Até R$ 50 — Achadinhos!
+          </div>
+          <div class="option" data-val="warrior" onclick="selectOption(this)">
+            <span class="opt-emoji">💎</span> R$ 50 a R$ 100 — Custo-benefício
+          </div>
+          <div class="option" data-val="power" onclick="selectOption(this)">
+            <span class="opt-emoji">👑</span> Acima de R$ 100 — Qualidade máxima
+          </div>
+          <div class="option" data-val="glow" onclick="selectOption(this)">
+            <span class="opt-emoji">🤷</span> Depende da oferta!
+          </div>
+        </div>
+      </div>
+
+      <!-- PERGUNTA 4 -->
+      <div class="question" data-q="4">
+        <h2>O que não pode faltar no seu treino?</h2>
+        <div class="options">
+          <div class="option" data-val="warrior" onclick="selectOption(this)">
+            <span class="opt-emoji">🎧</span> Fone bluetooth – sem música não treino!
+          </div>
+          <div class="option" data-val="power" onclick="selectOption(this)">
+            <span class="opt-emoji">🥤</span> Minha coqueteleira de whey
+          </div>
+          <div class="option" data-val="zen" onclick="selectOption(this)">
+            <span class="opt-emoji">💧</span> Garrafa de água bonita
+          </div>
+          <div class="option" data-val="glow" onclick="selectOption(this)">
+            <span class="opt-emoji">📱</span> Celular pra tirar foto do look!
+          </div>
+        </div>
+      </div>
+
+      <!-- PERGUNTA 5 -->
+      <div class="question" data-q="5">
+        <h2>Com que frequência você treina?</h2>
+        <div class="options">
+          <div class="option" data-val="glow" onclick="selectOption(this)">
+            <span class="opt-emoji">🌱</span> Estou começando agora
+          </div>
+          <div class="option" data-val="zen" onclick="selectOption(this)">
+            <span class="opt-emoji">⚡</span> 2 a 3 vezes por semana
+          </div>
+          <div class="option" data-val="warrior" onclick="selectOption(this)">
+            <span class="opt-emoji">🔥</span> 4 a 5 vezes por semana
+          </div>
+          <div class="option" data-val="power" onclick="selectOption(this)">
+            <span class="opt-emoji">🏆</span> Todo dia — treino é vida!
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTADO -->
+      <div id="result">
+        <div class="result-header">
+          <div class="profile-emoji" id="result-emoji"></div>
+          <h2 id="result-title"></h2>
+          <p id="result-desc"></p>
+        </div>
+
+        <div class="reco-title">✨ Produtos recomendados pra você</div>
+        <div id="result-products"></div>
+
+        <div class="email-capture-result">
+          <p>📬 Quer receber ofertas personalizadas pro seu perfil?</p>
+          <form id="quiz-email-form">
+            <input type="email" placeholder="Seu e-mail" required>
+            <button type="submit">Enviar 💜</button>
+          </form>
+        </div>
+
+        <div class="share-btns">
+          <a href="#" id="share-wpp" class="wpp" target="_blank">WhatsApp</a>
+          <a href="https://www.instagram.com/fit_com_estilo/" class="ig" target="_blank">Instagram</a>
+          <a href="https://t.me/fitcomestilo_ofertas" class="tg" target="_blank">Telegram</a>
+        </div>
+
+        <button class="restart-btn" onclick="restartQuiz()">🔄 Refazer Quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  var answers = {};
+  var currentQ = 1;
+  var totalQ = 5;
+
+  var profiles = {
+    warrior: {
+      emoji: '🔥',
+      title: 'Warrior Fit',
+      desc: 'Você é intensa, disciplinada e não pula treino nem no feriado! Seu estilo é all black com peças que acompanham seu ritmo pesado. Precisa de roupas que performam de verdade.',
+      products: [
+        { name: 'Legging Poliamida Cós Alto', price: 'R$ 60,03', store: 'Shopee', url: 'https://shopee.com.br/search?keyword=legging+poliamida+cos+alto&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Quiz' },
+        { name: 'Macaquinho Fitness Blackout', price: 'R$ 55,90', store: 'Shopee', url: 'https://shopee.com.br/search?keyword=macaquinho+fitness+blackout&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Quiz' },
+        { name: 'Whey Protein Isolado', price: 'A partir de R$ 89', store: 'Amazon', url: 'https://www.amazon.com.br/s?k=whey+protein+isolado&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl' },
+        { name: 'Creatina Monohidratada', price: 'A partir de R$ 49', store: 'Amazon', url: 'https://www.amazon.com.br/s?k=creatina+monohidratada&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl' }
+      ]
+    },
+    power: {
+      emoji: '💪',
+      title: 'Power Queen',
+      desc: 'Você é a rainha da academia! Treina pesado, come certinho e malha camiseta. Precisa de roupa que aguenta impacto e suplementos que acompanham sua evolução.',
+      products: [
+        { name: 'Conjunto Top + Legging Canelado', price: 'R$ 89,90', store: 'Shopee', url: 'https://shopee.com.br/search?keyword=conjunto+top+legging+canelado&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Quiz' },
+        { name: 'Kit Legging + Top Shein', price: 'R$ 49,90', store: 'Shein', url: 'https://onelink.shein.com/30/5hbo1g7ykwmc' },
+        { name: 'Whey + Creatina Kit', price: 'A partir de R$ 129', store: 'Amazon', url: 'https://www.amazon.com.br/s?k=whey+creatina+kit&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl' },
+        { name: 'Curso Receitas Fit', price: 'Acesso imediato', store: 'Hotmart', url: 'https://go.hotmart.com/C104342832B' }
+      ]
+    },
+    zen: {
+      emoji: '🧘',
+      title: 'Zen Flow',
+      desc: 'Yoga, pilates e corrida leve são sua praia. Você valoriza conforto, bem-estar e peças que fluem com o corpo. Minimalismo é a sua vibe!',
+      products: [
+        { name: 'Legging Canelada Sem Costura', price: 'R$ 32,99', store: 'Shopee', url: 'https://shopee.com.br/search?keyword=legging+canelada+sem+costura&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Quiz' },
+        { name: 'Top Cropped Costas Cruzadas', price: 'R$ 32,90', store: 'Shein', url: 'https://onelink.shein.com/30/5hbo63xl4v7t' },
+        { name: 'Colágeno Hidrolisado', price: 'A partir de R$ 39', store: 'Amazon', url: 'https://www.amazon.com.br/s?k=colageno+hidrolisado&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl' },
+        { name: 'O Poder do Hábito (eBook)', price: 'R$ 12,90', store: 'Amazon', url: 'https://www.amazon.com.br/dp/B00A3D10JE?tag=fitcomestilo-20&linkCode=ll1&ref_=as_li_ss_tl' }
+      ]
+    },
+    glow: {
+      emoji: '✨',
+      title: 'Glow Fitness',
+      desc: 'Você treina, mas também ama skincare, maquiagem e um look que arrasa nas fotos! Acredita que se sentir bonita é parte do treino. Estilo é tudo!',
+      products: [
+        { name: 'Sérum Vitamina C', price: 'A partir de R$ 19', store: 'Shopee', url: 'https://shopee.com.br/search?keyword=serum+vitamina+c+skincare&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Quiz' },
+        { name: 'Conjunto Fitness Colorido', price: 'R$ 37,92', store: 'Shopee', url: 'https://shopee.com.br/search?keyword=conjunto+fitness+colorido+feminino&mmp_pid=an_18356120947&utm_source=an_18356120947&utm_medium=affiliates&utm_content=FitComEstilo-Quiz' },
+        { name: 'Curso AutoMaquiagem', price: 'Acesso imediato', store: 'Hotmart', url: 'https://go.hotmart.com/M104342954A' },
+        { name: 'Curso Dança Fit', price: '74 aulas', store: 'Hotmart', url: 'https://go.hotmart.com/B104342919Q' }
+      ]
+    }
+  };
+
+  function selectOption(el) {
+    var parent = el.closest('.question');
+    parent.querySelectorAll('.option').forEach(function(o) { o.classList.remove('selected'); });
+    el.classList.add('selected');
+
+    var val = el.getAttribute('data-val');
+    answers[currentQ] = val;
+
+    setTimeout(function() {
+      if (currentQ < totalQ) {
+        parent.classList.remove('active');
+        currentQ++;
+        document.querySelector('.question[data-q="' + currentQ + '"]').classList.add('active');
+        document.getElementById('progress').style.width = ((currentQ - 1) / totalQ * 100) + '%';
+        document.getElementById('step-counter').textContent = 'Pergunta ' + currentQ + ' de ' + totalQ;
+      } else {
+        showResult();
+      }
+    }, 400);
+  }
+
+  function showResult() {
+    // Calcular perfil dominante
+    var counts = { warrior: 0, power: 0, zen: 0, glow: 0 };
+    for (var k in answers) { counts[answers[k]]++; }
+    var maxKey = 'warrior';
+    var maxVal = 0;
+    for (var key in counts) {
+      if (counts[key] > maxVal) { maxVal = counts[key]; maxKey = key; }
+    }
+
+    var profile = profiles[maxKey];
+
+    // Esconder quiz, mostrar resultado
+    document.querySelectorAll('.question').forEach(function(q) { q.classList.remove('active'); });
+    document.getElementById('quiz-header').style.display = 'none';
+    document.querySelector('.progress-bar').style.display = 'none';
+    document.getElementById('step-counter').style.display = 'none';
+    document.getElementById('progress').style.width = '100%';
+
+    document.getElementById('result-emoji').textContent = profile.emoji;
+    document.getElementById('result-title').textContent = profile.title;
+    document.getElementById('result-desc').textContent = profile.desc;
+
+    // Produtos
+    var prodHTML = '';
+    profile.products.forEach(function(p) {
+      prodHTML += '<div class="product-card">' +
+        '<div class="prod-info">' +
+          '<div class="prod-name">' + p.name + '</div>' +
+          '<div class="prod-price">' + p.price + '</div>' +
+          '<div class="prod-store">📍 ' + p.store + '</div>' +
+        '</div>' +
+        '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn-ver">Ver Oferta →</a>' +
+      '</div>';
+    });
+    document.getElementById('result-products').innerHTML = prodHTML;
+
+    // WhatsApp share URL
+    var shareText = encodeURIComponent('Eu sou ' + profile.title + ' ' + profile.emoji + '! Fiz o quiz do Fit com Estilo e descobri meu estilo fitness. Faz o seu: https://fitcomestilo.store/quiz/');
+    document.getElementById('share-wpp').href = 'https://wa.me/?text=' + shareText;
+
+    document.getElementById('result').classList.add('active');
+
+    // Analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'quiz_completed', { 'event_category': 'Quiz', 'event_label': maxKey });
+    }
+  }
+
+  function restartQuiz() {
+    answers = {};
+    currentQ = 1;
+    document.getElementById('result').classList.remove('active');
+    document.getElementById('quiz-header').style.display = '';
+    document.querySelector('.progress-bar').style.display = '';
+    document.getElementById('step-counter').style.display = '';
+    document.getElementById('progress').style.width = '0%';
+    document.getElementById('step-counter').textContent = 'Pergunta 1 de 5';
+    document.querySelectorAll('.question').forEach(function(q) { q.classList.remove('active'); });
+    document.querySelectorAll('.option').forEach(function(o) { o.classList.remove('selected'); });
+    document.querySelector('.question[data-q="1"]').classList.add('active');
+  }
+
+  // Email capture
+  document.getElementById('quiz-email-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = this.querySelector('input[type=email]').value;
+    localStorage.setItem('subscriber-email', email);
+    this.parentElement.innerHTML = '<p style="color:#10b981; font-weight:700;">✅ Pronto! Você receberá ofertas personalizadas pro seu perfil!</p>';
+    if (typeof gtag !== 'undefined') { gtag('event', 'email_signup', { 'event_category': 'Email', 'event_label': 'quiz_result' }); }
+  });
+
+  // Tracking de cliques em links de afiliado
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href*="shopee"], a[href*="amazon"], a[href*="shein"], a[href*="magalu"], a[href*="hotmart"]');
+    if (!link) return;
+    var h = link.href;
+    var store = h.indexOf('shopee') > -1 ? 'Shopee' :
+                h.indexOf('amazon') > -1 ? 'Amazon' :
+                h.indexOf('shein') > -1 ? 'Shein' :
+                h.indexOf('magalu') > -1 ? 'Magalu' : 'Hotmart';
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'affiliate_click', { 'event_category': 'Affiliate', 'event_label': store + '_quiz', 'link_url': h });
+    }
+  });
+  </script>
+</body>
+</html>
