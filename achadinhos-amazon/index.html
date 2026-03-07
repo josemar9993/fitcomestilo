@@ -93,6 +93,16 @@
       background: linear-gradient(135deg, #fff8f0, #fff3e0);
       min-height: 90px; display: flex; align-items: center; justify-content: center;
     }
+    .card-media {
+      width: 100%; aspect-ratio: 1; overflow: hidden;
+      background: linear-gradient(135deg, #fff8f0, #fff3e0);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .card-media img {
+      width: 100%; height: 100%; object-fit: contain; padding: 8px;
+      transition: transform 0.25s;
+    }
+    .card:hover .card-media img { transform: scale(1.06); }
     .card .info { padding: 10px 12px 6px; flex: 1; }
     .card .nome {
       font-size: 0.8rem; line-height: 1.35; color: #333; font-weight: 600;
@@ -138,7 +148,7 @@
       <span class="amazon-logo">amazon</span>
       <h1>Achadinhos da Amazon</h1>
       <p class="subtitle">Curadoria de moda fitness, suplementos e beleza 💪</p>
-      <p class="header-update">90 produtos selecionados · Atualizado em 06/03/2026 às 21:41</p>
+      <p class="header-update">90 produtos selecionados · Atualizado em 06/03/2026 às 22:00</p>
     </header>
 
     <nav class="filters">
@@ -158,7 +168,9 @@
       <div class="grid">
         <a href="https://www.amazon.com.br/s?k=legging+fitness+feminina+suplex&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">TOP VENDA</span>
-          <div class="card-icon">👖</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/calca-legging-fitness-feminino-academia-suplex-donna-martins/donnamartins/15971229789/610c1e70782b5a284416f765a63b223b.jpeg" alt="Legging Fitness Feminina Suplex" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👖</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Legging Fitness Feminina Suplex</p>
             <p class="preco">a partir de R$ 49</p>
@@ -167,7 +179,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=conjunto+academia+2+pecas+feminino&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">TOP VENDA</span>
-          <div class="card-icon">👗</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-2-conjuntos-fitness-academia-feminino-top-e-short-4-pecas-wm/jgmallon/15971463186/88461c41f1f8977338c0caf8fe337bdf.jpeg" alt="Conjunto Academia 2 Peças Feminino" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👗</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Conjunto Academia 2 Peças Feminino</p>
             <p class="preco">a partir de R$ 79</p>
@@ -176,7 +190,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=top+cropped+academia+feminino+bojo&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">👙</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/top-fitness-protecao-uv-50-alca-nadador-elite/sportseasy/971-16629/4c898822520135564dbf9841da66f767.jpeg" alt="Top Cropped Academia com Bojo" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👙</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Top Cropped Academia com Bojo</p>
             <p class="preco">a partir de R$ 39</p>
@@ -185,7 +201,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=short+fitness+feminino+cintura+alta&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🩳</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-3-short-fitness-feminino-meia-coxa-cintura-alta-zero-transparencia-academia-basico-pink-urban/lovepinklingerie/kit3-ster-s04-cf-pr-vd-p/3ed9683d24cf485bce450d91d75c1b77.jpeg" alt="Short Fitness Feminino Cintura Alta" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🩳</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Short Fitness Feminino Cintura Alta</p>
             <p class="preco">a partir de R$ 39</p>
@@ -194,7 +212,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=regata+fitness+dry+fit+feminina&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">👕</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/regata-feminina-academia-fitness-dry-fit-basica-original-caminhada-corrida-pilates-musculacao/labelafitnesscasual/nad-gg-cor-variada8/4356dd4e9eaa3dabd3b50f0fbadd40c5.jpeg" alt="Regata Dry-Fit Feminina" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👕</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Regata Dry-Fit Feminina</p>
             <p class="preco">a partir de R$ 29</p>
@@ -203,7 +223,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=calca+flare+fitness+feminina&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">TENDÊNCIA</span>
-          <div class="card-icon">👖</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-2-calca-legging-flare-peluciada-wls-modas-boca-de-sino-bailarina-cintura-alto-moda-fitness/wlsmodas/vk-ft057-kit2-sortido-m/987a0d9f08553275748d912816cb1646.jpeg" alt="Calça Flare Fitness Feminina" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👖</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Calça Flare Fitness Feminina</p>
             <p class="preco">a partir de R$ 79</p>
@@ -212,7 +234,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=tenis+corrida+feminino&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">👟</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/tenis-de-corrida-feminino-mizuno-goya/mizunobr/34323/1047c06b030f7a9da7bd49b2474435bd.jpeg" alt="Tênis de Corrida Feminino" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👟</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Tênis de Corrida Feminino</p>
             <p class="preco">a partir de R$ 129</p>
@@ -221,7 +245,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=meia+cano+alto+academia+feminina&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🧦</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/meias-sortidas-kit-com-12-pares-cano-longo-fashion-meias/armarinhodimstore/12sortidas/dd50f7de47738f58d7b8054c0e6873d8.jpeg" alt="Meia Cano Alto Academia Feminina" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🧦</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Meia Cano Alto Academia Feminina</p>
             <p class="preco">a partir de R$ 19</p>
@@ -230,7 +256,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=cinta+modeladora+feminina&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🩱</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/cinta-short-modeladora-redutor-loba-lupo-up-line-feminino-levanta-bumbum/lunnamix/lp5690k1ndp/2cbdca1300518b1e8d679f5f695a67cf.jpeg" alt="Cinta Modeladora Feminina" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🩱</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Cinta Modeladora Feminina</p>
             <p class="preco">a partir de R$ 49</p>
@@ -239,7 +267,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=faixa+cabeca+fitness+academia&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🎀</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/faixa-de-cabeca-75cm-compressport/maisdecora/45042/c31f17c194c51e534b6a0f712c71ca89.jpeg" alt="Faixa de Cabeça Fitness" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🎀</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Faixa de Cabeça Fitness</p>
             <p class="preco">a partir de R$ 19</p>
@@ -248,7 +278,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=luva+academia+feminina&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🥊</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/luva-de-academia-masculina-e-feminina-par-protecao-treino-fitness-ajustavel-para-exercicios-esporte-mb-fit/redplace/p1816/c4af1945d9eb72dcf02e0a63877f8e6d.jpeg" alt="Luva de Academia Feminina" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🥊</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Luva de Academia Feminina</p>
             <p class="preco">a partir de R$ 29</p>
@@ -257,7 +289,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=legging+live+fitness+feminina&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">LIVE!</span>
-          <div class="card-icon">👖</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/legging-fitness-feminina-poliamida-textura-recortes-cintura-alta-orbis-fitness/orbisfitness/3821vinho0x03030x0gg/66844c9b3dcdbf0d5511d36751821dd6.jpeg" alt="Legging Fitness Live! Feminina" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👖</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Legging Fitness Live! Feminina</p>
             <p class="preco">a partir de R$ 89</p>
@@ -266,7 +300,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=conjunto+supplex+academia+feminino&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">👗</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/cj-de-mesa-6-cadeiras-tubo-chocolate-tampo-mdp-160x090-aco-nobre-moveis/lojawebcontinentalmarketplace/mkp001937000343/c7d1cdde255bed2541a67684468d3559.jpeg" alt="Conjunto Supplex Academia Feminino" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👗</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Conjunto Supplex Academia Feminino</p>
             <p class="preco">a partir de R$ 99</p>
@@ -275,7 +311,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=shorts+ciclista+compressao+feminino&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🩲</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/short-bermuda-ciclista-corrida-fitnes-fanaticos-por-cintas/matheusvariedades/16001471669/31443b6ce045ea438b5f082e13849fed.jpeg" alt="Shorts Ciclista Compressão" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🩲</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Shorts Ciclista Compressão</p>
             <p class="preco">a partir de R$ 49</p>
@@ -284,7 +322,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=blusa+uv50+protecao+solar+feminina&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">UV+50</span>
-          <div class="card-icon">👚</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/blusa-infantil-protecao-solar-uv-50-masculina-feminina-bebe-conjunto-praia-c-bone-hype-kids/hypekids2/955-2515/c1dfcb2b67a34056ace3a4d019b54fb3.jpeg" alt="Blusa UV 50+ de Proteção Solar" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👚</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Blusa UV 50+ de Proteção Solar</p>
             <p class="preco">a partir de R$ 59</p>
@@ -293,7 +333,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=bolsa+mochila+academia+feminina&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">👜</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-bolsa-lancheira-feminina-transversal-termica-e-mochila-presente-luxo-viagem-passeios-comidas-quentes-frias-academia-meimi-amores/franshopmix8/15987695907/c87a7c63488a5c7a2f7d0903fc250ae7.jpeg" alt="Bolsa Mochila Academia Feminina" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👜</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Bolsa Mochila Academia Feminina</p>
             <p class="preco">a partir de R$ 49</p>
@@ -302,7 +344,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=garrafa+agua+academia+1+litro&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">💧</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/garrafa-termica-aco-inox-portatil-17-litros-cafe-suco-agua-academia-passeio-caminhada-bebidas-quentes-geladas-modus/lincomercial/xb614z-c1/6cc3f78bf0f0046547c3e711bc7b10d8.jpeg" alt="Garrafa de Água Academia 1L" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💧</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Garrafa de Água Academia 1L</p>
             <p class="preco">a partir de R$ 29</p>
@@ -311,7 +355,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=oculos+esportivo+corrida+feminino&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🕶️</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/oculos-de-sol-esportivo-feminino-espelhado-para-ciclismo-corrida-com-protecao-400uv-omg/lojaomega/ocf19/29f7b644faef961bf44bd49c0079d14a.jpeg" alt="Óculos Esportivo para Corrida" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🕶️</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Óculos Esportivo para Corrida</p>
             <p class="preco">a partir de R$ 39</p>
@@ -320,7 +366,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=camiseta+fitness+estampada+feminina&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">👕</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/camiseta-streetwear-oversized-feminina-ombro-caido-life-style-sport-academia-fitness-estampada-des/lojadk2/2073192/70e49db3dd77db64bf3948a8ad8a72a6.jpeg" alt="Camiseta Fitness Estampada Feminina" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👕</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Camiseta Fitness Estampada Feminina</p>
             <p class="preco">a partir de R$ 35</p>
@@ -329,7 +377,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=bermuda+fitness+tactel+feminina&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🩳</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/shorts-unissex-fitness-hupi/patimodafitness/0e2cf8a8f23911ecaeaa4201ac185078/5f6c5f80acf4ef61397a4140df6c761f.jpeg" alt="Bermuda Fitness Tactel Feminina" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🩳</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Bermuda Fitness Tactel Feminina</p>
             <p class="preco">a partir de R$ 45</p>
@@ -338,7 +388,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=top+nadador+academia+feminino&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">👙</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-2-top-puma-original-feminino-academia-fitness-nadador-sem-costura-s-bojo-otima-sustentacao-confortavel-27070/lojatotalmobile/27070001eg550k2/2b0b9bb7e22e51f46b5db606cb5d4e1d.jpeg" alt="Top Nadador Academia" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👙</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Top Nadador Academia</p>
             <p class="preco">a partir de R$ 49</p>
@@ -347,7 +399,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=calca+legging+xadrez+academia&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">ESTILO</span>
-          <div class="card-icon">👖</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/leggings-femininas-qivicima-de-cintura-alta-xadrez-vermelhas-pretas-xxl/nocnocasiacbt/buybox-cpb0ck1pwrxd/eedd8c2d0d930c5d79b05ff7d8f559b2.jpeg" alt="Calça Legging Xadrez Academia" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👖</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Calça Legging Xadrez Academia</p>
             <p class="preco">a partir de R$ 59</p>
@@ -356,7 +410,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=pulseira+treino+borracha+academia&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">⌚</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/capa-de-resina-fosca-com-pulseira-de-borracha-para-acessorios-de-relogio-casio-g-shock-dw-5600/aliexpress/209085893/6ee02eee86a71925ab1db23a07167e16.jpeg" alt="Pulseira de Treino de Borracha" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>⌚</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Pulseira de Treino de Borracha</p>
             <p class="preco">a partir de R$ 15</p>
@@ -365,7 +421,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=kit+conjunto+academia+feminino+completo&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">KIT</span>
-          <div class="card-icon">👗</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-2-conjuntos-shorts-e-top-academia-levanta-bumbum-luega-moda-intima/luegamd/kit2-cj-topsh-gg/baf42f917827e00ab267adf78d2bf257.jpeg" alt="Kit Conjunto Academia Completo" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👗</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Kit Conjunto Academia Completo</p>
             <p class="preco">a partir de R$ 119</p>
@@ -374,7 +432,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=shorts+running+feminino+leve&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🩳</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/short-feminino-esportivo-running-com-bolso-fitmoda/fitmoda/3-3-2621-4001-gg/dfe96bd4a63323409a007f6b52453832.jpeg" alt="Shorts Running Feminino Leve" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🩳</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Shorts Running Feminino Leve</p>
             <p class="preco">a partir de R$ 49</p>
@@ -383,7 +443,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=legging+fitness+estampada+animal+print&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">PRINT</span>
-          <div class="card-icon">👖</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/calca-legging-max-lupo-sport-ref-71053/grymel/509-17503/28bb4034cc3a23321147b9ac483d4cf5.jpeg" alt="Legging Fitness Estampada Animal Print" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👖</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Legging Fitness Estampada Animal Print</p>
             <p class="preco">a partir de R$ 59</p>
@@ -392,7 +454,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=camiseta+dry+fit+feminina+manga+curta&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">👕</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-2-camisetas-dry-fit-feminina-manga-curta-trendixx-ptrotecao-uv-secagem-rapida-e-conforto/trendixx/trd-dfmc-kit2-010-g/50e1710f6f6dc457d64fb7ea72bc9886.jpeg" alt="Camiseta Dry-Fit Feminina Manga Curta" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👕</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Camiseta Dry-Fit Feminina Manga Curta</p>
             <p class="preco">a partir de R$ 29</p>
@@ -401,7 +465,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=tenis+caminhada+feminino+confortavel&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">👟</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/tenis-feminino-caminhada-academia-esportivo-confortavel-relogio-yes-basic/lojayesbasic/kit-001yes-grafite-relog-led-35/76bc30788801126471fb92aad081ca6c.jpeg" alt="Tênis Caminhada Feminino Confortável" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👟</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Tênis Caminhada Feminino Confortável</p>
             <p class="preco">a partir de R$ 99</p>
@@ -410,7 +476,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=regata+fitness+protecao+uv+feminina&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">UV+</span>
-          <div class="card-icon">👕</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/regata-feminina-academia-fitness-dry-fit-basica-original-caminhada-corrida-pilates-musculacao/labelafitnesscasual/nad-gg-cor-variada8/4356dd4e9eaa3dabd3b50f0fbadd40c5.jpeg" alt="Regata Fitness com Proteção UV" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>👕</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Regata Fitness com Proteção UV</p>
             <p class="preco">a partir de R$ 39</p>
@@ -419,7 +487,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=conjunto+fitness+estampado+floral+feminino&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">FLORAL</span>
-          <div class="card-icon">🌸</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/conjunto-de-biquini-soly-hux-feminino-com-estampa-floral-em-v-e-cintura-alta/nocnocasiacbt/buybox-cpb0f8h71slw/5c5987261238c6c03347f470144f16ec.jpeg" alt="Conjunto Fitness Estampado Floral" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🌸</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Conjunto Fitness Estampado Floral</p>
             <p class="preco">a partir de R$ 89</p>
@@ -434,7 +504,9 @@
       <div class="grid">
         <a href="https://www.amazon.com.br/s?k=whey+protein+concentrado+growth+1kg&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">GROWTH</span>
-          <div class="card-icon">🥛</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/whey-protein-basic-1kg-original-growth-supplements/maxpowersuplementos/7987156663/717a9bc449c1a1c721e62d36f2c71ec0.jpeg" alt="Whey Protein Concentrado Growth 1kg" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🥛</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Whey Protein Concentrado Growth 1kg</p>
             <p class="preco">a partir de R$ 69</p>
@@ -443,7 +515,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=creatina+monohidratada+300g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">TOP VENDA</span>
-          <div class="card-icon">💊</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/creatina-pura-300g-500g-600g-1kg-dark-lab-monohidratada/trevizosuplementos/c9219-3/2c87c810bde542de3d5b3671d5c83b36.jpeg" alt="Creatina Monohidratada 300g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💊</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Creatina Monohidratada 300g</p>
             <p class="preco">a partir de R$ 49</p>
@@ -452,7 +526,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=pre+treino+300g+sabor+melancia&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">ENERGIA</span>
-          <div class="card-icon">⚡</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/diabo-verde-pre-workout-300g-sabor-melancia-ftw-sports-nutrition/fortlsup/2469024/22be164331d4a5f5c52f1d0b62b9c627.jpeg" alt="Pré-Treino 300g Sabor Melancia" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>⚡</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Pré-Treino 300g Sabor Melancia</p>
             <p class="preco">a partir de R$ 69</p>
@@ -461,7 +537,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=bcaa+2400mg+200+capsulas&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">💪</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/aminoacido-bcaa-2400mg-200-capsulas-max-titanium/xtunedltda/274/1518156552c394f68ab536f1e90be575.jpeg" alt="BCAA 2.400mg 200 Cápsulas" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💪</div>'" />
+          </div>
           <div class="info">
             <p class="nome">BCAA 2.400mg 200 Cápsulas</p>
             <p class="preco">a partir de R$ 39</p>
@@ -470,7 +548,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=colageno+hidrolisado+300g+natural&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">COLÁGENO</span>
-          <div class="card-icon">🌿</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/collagen-renew-sabor-limao-300g-nutrify/hotbody/nt76524/5d6f5f0703760e8e938e3c3737e47ae0.jpeg" alt="Colágeno Hidrolisado 300g Natural" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🌿</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Colágeno Hidrolisado 300g Natural</p>
             <p class="preco">a partir de R$ 39</p>
@@ -479,7 +559,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=albumina+avacaro+500g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🥚</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/albumina-protein-500g-refil-bodybuilders/raia-fit/14869333006/6f16e961582e668855640c9d3d8bfde1.jpeg" alt="Albumina Avacaro 500g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🥚</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Albumina Avacaro 500g</p>
             <p class="preco">a partir de R$ 29</p>
@@ -488,7 +570,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=vitamina+d3+2000ui+60+capsulas&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">☀️</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/vitamina-d3-2000ui-com-vitamina-k2-mk7-60-120-ou-180-capsulas-ouro-pharma/ouropharma/365/430c358fc124149b15f60d472ae55adb.jpeg" alt="Vitamina D3 2000UI 60 Cápsulas" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>☀️</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Vitamina D3 2000UI 60 Cápsulas</p>
             <p class="preco">a partir de R$ 19</p>
@@ -497,7 +581,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=omega+3+1000mg+120+capsulas&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">SAÚDE</span>
-          <div class="card-icon">🐟</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/super-omega-3-tg-1080mg-180-capsulas-alta-concentracao-global7/vendasbelezapurabr/8/96f99daa4f0ee28a10f346f76f236512.jpeg" alt="Ômega 3 1000mg 120 Cápsulas" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🐟</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Ômega 3 1000mg 120 Cápsulas</p>
             <p class="preco">a partir de R$ 25</p>
@@ -506,7 +592,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=glutamina+po+300g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🧬</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/suplemento-academia-max-titanium-glutamina-l-g-pote-300g/lojamaxtitanium/pa-001-001-0084/b5e8b737d90d03d4e111c5aed77728fc.jpeg" alt="Glutamina em Pó 300g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🧬</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Glutamina em Pó 300g</p>
             <p class="preco">a partir de R$ 39</p>
@@ -515,7 +603,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=whey+protein+isolado+900g+chocolate&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">ISOLADO</span>
-          <div class="card-icon">🍫</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/whey-blend-protein-concentrado-e-isolado-chocolate-900g-soldiers-nutrition/soldiersnutrition/16039664055/e79c0c8d973365d0c4b76164a51309d8.jpeg" alt="Whey Isolado 900g Chocolate" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🍫</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Whey Isolado 900g Chocolate</p>
             <p class="preco">a partir de R$ 99</p>
@@ -524,7 +614,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=termogenico+feminino+120+capsulas&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">QUEIMA</span>
-          <div class="card-icon">🔥</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/termogenico-probiotica-120-capsulas-sem-sabor/magazineluiza/231371000/1b2042cb11f44365d3918348d3beb578.jpg" alt="Termogênico Feminino 120 Cápsulas" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🔥</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Termogênico Feminino 120 Cápsulas</p>
             <p class="preco">a partir de R$ 49</p>
@@ -533,7 +625,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=vitamina+c+1000mg+60+comprimidos&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🍊</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/vitamina-c-1000mg-e-zinco-com-alta-concentracao-e-mais-imunidade-60-capsulas-vhita/vhita/205020501/d9a053f138be6283394309bf222f022b.jpeg" alt="Vitamina C 1000mg 60 Comprimidos" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🍊</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Vitamina C 1000mg 60 Comprimidos</p>
             <p class="preco">a partir de R$ 19</p>
@@ -542,7 +636,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=whey+protein+gold+standard+optimum+909g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">GOLD</span>
-          <div class="card-icon">🥇</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/whey-protein-100-gold-standard-morango-909g-optimum-nutrition/rtsuplementossj/e6232aa2170b11ecbb034201ac185013/66d5d74356460a661f83afab2d672e00.jpeg" alt="Whey Protein Gold Standard ON 909g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🥇</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Whey Protein Gold Standard ON 909g</p>
             <p class="preco">a partir de R$ 149</p>
@@ -551,7 +647,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=barra+proteina+zero+40g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">ZERO</span>
-          <div class="card-icon">🍫</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/barra-de-proteina-nutrata-havanna-dulce-de-leche-legitimo-40g-12-unidades/magazineluiza/240741700/b0ba612e430ef4709db42ad592a228b7.jpg" alt="Barra de Proteína Zero 40g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🍫</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Barra de Proteína Zero 40g</p>
             <p class="preco">a partir de R$ 4</p>
@@ -560,7 +658,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=multivitaminico+feminino+60+capsulas&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">💊</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/multivitaminico-feminino-completo-libdellas-mulher-academia-disposicao-fitness-500mg-60-capsulas-avanti-supplements/avantisupplements/brb0027/65e0a3f2590fefea60cd1946b816f03c.jpeg" alt="Multivitamínico Feminino 60 Cápsulas" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💊</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Multivitamínico Feminino 60 Cápsulas</p>
             <p class="preco">a partir de R$ 29</p>
@@ -569,7 +669,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=hipercalorico+3kg+baunilha&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">MASSA</span>
-          <div class="card-icon">💪</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/creamass-hipercalorico-pouch-3kg-integralmedica-baunilha/olistplus/opmsj1ma1n1cj9g6/bf321966fc2f4d7762b680c027a56de2.jpeg" alt="Hipercalórico 3kg Baunilha" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💪</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Hipercalórico 3kg Baunilha</p>
             <p class="preco">a partir de R$ 89</p>
@@ -578,7 +680,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=proteina+vegana+ervilha+500g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">VEGANO</span>
-          <div class="card-icon">🌱</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-creatina-500g-vegan-protein-proteina-vegana-de-ervilha-panettone-de-chocolate-837g-wisehealth/wisehealthnutrition/m00209/9ce18e31f4016343b44e1e02157ccf0f.jpeg" alt="Proteína Vegana de Ervilha 500g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🌱</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Proteína Vegana de Ervilha 500g</p>
             <p class="preco">a partir de R$ 59</p>
@@ -587,7 +691,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=kit+creatina+whey+protein+combo&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">KIT</span>
-          <div class="card-icon">🎯</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-black-skull-whey-protein-100-hd-pure-concentrado-isolado-hidrolisado-creatina-coqueteleira/nutrilsuplementos/8b456492f99011edb3b14201ac185049/c7ab089c662facfa675c16a9af771f52.jpeg" alt="Câmbio Creatina + Whey Combo" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🎯</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Câmbio Creatina + Whey Combo</p>
             <p class="preco">a partir de R$ 99</p>
@@ -596,7 +702,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=zma+zinco+magnesio+b6+120+capsulas&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">SONO</span>
-          <div class="card-icon">🌙</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/zma-polivitaminico-zinco-magnesio-e-b6-120-caps-black-skull/oliststore/mglbrcyoyropg1fc/baecda86bafdb57dfc802c21af4d1474.jpeg" alt="ZMA Zinco Magnésio 120 Cápsulas" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🌙</div>'" />
+          </div>
           <div class="info">
             <p class="nome">ZMA Zinco Magnésio 120 Cápsulas</p>
             <p class="preco">a partir de R$ 29</p>
@@ -605,7 +713,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=colageno+vitamina+c+120+capsulas&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">DUO</span>
-          <div class="card-icon">💎</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-2-potes-colageno-hidrolisado-tipo-1-suplemento-natural-vitamina-100-em-po-puro-natunectar-120-capsulas-renova-zero-lactose-protein/natu7suplementos/2xnt0052/84cde5207a37d92de827b701f4e9ecb8.jpeg" alt="Colágeno + Vitamina C 120 Cápsulas" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💎</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Colágeno + Vitamina C 120 Cápsulas</p>
             <p class="preco">a partir de R$ 35</p>
@@ -614,7 +724,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=capsaicina+termogenico+120+capsulas&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🌶️</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/termogenico-probiotica-120-capsulas-sem-sabor/magazineluiza/231371000/1b2042cb11f44365d3918348d3beb578.jpg" alt="Capsaicina Termogênico 120 Cápsulas" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🌶️</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Capsaicina Termogênico 120 Cápsulas</p>
             <p class="preco">a partir de R$ 39</p>
@@ -623,7 +735,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=l+carnitina+liquida+480ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">⚡</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/l-carnitina-2300mg-com-coenzima-q-10-480ml-fisionutri/theheatcomerciovarejistadesup/a92bf992908a11eba3344201ac1850e0/fdb7c31fdbcf5b3c9cef27034994939b.jpeg" alt="L-Carnitina Líquida 480ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>⚡</div>'" />
+          </div>
           <div class="info">
             <p class="nome">L-Carnitina Líquida 480ml</p>
             <p class="preco">a partir de R$ 49</p>
@@ -632,7 +746,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=whey+protein+growth+2kg+baunilha&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">2KG</span>
-          <div class="card-icon">🥛</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/whey-3w-2kg-pro-force-32g-proteina-muscle-growth-sabor-chocolate/zanonsgym/wheychoco3w2kg/397b98416ffc117a61a905a2673cc5df.jpeg" alt="Whey Protein Growth 2kg Baunilha" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🥛</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Whey Protein Growth 2kg Baunilha</p>
             <p class="preco">a partir de R$ 129</p>
@@ -641,7 +757,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=pre+treino+dark+blood+300g+black+skull&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">DARK</span>
-          <div class="card-icon">💀</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/pre-treino-black-skull-by-cedric-mcmillan-bone-crusher-300g-melancia/magazineluiza/238332900/5b672c22c27a8744aa01d25a662782a0.jpg" alt="Pré-Treino Dark Blood 300g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💀</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Pré-Treino Dark Blood 300g</p>
             <p class="preco">a partir de R$ 69</p>
@@ -650,7 +768,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=spirulina+500mg+120+capsulas&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">SUPER</span>
-          <div class="card-icon">💚</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/magnesio-bisglicinato-500mg-materia-prima-importada-60-ou-120-capsulas-ouro-pharma/ouropharma/78987766219310257/447b910640795d89fc0c6ff426b75e18.jpeg" alt="Spirulina 500mg 120 Cápsulas" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💚</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Spirulina 500mg 120 Cápsulas</p>
             <p class="preco">a partir de R$ 29</p>
@@ -659,7 +779,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=palatinose+dextrose+1kg&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">ENERGY</span>
-          <div class="card-icon">⚡</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/palatinose-1kg-abacaxi-com-hortela-newnutrition/newnutritionoficial/5340/22f6ee57696622d10b5dd7f24ef53ed4.jpeg" alt="Palatinose + Dextrose 1kg" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>⚡</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Palatinose + Dextrose 1kg</p>
             <p class="preco">a partir de R$ 39</p>
@@ -668,7 +790,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=cafeina+210mg+100+capsulas&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">FOCO</span>
-          <div class="card-icon">☕</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/cafeina-200mg-em-capsulas-pura-100-natural-suplemento-treino-e-energia-nativa-farma/nativaformulafarmacia/76e5d988af5911f08d6642010a480de5/03cc8ab5acb3424601d856f6012c6a77.jpeg" alt="Cafeína 210mg 100 Cápsulas" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>☕</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Cafeína 210mg 100 Cápsulas</p>
             <p class="preco">a partir de R$ 19</p>
@@ -677,7 +801,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=whey+protein+hidrolisado+recovery&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">HIDRO</span>
-          <div class="card-icon">🏋️</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/recovery-3-1-pos-treino-milk-chocolate-true-source-900g/emporiolanutri/b26f24d4957611f0a16542010a480899/7bd21d5e5cc682cf3f51f2330d3be0b1.jpeg" alt="Whey Protein Hidrolisado Recovery" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🏋️</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Whey Protein Hidrolisado Recovery</p>
             <p class="preco">a partir de R$ 119</p>
@@ -686,7 +812,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=colageno+verisol+sache+10g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">VERISOL</span>
-          <div class="card-icon">🌟</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/colageno-hidrolisado-verisol-versao-po-200g-versao-gel-10-saches-nutrilibrium/suplementooficial/3692561234-1/28bb90973e9fa68c7957686766e50b69.jpeg" alt="Colágeno Verisol em Sachê 10g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🌟</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Colágeno Verisol em Sachê 10g</p>
             <p class="preco">a partir de R$ 49</p>
@@ -695,7 +823,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=kit+termogenico+bcaa+academia&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">KIT DUO</span>
-          <div class="card-icon">🔥</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-6-meias-esportivas-academia-unissex-cano-curto-soquete-corrida-ciclismo-performance-bike-up-qlc-sport/compramais/kit6meiaacademiasort3438/d421b75d64db4ccef0aa5341cbb6aa53.jpeg" alt="Câmbio Termogênico + BCAA Kit" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🔥</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Câmbio Termogênico + BCAA Kit</p>
             <p class="preco">a partir de R$ 79</p>
@@ -710,7 +840,9 @@
       <div class="grid">
         <a href="https://www.amazon.com.br/s?k=serum+vitamina+c+facial+30ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">VITAMINA C</span>
-          <div class="card-icon">🍊</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/serum-facial-antioxidante-fisiogel-c22/epocacosmeticos-integra/83517/c18f719167c5ad422a6ee544e8431ac6.jpeg" alt="Sérum Vitamina C Facial 30ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🍊</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Sérum Vitamina C Facial 30ml</p>
             <p class="preco">a partir de R$ 39</p>
@@ -719,7 +851,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=protetor+solar+fps60+60g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">FPS 60</span>
-          <div class="card-icon">☀️</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/protetor-solar-facial-isdin-foto-fusion-water-5-stars-fps60/epocacosmeticos-integra/54909/73e2bbc972554943eb089d562d4b487c.jpeg" alt="Protetor Solar FPS60 60g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>☀️</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Protetor Solar FPS60 60g</p>
             <p class="preco">a partir de R$ 49</p>
@@ -728,7 +862,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=acido+hialuronico+facial+30ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">HIALURÔNICO</span>
-          <div class="card-icon">💧</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/serum-facial-com-peptideo-de-argirelina-e-acido-hialuronico-asterwood-30ml/nocnocestadosunidos/buybox-cpb01i7atid4/d965e6b1f948c83dc48a8d04771740b3.jpeg" alt="Ácido Hialurônico Facial 30ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💧</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Ácido Hialurônico Facial 30ml</p>
             <p class="preco">a partir de R$ 39</p>
@@ -737,7 +873,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=mascara+capilar+hidratacao+intensa+500g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">💆</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-wella-professionals-cronograma-capilar-masq-enrich-500g-masq-fusion-500g-masq-oil-reflections-500g/younaweb/meng-moig-mfug/ac24ec88a2ef16bc01868b6ef2ee7caf.jpeg" alt="Máscara Capilar Hidratação Intensa 500g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💆</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Máscara Capilar Hidratação Intensa 500g</p>
             <p class="preco">a partir de R$ 29</p>
@@ -746,7 +884,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=agua+micelar+demaquilante+200ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🌊</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/agua-micelar-l-oreal-paris-5-em-1-demaquilante-200ml-loreal/hipercarijos/743165/4ab93d0530f876286bf88a07ae6ca3bd.jpeg" alt="Água Micelar Demaquilante 200ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🌊</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Água Micelar Demaquilante 200ml</p>
             <p class="preco">a partir de R$ 24</p>
@@ -755,7 +895,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=gel+limpeza+facial+suave+150ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">SKINCARE</span>
-          <div class="card-icon">🫧</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/gel-de-limpeza-facial-suave-pele-oleosa-e-sensivel-la-roche-posay-effaclar-alta-tolerancia/epocacosmeticos-integra/3834/0c0a0fe1fbe42b806c2ccba5bc40788d.jpeg" alt="Gel de Limpeza Facial Suave 150ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🫧</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Gel de Limpeza Facial Suave 150ml</p>
             <p class="preco">a partir de R$ 29</p>
@@ -764,7 +906,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=vitamina+c+1000mg+60+pastilhas+efervescente&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🍋</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/suplemento-de-vitamina-c-efervescente-suica-1000-mg-60-comprimidos-swisse/nocnocestadosunidos/buybox-cpb09t1z97x6/506040ad8606a031e01b974f9b38e236.jpeg" alt="Vitamina C 1000mg 60 Pastilhas" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🍋</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Vitamina C 1000mg 60 Pastilhas</p>
             <p class="preco">a partir de R$ 19</p>
@@ -773,7 +917,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=creme+hidratante+corporal+400ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🧴</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/creme-hidratante-corporal-natura-tododia-400ml-fragrancias-fragrancia-ameixa-e-flor-de-baunilha/lojamixx/7908371616208/a25d46a5855aef6f1e712260cf93f983.jpeg" alt="Creme Hidratante Corporal 400ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🧴</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Creme Hidratante Corporal 400ml</p>
             <p class="preco">a partir de R$ 29</p>
@@ -782,7 +928,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=oleo+argan+cabelos+50ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">ARGAN</span>
-          <div class="card-icon">🌰</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/lola-cosmetics-argan-oil-kit-com-3-oleos-capilares-lola-from-rio/epocacosmeticos-integra/83019/927d3fbf487adeaf03e2f5fda48b73c2.jpeg" alt="Óleo de Argan para Cabelos 50ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🌰</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Óleo de Argan para Cabelos 50ml</p>
             <p class="preco">a partir de R$ 29</p>
@@ -791,7 +939,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=retinol+serum+facial+antirrugas&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">RETINOL</span>
-          <div class="card-icon">✨</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/serum-facial-antirrugas-com-vitamina-b3-e-retinol-puro-la-roche-posay-retinol-b3/epocacosmeticos-integra/79063/5185afaf001b9f4b2be4602096a64414.jpeg" alt="Retinol Sérum Facial Antirrugas" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>✨</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Retinol Sérum Facial Antirrugas</p>
             <p class="preco">a partir de R$ 49</p>
@@ -800,7 +950,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=batom+hidratante+fps15+protetor&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">💋</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/avon-color-trend-batom-hidratante-manteiga-cacau-fps15-45g/mtcosmetic/146981/4617e6eb7d4d3d16b4f7f6c25fb7ab39.jpeg" alt="Batom Hidratante FPS15 3,5g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💋</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Batom Hidratante FPS15 3,5g</p>
             <p class="preco">a partir de R$ 19</p>
@@ -809,7 +961,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=esfoliante+corporal+acucar+300g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">ESFOLIANTE</span>
-          <div class="card-icon">💆</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/barbour-s-beauty-coconut-sugar-body-scrub-esfoliante-corporal-300g-barbour-s-beauty/kassioperfumaria/7898342117318/473e602ad97f4a0693002264101336a0.jpeg" alt="Esfoliante Corporal Açúcar 300g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💆</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Esfoliante Corporal Açúcar 300g</p>
             <p class="preco">a partir de R$ 29</p>
@@ -818,7 +972,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=shampoo+anticaspa+400ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🧴</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/shampoo-anticaspa-clear-men-ice-cool-menthol-400ml/magazineluiza/221321100/bd4ff8f7fb5e6141fa59158c0673c7d0.jpg" alt="Shampoo Anticaspa 400ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🧴</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Shampoo Anticaspa 400ml</p>
             <p class="preco">a partir de R$ 19</p>
@@ -827,7 +983,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=niacinamida+10+serum+facial+30ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">POROS</span>
-          <div class="card-icon">🔬</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/mela-b3-serum-concentrado-antimanchas-30ml-importado/inovvacosmeticos/933a2b5801e711f1a58742010a480d0c/012e42583313511e86118e403db58ee5.jpeg" alt="Niacinamida 10% Sérum Facial 30ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🔬</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Niacinamida 10% Sérum Facial 30ml</p>
             <p class="preco">a partir de R$ 39</p>
@@ -836,7 +994,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=filtro+solar+mineral+fps50+40g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">MINERAL</span>
-          <div class="card-icon">🌞</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/protetor-solar-com-cor-bioderma-photoderm-nude-touch-mineral-fps-50/epocacosmeticos-integra/60404/538cdb1166a9446f81b0925254217dee.jpeg" alt="Filtro Solar Mineral FPS50 40g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🌞</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Filtro Solar Mineral FPS50 40g</p>
             <p class="preco">a partir de R$ 39</p>
@@ -845,7 +1005,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=oleo+rosa+mosqueta+30ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">CICATRIZ</span>
-          <div class="card-icon">🌹</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/rosa-rubiginosa-puro-rosa-mosqueta-30ml-utoleos/votremagasin/rmosquetavd/2897b34a9f5f9e7fc2acee35dad4b534.jpeg" alt="Óleo de Rosa Mosqueta 30ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🌹</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Óleo de Rosa Mosqueta 30ml</p>
             <p class="preco">a partir de R$ 29</p>
@@ -854,7 +1016,9 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=kit+skincare+antiidade+completo&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">KIT</span>
-          <div class="card-icon">💎</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-skincare-completo-5-em-1-serum-tonico-bruma-fixadora-hidratante-facial-e-creme-olhos-antiidade-max-love/ofertafacil/fc7951acd22111f08bdb42010a480d47/582b1786e47ab489b8c8c6c22a957415.jpeg" alt="Kit Skincare Anti-Idade Completo" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💎</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Kit Skincare Anti-Idade Completo</p>
             <p class="preco">a partir de R$ 59</p>
@@ -863,115 +1027,141 @@
         </a>
         <a href="https://www.amazon.com.br/s?k=mascara+argila+facial+100g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">ARGILA</span>
-          <div class="card-icon">🏺</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/mascara-de-argila-facial-vita-derm-100g/olistsp/ospx1i632pqmku4x/17ea5f25482e3c0aa1d47513a9f6b853.jpeg" alt="Máscara de Argila Facial 100g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🏺</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Máscara de Argila Facial 100g</p>
             <p class="preco">a partir de R$ 29</p>
           </div>
           <div class="ver-btn">Ver na Amazon ›</div>
         </a>
-        <a href="https://www.amazon.com.br/s?k=condicionador+reparador+400ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
+        <a href="https://www.amazon.com.br/s?k=condicionador+reparador+cabelo&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">🪮</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/trivitt-shampoo-condicionador-leave-in-hidratacao-reparador-itallian-hairtech/segenbeauty/sg-ittvtc-k0143/0cc77ce63cfd974a7f2267febd615c6e.jpeg" alt="Condicionador Reparador 400ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🪮</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Condicionador Reparador 400ml</p>
             <p class="preco">a partir de R$ 19</p>
           </div>
           <div class="ver-btn">Ver na Amazon ›</div>
         </a>
-        <a href="https://www.amazon.com.br/s?k=acido+glicolico+10+serum+30ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
+        <a href="https://www.amazon.com.br/s?k=serum+esfoliante+acido+glicolico&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">ESFOLIANTE</span>
-          <div class="card-icon">⚗️</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/serum-esfoliante-minimalista-10-aha-acido-latico-e-acido-glicolico-bha-acido-salicilico-30ml/nocnocestadosunidos/buybox-cpb08gg5x3wz/e8cf39bd259be16b386f493dce4d276b.jpeg" alt="Ácido Glicólico 10% Sérum 30ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>⚗️</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Ácido Glicólico 10% Sérum 30ml</p>
             <p class="preco">a partir de R$ 39</p>
           </div>
           <div class="ver-btn">Ver na Amazon ›</div>
         </a>
-        <a href="https://www.amazon.com.br/s?k=manteiga+karite+hidratante+200g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
+        <a href="https://www.amazon.com.br/s?k=manteiga+karite+corporal+hidratante&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">NUTRITIVO</span>
-          <div class="card-icon">🧈</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/creme-corporal-aaa-floral-white-jasmine-com-manteiga-de-karite-130ml-aaa-de-aromas-artesanales-de-antigua/nocnocestadosunidos/buybox-cpb00jwqs1ja/2909ed1654daaa8b5dc1ffaf1f6966c2.jpeg" alt="Manteiga de Karité Hidratante 200g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🧈</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Manteiga de Karité Hidratante 200g</p>
             <p class="preco">a partir de R$ 29</p>
           </div>
           <div class="ver-btn">Ver na Amazon ›</div>
         </a>
-        <a href="https://www.amazon.com.br/s?k=ampola+capilar+reconstrucao+15ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
+        <a href="https://www.amazon.com.br/s?k=ampola+capilar+reconstrucao+cabelo&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">RECONSTRUÇÃO</span>
-          <div class="card-icon">💊</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/ampola-capilar-pantene-reconstrucao-revitalizadora-pantene/klostermann/13298401/ff37d6c7ed0fe262f62573788e06cea2.jpeg" alt="Ampola Capilar Reconstrução 15ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💊</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Ampola Capilar Reconstrução 15ml</p>
             <p class="preco">a partir de R$ 9</p>
           </div>
           <div class="ver-btn">Ver na Amazon ›</div>
         </a>
-        <a href="https://www.amazon.com.br/s?k=protetor+termico+capilar+200ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
+        <a href="https://www.amazon.com.br/s?k=protetor+termico+para+cabelo&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">TÉRM.</span>
-          <div class="card-icon">🔥</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/protetor-termico-para-cabelo-creme-defrizante-liso-profundo-termoprotetor-anti-frizz-100ml-vult/lemisstore/123064/b8538e0bc4447c470dab492843ddf70d.jpeg" alt="Protetor Térmico Capilar 200ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🔥</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Protetor Térmico Capilar 200ml</p>
             <p class="preco">a partir de R$ 29</p>
           </div>
           <div class="ver-btn">Ver na Amazon ›</div>
         </a>
-        <a href="https://www.amazon.com.br/s?k=serum+capilar+reparador+pontas+35ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
+        <a href="https://www.amazon.com.br/s?k=serum+capilar+pontas+reparador&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">✂️</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/vitaderm-3r-total-express-shampoo-creatina-em-gel-mascara-fluido-hidratante-serum-reparador-vita-derm/lojamixx/7896207325052/f6f3c477e3e88e00cb64fa0718ecf067.jpeg" alt="Serum Capilar Reparador Pontas 35ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>✂️</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Serum Capilar Reparador Pontas 35ml</p>
             <p class="preco">a partir de R$ 19</p>
           </div>
           <div class="ver-btn">Ver na Amazon ›</div>
         </a>
-        <a href="https://www.amazon.com.br/s?k=creme+anti+celulite+firmador+300g&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
+        <a href="https://www.amazon.com.br/s?k=creme+anti+celulite+corporal&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">FIRMADOR</span>
-          <div class="card-icon">💪</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-creme-para-o-bumbum-celulite-espinha-e-clareador-mancha-bio-soft/hormonas/lisabumhot-lisabum-lisaclare-a/f39347345bd67e11cadaec88577ec0b1.jpeg" alt="Creme Anti-Celulite Firmador 300g" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💪</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Creme Anti-Celulite Firmador 300g</p>
             <p class="preco">a partir de R$ 39</p>
           </div>
           <div class="ver-btn">Ver na Amazon ›</div>
         </a>
-        <a href="https://www.amazon.com.br/s?k=bronzeador+automotivo+fps15+200ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
+        <a href="https://www.amazon.com.br/s?k=bronzeador+solar+fps+15&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">BRONZE</span>
-          <div class="card-icon">🌟</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/spray-gel-bronzeador-australian-gold-bronzing-accelerator-125g/magazineluiza/240653600/628f389e2676472ecc124b95d1a40ebd.jpg" alt="Bronzeador Automotivo FPS15 200ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🌟</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Bronzeador Automotivo FPS15 200ml</p>
             <p class="preco">a partir de R$ 29</p>
           </div>
           <div class="ver-btn">Ver na Amazon ›</div>
         </a>
-        <a href="https://www.amazon.com.br/s?k=esmalte+gel+semipermanente+kit&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
+        <a href="https://www.amazon.com.br/s?k=kit+esmalte+gel+unhas&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">GEL</span>
-          <div class="card-icon">💅</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/kit-10-esmaltes-em-gel-7-5ml-d-z-bella-rosa-unhas-uv-led-oem/mmmagazine/15181923433/a9cdbd623c1fa0262592b57432d8447e.jpg" alt="Esmalte Gel Semipermanente Kit" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💅</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Esmalte Gel Semipermanente Kit</p>
             <p class="preco">a partir de R$ 29</p>
           </div>
           <div class="ver-btn">Ver na Amazon ›</div>
         </a>
-        <a href="https://www.amazon.com.br/s?k=gloss+labial+volumizador+4ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
+        <a href="https://www.amazon.com.br/s?k=gloss+labial+brilho+labial&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">VOLUME</span>
-          <div class="card-icon">💋</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/eu-amo-charming-spray-de-brilho-gloss-150ml/cless/703046099/f54cec6047768ecd0e911792ff78b6fc.jpeg" alt="Gloss Labial Volumizador 4ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💋</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Gloss Labial Volumizador 4ml</p>
             <p class="preco">a partir de R$ 19</p>
           </div>
           <div class="ver-btn">Ver na Amazon ›</div>
         </a>
-        <a href="https://www.amazon.com.br/s?k=perfume+feminino+floral+100ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
+        <a href="https://www.amazon.com.br/s?k=perfume+feminino+floral&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           <span class="badge">PARFUM</span>
-          <div class="card-icon">🌸</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/perfume-arabe-sabah-al-ward-al-wataniah-feminino-floral-original-100ml/glowgomake/0105/3054a73950ead1fbcf3cf65cedb18880.jpeg" alt="Perfume Feminino Floral 100ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>🌸</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Perfume Feminino Floral 100ml</p>
             <p class="preco">a partir de R$ 49</p>
           </div>
           <div class="ver-btn">Ver na Amazon ›</div>
         </a>
-        <a href="https://www.amazon.com.br/s?k=spray+capilar+finalizador+250ml&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
+        <a href="https://www.amazon.com.br/s?k=finalizador+capilar+spray&tag=fitcomestilo-20&linkCode=ll2&ref_=as_li_ss_tl" target="_blank" rel="noopener" class="card">
           
-          <div class="card-icon">💨</div>
+          <div class="card-media">
+            <img src="https://a-static.mlcdn.com.br/800x800/duo-xidil-7-spray-femme-100ml-tonico-capilar-cabelos-fortlife-pharma/fortlifepharma/0042882192602/b6b9a5624ba68cc463fbe834bbf16eae.jpeg" alt="Spray Capilar Finalizador 250ml" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-icon\'>💨</div>'" />
+          </div>
           <div class="info">
             <p class="nome">Spray Capilar Finalizador 250ml</p>
             <p class="preco">a partir de R$ 24</p>
