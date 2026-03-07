@@ -610,6 +610,29 @@
             font-weight: 600;
         }
 
+        .cupom-codigo-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 230, 0, 0.1);
+            border: 1.5px dashed rgba(255, 230, 0, 0.5);
+            border-radius: 10px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .cupom-codigo-box:hover { background: rgba(255, 230, 0, 0.18); }
+
+        .cupom-codigo-texto {
+            font-size: 15px;
+            font-weight: 900;
+            color: #ffe600;
+            letter-spacing: 1px;
+        }
+
+        .cupom-copiar-icon { font-size: 18px; }
+
         .cupom-gerar-btn {
             display: inline-block;
             background: linear-gradient(135deg, #ffe600, #f5c800);
@@ -621,7 +644,10 @@
             text-align: center;
             margin-top: 4px;
             text-decoration: none;
-            transition: opacity 0.2s;
+            transition: background 0.25s, opacity 0.2s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
         }
 
         .cupom-gerar-btn:hover { opacity: 0.85; }
@@ -1627,6 +1653,7 @@
                 </div>
             </a>
 
+<!-- CUPONS_ML_INICIO -->
             <!-- DIVISOR CUPONS -->
             <div class="section-divider animate-in delay-12">
                 <span class="section-title">🎟️ Cupons de Desconto</span>
@@ -1638,54 +1665,71 @@
                     <span class="cupom-banner-icon">🎟️</span>
                     <div>
                         <div class="cupom-banner-titulo">Cupons exclusivos no Mercado Livre</div>
-                        <div class="cupom-banner-sub">Descontos reais em suplementos, moda fitness e beleza. Gere seu código e economize!</div>
+                        <div class="cupom-banner-sub">Descontos reais em suplementos, moda fitness e beleza. Clique no código para copiar e use na compra!</div>
                     </div>
                 </div>
 
                 <div class="cupons-grid">
 
                     <!-- Darklab R$80 OFF -->
-                    <a href="https://www.mercadolivre.com.br/cupons" target="_blank" rel="noopener" class="cupom-card">
+                    <div class="cupom-card" onclick="copiarCupom(this, 'DARKLAB80')">
                         <div class="cupom-desconto">R$ 80 OFF</div>
                         <div class="cupom-marca">Darklab — Suplementos</div>
                         <div class="cupom-nicho">💊 Suplementos</div>
                         <div class="cupom-validade">⏰ Vence 1 de abril</div>
-                        <span class="cupom-gerar-btn">Gerar código →</span>
-                    </a>
+                        <div class="cupom-codigo-box" data-codigo="DARKLAB80">
+                            <span class="cupom-codigo-texto">#DARKLAB80</span>
+                            <span class="cupom-copiar-icon">📋</span>
+                        </div>
+                        <span class="cupom-gerar-btn">Copiar código →</span>
+                    </div>
 
                     <!-- Darklab R$20 OFF -->
-                    <a href="https://www.mercadolivre.com.br/cupons" target="_blank" rel="noopener" class="cupom-card">
+                    <div class="cupom-card" onclick="copiarCupom(this, 'DARKLAB20')">
                         <div class="cupom-desconto">R$ 20 OFF</div>
                         <div class="cupom-marca">Darklab — Suplementos</div>
                         <div class="cupom-nicho">💊 Suplementos</div>
                         <div class="cupom-validade">⏰ Vence 1 de abril</div>
-                        <span class="cupom-gerar-btn">Gerar código →</span>
-                    </a>
+                        <div class="cupom-codigo-box" data-codigo="DARKLAB20">
+                            <span class="cupom-codigo-texto">#DARKLAB20</span>
+                            <span class="cupom-copiar-icon">📋</span>
+                        </div>
+                        <span class="cupom-gerar-btn">Copiar código →</span>
+                    </div>
 
                     <!-- Sandrini Moda R$15 OFF -->
-                    <a href="https://www.mercadolivre.com.br/cupons" target="_blank" rel="noopener" class="cupom-card">
+                    <div class="cupom-card" onclick="copiarCupom(this, 'SANDRINI15')">
                         <div class="cupom-desconto">R$ 15 OFF</div>
                         <div class="cupom-marca">Sandrini Menswear — Moda</div>
                         <div class="cupom-nicho">👗 Moda</div>
-                        <div class="cupom-validade">⏰ Vence 31 de março</div>
-                        <span class="cupom-gerar-btn">Gerar código →</span>
-                    </a>
+                        <div class="cupom-validade" style="color:#ef4444;">⏰ Vence 31 de março</div>
+                        <div class="cupom-codigo-box" data-codigo="SANDRINI15">
+                            <span class="cupom-codigo-texto">#SANDRINI15</span>
+                            <span class="cupom-copiar-icon">📋</span>
+                        </div>
+                        <span class="cupom-gerar-btn">Copiar código →</span>
+                    </div>
 
                     <!-- Betahome 15% OFF -->
-                    <a href="https://www.mercadolivre.com.br/cupons" target="_blank" rel="noopener" class="cupom-card">
+                    <div class="cupom-card" onclick="copiarCupom(this, 'BETAHOME15')">
                         <div class="cupom-desconto">15% OFF</div>
                         <div class="cupom-marca">Betahome — Casa</div>
                         <div class="cupom-nicho">🏠 Casa</div>
                         <div class="cupom-validade">⏰ Vence 1 de abril</div>
-                        <span class="cupom-gerar-btn">Gerar código →</span>
-                    </a>
+                        <div class="cupom-codigo-box" data-codigo="BETAHOME15">
+                            <span class="cupom-codigo-texto">#BETAHOME15</span>
+                            <span class="cupom-copiar-icon">📋</span>
+                        </div>
+                        <span class="cupom-gerar-btn">Copiar código →</span>
+                    </div>
 
                 </div>
 
-                <a href="https://www.mercadolivre.com.br/cupons" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; color:#ffe600; font-weight:700; font-size:14px; text-decoration:none; align-self:center; margin-top:4px;">
+                <a href="https://vendedor.mercadolivre.com.br/cupons" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; color:#ffe600; font-weight:700; font-size:14px; text-decoration:none; align-self:center; margin-top:4px;">
                     Ver todos os 6.000+ cupons disponíveis →
                 </a>
             </div>
+<!-- CUPONS_ML_FIM -->
 
             <!-- DIVISOR -->
             <div class="section-divider animate-in delay-12">
@@ -2226,6 +2270,37 @@
     <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').catch(function(){});
+    }
+    </script>
+
+    <!-- Cupons: copiar código para o clipboard -->
+    <script>
+    function copiarCupom(card, codigo) {
+        navigator.clipboard.writeText(codigo).then(function() {
+            var btn = card.querySelector('.cupom-gerar-btn');
+            if (btn) {
+                var orig = btn.innerText;
+                btn.innerText = '✅ Copiado! Cole na compra';
+                btn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
+                btn.style.color = '#fff';
+                setTimeout(function() {
+                    btn.innerText = orig;
+                    btn.style.background = '';
+                    btn.style.color = '';
+                }, 2800);
+            }
+            var box = card.querySelector('.cupom-codigo-box');
+            if (box) {
+                box.style.borderColor = '#10b981';
+                box.style.background = 'rgba(16,185,129,0.12)';
+                setTimeout(function() {
+                    box.style.borderColor = '';
+                    box.style.background = '';
+                }, 2800);
+            }
+        }).catch(function() {
+            window.prompt('Copie o código:', codigo);
+        });
     }
     </script>
 
